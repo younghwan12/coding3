@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 : 데이터 저장하기</title>
-    <!--오후에 작업한거  -->
-    <!--오후에 작업한거2  -->
+
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
    <style>
         *{
@@ -23,7 +22,7 @@
     header{
         list-style: none;
         padding: 2vw;
-        border-bottom: 1px dash #cdcdcd;
+        border-bottom: 1px dashed #cdcdcd;
     }
     header h1{
         font-size: 4vw;
@@ -46,12 +45,34 @@
     }
     #main{
         padding: 2vw;
-        border-bottom: 1px dash #cdcdcd;
+        border-bottom: 1px dashed #cdcdcd;
 
     }
     .list{font-size: 18px;
         line-height: 1.8;
         
+    }
+    #plist {
+        padding: 4vw 2vw;
+        border-bottom: 1px dashed #cdcdcd;
+    }
+    #plist ul li a {
+        background-color: #000;
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 18px;
+    }
+
+    @media (max-width: 800px){
+        header h1 {
+            font-size: 40px;
+        }
+        header nav ul li a{
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+
+
     }
     </style>
 </head>
@@ -68,6 +89,14 @@
             </ul>
         </nav>    
     </header>
+
+    <section id="plist">
+        <ul>
+            <li><a href="basic.html">기본 규칙</a></li>
+        </ul>
+    </section>
+
+
     <main id="main">
         <div class="list">
             <li>01. 변수 : 데이터 저장</li>
