@@ -67,13 +67,14 @@
             padding: 2vw 0;
             line-height: 1.6;
         }
+
         .article h2 {
             font-weight: normal;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         .article h3 {
             font-weight: normal;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         .article p {
             margin-bottom: 10px;
@@ -151,15 +152,25 @@
             </ul>
         </nav>
         <article class="article">
-            <h2>시멘틱 마크업</h2>
-            <p>시멘틱(semantic)의 사전적 뜻은 '의미론적인' 으로 해석되는데, 이것은 마크업 할 때 의미에 부합하는 태그를 사용하라는 뜻이다.</p>
-            <h3>다음 예시를 보면서 설명하겠습니다.</h3>
-
-            <p class="box">
-                &lt;body&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;반응형웹<br>
-                &lt;body&gt;<br>
+            <h2>블록 레벨 요소</h2>
+            <p>
+                블록 레벨 요소는 마크업을 할 때 줄이 바뀌는 특성을 가지고 있는데, 다음 예제를 보면서 설명하겠습니다.
             </p>
+            <pre><p class="box">
+&lt;body&gt;<br>    h1&gt;블록 레벨 요소&lt;h1&gt;
+    h2&gt;블록 레벨 요소&lt;h2&gt;
+    p&gt;줄 바꿈이 생깁니다&lt;p&gt;
+&lt;body&gt;
+            </p></pre>
+            <p>결과</p>
+            <pre><p class="box">
+<h2>블록 레벨 요소</h2>
+<h3>블록 레벨 요소 성질</h3>
+줄 바꿈이 생깁니다.               
+            </p>
+            
+            
+
             <p>만약 '반응형웹'이 HTML 문서에서 제목으로 사용된다고 가정할 경우 예시처럼 마크업을 하면, 스크린 리더(음성낭독프로그램) 에서는<br>
                그저 '반응형웹'이라고 읽어주기 때문에 그 것이 제목인지를 알수가 없습니다.
             </p>
