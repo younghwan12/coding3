@@ -63,6 +63,7 @@
             display: inline-block;
         }
         /* 아티클 */
+        
         .article {
             padding: 2vw 0;
             line-height: 1.6;
@@ -70,7 +71,7 @@
 
         .article h2 {
             font-weight: normal;
-            margin-bottom: 5px;
+            margin : 10px;
         }
         .article h3 {
             font-weight: normal;
@@ -158,39 +159,85 @@
             </p>
             <pre><p class="box">
 &lt;body&gt;<br>    &lt;h1&gt;블록 레벨 요소&lt;h1&gt;
-    &lt;h2&gt;블록 레벨 요소&lt;h2&gt;
+    &lt;h2&gt;블록 레벨 요소 성질&lt;h2&gt;
     &lt;p&gt;줄 바꿈이 생깁니다&lt;p&gt;
 &lt;body&gt;
             </p></pre>
             <p>
                 결과
             </p>
-            <p>
-            <h1>블록 레벨 요소</h1>
-            <h3>블록 레벨 요소 성질</h3>
-            줄 바꿈이 생깁니다
-            </p>
+            <pre><p class="box">
+블록 레벨 요소
+블록 레벨 요소 성질
+줄 바꿈이 생깁니다
+            </p></pre>
             <p>
                 마크업 했던 &lt;h1&gt;, &lt;h2&gt;, &lt;p&gt; 요소들은 블록의 성질을 가지고 있어 화면상 줄 바꿈 현상이 일어나는 것을 볼 수 있습니다.
             </p>
             
-            
+            <h2>인라인 요소</h2>
 
-            <p>만약 '반응형웹'이 HTML 문서에서 제목으로 사용된다고 가정할 경우 예시처럼 마크업을 하면, 스크린 리더(음성낭독프로그램) 에서는<br>
-               그저 '반응형웹'이라고 읽어주기 때문에 그 것이 제목인지를 알수가 없습니다.
-            </p>
             <p>
-                이 부분을 제목을 의미하는 태그로 바꾸어 마크업 해보도록 하겠습니다.
+                인라인 요소는 블록 레벨 요소와 달리 줄 바꿈 특성이 없습니다. 즉, 블록 레벨 요소처럼 행이 바뀌지 않고 한 줄로 출력됩니다.
             </p>
-            <p class="box">
-                &lt;body&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;반응형웹&lt;/h1&gt;<br>
-                &lt;body&gt;<br>
-            </p>
-            <p>
-                예시에서 &lt;h1&gt;은 문서의 첫 제목을 의미하는 태그입니다. 이 부분을 '반응형웹' 헤딩 일이라고 읽어 준다면 "아!" 이 부분이 제목이구나."를 알 수<br>있게 됩니다.
-            </p>                                 
             
+            <p class="box">
+                &lt;strong&gt;인라인 요소&lt;/strong&gt;<br>
+                &lt;span&gt;인라인 요소는 한 줄로 출력됩니다.&lt;span&gt;
+            </p>
+            <p>
+                결과
+            </p>
+            <p>
+                인라인 요소 인라인 요소는 한 줄로 출력됩니다.
+            </p>
+            <p>
+                마크업 했던 &lt;strong&gt;, &lt;span&gt; 요소들은 인라인 성질을 가지고 있어 행이 바뀌지 않고 한 줄로 출력 된 것을 볼 수 있습니다.
+            </p>                               
+            <h2>블록 레벨 요소와 인라인 요소의 특성</h2>
+            <table class="table">
+                <theady>
+                    <tr>
+                        <th>요소 유형</th>
+                        <th>특징</th>
+                        <th>콘텐츠 종류</th>
+                        <th>내용</th>
+                        <th>해당요소</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">블록 레벨<br>요소</td>
+                        <td>1. 블록 레벨 요소는 줄 바꿈이 일어난다.<br>
+                            2. 블록 레벨 요소는 텍스트(문자) 와 인라인 요소를 자식 요소로 포함할수있다.<br>
+                            3. 블록 레벨 요소 중에는 블록 레벨 요소를 자식 요소로 포함 할 수 있는 요소와 포함할수 없는 요소가 있다.
+                        </td>
+                        <td class="center">메타데이터 콘텐츠<br>Metadata Content</td>
+                        <td>&lt;head&gt; 태그 안에 포함되는 요소들로<br>콘텐츠의 표현, 동작 설정, 문서간 관<br>계를 설정, 정보전달을 포함하는 요소<br>를 의미합니다</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="center">&lt;meta&gt;</td>
+                        <td>HTML 문서의 설명, 키워드, 문서의 작성자 등을 지정</td>
+                    </tr>
+                    <tr>
+                        <td class="center">&lt;title&gt;</td>
+                        <td>HTML 문서의 제목 설정</td>
+                    </tr>
+                    <tr>
+                        <td class="center">&lt;link&gt;</td>
+                        <td>외부의 CSS파일을 HTML 문서에 연결할때 사용</td>
+                    </tr>
+                    <tr>
+                        <td class="center">&lt;style&gt;</td>
+                        <td>HTML 문서 내에 스타일(CSS)을 정의</td>
+                    </tr>
+                    <tr>
+                        <td class="center">&lt;script&gt;</td>
+                        <td>자바스크립트를 HTML 문서 내부에서 정의 혹은 외부에서 자바스크립트 파일을 불러올 때 사용</td>
+                    </tr>
+                </tbody>
+            </table>
         </article>
 
     </section>
