@@ -159,7 +159,6 @@ footer {
 .document .t_box {
     padding: 10px 20px ;
     background-color: #f9f9f9;
-    margin: 10px;
     color: #666;
     border-radius: 5px;
 }
@@ -170,7 +169,7 @@ footer {
     border-collapse: collapse;
 }
 .document .t_table tr th {
-    background-color: f9f9f9;
+    background-color: #f9f9f9;
 }
 .document .t_table tr th,
 .document .t_table tr td {
