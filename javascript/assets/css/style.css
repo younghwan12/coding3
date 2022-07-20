@@ -118,7 +118,7 @@ footer {
 }
 .document hr {
     border: 0;
-    border: 1px dashed #dcdcdc;
+    border-bottom: 1px dashed #dcdcdc;
     margin-top: 44px;
 }
 .document .t_tit {
