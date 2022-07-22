@@ -168,11 +168,12 @@ function func(){
     x = 200;            //지역변수 100 -> 200
     y = 300;            //전역변수 200 -> 300  
 
-document.write("함수 안");          //지역변수
-document.write(x);
-document.write(y);
-document.write(z);
+    document.write("함수 안");          //지역변수
+    document.write(x);
+    document.write(y);
+    document.write(z);
 }
+func();
 document.write("함수 밖");          //전역변수
 document.write(x);
 document.write(y);
