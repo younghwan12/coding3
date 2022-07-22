@@ -16,6 +16,8 @@
     #wrap {
         width: 1200px;
         margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
     }
     #header {
         width: 100%;
@@ -31,26 +33,57 @@
         width: 25%;
         height: 780px;
         background-color: #81C784;
-        float: left;
     }
     #article {
         width: 50%;
         height: 780px;
         background-color: #66BB6A;
-        float: left;
     }
     
     #section {
         width: 25%;
         height: 780px;
         background-color: #4CAF50;
-        float: left;
     }
     #footer {
         width: 100%;
         height: 100px;
         background-color: #43A047;
-        clear: both;
+    }
+    @media( max-width : 1280px ){
+        #wrap {
+                width: 96%;
+        }
+    }
+    @media( max-width : 768px ){
+        #wrap {
+            width : 100%
+        }
+        #aside {
+            width: 39%;
+            height: 630px;
+        }
+        #article {
+            width: 61%;
+            height: 630px;
+        }
+        #section {
+            width: 100%;
+            height: 150px;
+        }
+    }
+    @media (max-width : 480px ){
+        #wrap {
+            width : 100%
+        }
+        #aside {
+            width: 100%;
+            height: 200px;
+        }
+        #article {
+            width: 100%;
+            height: 430px;
+        }
     }
 
 </style>

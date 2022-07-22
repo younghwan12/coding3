@@ -18,44 +18,90 @@
         margin: 0 auto;
     }
     #header {
-        width: 1200px;
+        width: 100%;
         height: 100px;
         background-color: #B3E5FC;
     }
     #nav {
-        width: 1200px;
+        width: 100%;
         height: 100px;
         background-color: #81D4FA;
     }
     #aside {
-        width: 300px;
+        width: 25%;
         height: 780px;
         background-color: #4FC3F7;
         float: left;
     }
     #section1 {
-        width: 900px;
+        width: 75%;
         height: 260px;
         background-color: #29B6F6;
         float: left;
     }
     #section2 {
-        width: 900px;
+        width: 75%;
         height: 260px;
         background-color: #03A9F4;
         float: left;
     }
     #section3 {
-        width: 900px;
+        width: 75%;
         height: 260px;
         background-color: #039BE5;
         float: left;
     }
     #footer {
-        width: 1200px;
+        width: 100%;
         height: 100px;
         background-color: #0288D1;
         clear: both;
+    }
+    @media (max-width : 1280px) {
+        #wrap {
+            width: 96%;
+        }
+    }
+    @media( max-width : 768px ) {
+        #wrap {
+            width: 100%;
+        }
+        #aside {
+            width: 32%;
+            height: 780px;
+        }
+        #section1 {
+            width: 68%;
+            height: 390px;
+        }
+        #section2 {
+            width: 68%;
+            height: 390px;
+        }
+        #section3 {
+            display: none;
+        }    
+    }
+    @media (max-width : 480px ){
+        #wrap {
+            width : 100%
+        }
+        #aside {
+            width: 100%;
+            height: 200px;
+        }
+        #article {
+            width: 100%;
+            height: 430px;
+        }
+        #section1 {
+            width: 100%;
+            height: 430px;
+        }
+        #section2 {
+            width: 100%;
+            height: 150px;
+        }
     }
     
 </style>
