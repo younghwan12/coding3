@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,46 +27,61 @@
         height: 100px;
         background-color: #81D4FA;
     }
+    #main {
+        width: 1200px;
+    }
     #aside {
         width: 300px;
         height: 780px;
         background-color: #4FC3F7;
         float: left;
     }
-    #section1 {
+    #article1 {
         width: 900px;
         height: 260px;
         background-color: #29B6F6;
         float: left;
     }
-    #section2 {
+    #article2 {
         width: 900px;
         height: 260px;
         background-color: #03A9F4;
         float: left;
     }
-    #section3 {
+    #article3 {
         width: 900px;
         height: 260px;
         background-color: #039BE5;
         float: left;
     }
+    
     #footer {
         width: 1200px;
         height: 100px;
         background-color: #0288D1;
+    }
+
+    /* clearfix */
+    .clearfix:before,
+    .clearfix:after {
+        content: '';
+        display: block;
+        line-height: 0;
+    }
+    .clearfix:after {
         clear: both;
     }
-    
 </style>
 <body>
     <div id="wrap">
         <div id="header"></div>
         <div id="nav"></div>
-        <div id="aside"></div>
-        <div id="section1"></div>
-        <div id="section2"></div>
-        <div id="section3"></div>
+        <div id="main" class="clearfix">
+            <div id="aside"></div>
+            <div id="article1"></div>
+            <div id="article2"></div>
+            <div id="article3"></div>
+        </div>
         <div id="footer"></div>
     </div>
 </body>
