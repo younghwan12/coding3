@@ -10,11 +10,9 @@
         * {
             margin: 0;
         }
-
         body {
             background-color: #FFF3E0;
         }
-
         #wrap {
             width: 1200px;
             margin: 0 auto;
@@ -53,7 +51,7 @@
             background-color: #FF9800;
         }
 
-        @media(max-width : 1200px) {
+        @media(max-width : 1300px) {
             #wrap {
                 width: 96%;
             }
@@ -64,32 +62,28 @@
                 width: 100%
             }
         }
-
         @media(max-width : 480px) {
             #wrap {
-                width: 100%
-            }
-
-            #aside {
-                width: 480px;
-                height: 300px;
-            }
-
-            #section {
-                width: 480px;
-                height: 480px;
-            }
+            grid-template-areas:
+                "header"
+                "nav"
+                "aside"
+                "section"
+                "footer";
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 100px 100px 300px 480px 100px;
+        }
         }
     </style>
 </head>
 
 <body>
     <div id="wrap">
-        <div id="header"></div>
-        <div id="nav"></div>
-        <div id="aside"></div>
-        <div id="section"></div>
-        <div id="footer"></div>
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <aside id="aside"></aside>
+        <section id="section"></section>
+        <footer id="footer"></footer>
     </div>
 </body>
 

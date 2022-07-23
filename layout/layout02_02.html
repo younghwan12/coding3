@@ -27,21 +27,25 @@
         height: 100px;
         background-color: #A5D6A7;
     }
+    #main {
+        width: 100%;
+        overflow: hidden;
+    }
     #aside {
-        width: 25%;
+        width: 30%;
         height: 780px;
         background-color: #81C784;
         float: left;
     }
     #article {
-        width: 50%;
+        width: 40%;
         height: 780px;
         background-color: #66BB6A;
         float: left;
     }
     
     #section {
-        width: 25%;
+        width: 30%;
         height: 780px;
         background-color: #4CAF50;
         float: left;
@@ -52,21 +56,25 @@
         background-color: #43A047;
         clear: both;
     }
-    @media( max-width : 1280px ){
+    /* 미디어 쿼리 */
+    @media( max-width : 1300px ){
         #wrap {
-                width: 96%;
+            width: 96%;
+        }
+        #aside {
+
         }
     }
     @media( max-width : 768px ){
         #wrap {
-            width : 100%
+            width: 96%;
         }
         #aside {
-            width: 39%;
+            width: 30%;
             height: 630px;
         }
         #article {
-            width: 61%;
+            width: 70%;
             height: 630px;
         }
         #section {
@@ -74,10 +82,7 @@
             height: 150px;
         }
     }
-    @media (max-width : 480px ){
-        #wrap {
-            width : 100%
-        }
+    @media( max-width : 480px ){
         #aside {
             width: 100%;
             height: 200px;
@@ -93,9 +98,11 @@
     <div id="wrap">
         <div id="header"></div>
         <div id="nav"></div>
-        <div id="aside"></div>
-        <div id="article"></div>
-        <div id="section"></div>
+        <div id="main">
+            <div id="aside"></div>
+            <div id="article"></div>
+            <div id="section"></div>
+        </div>
         <div id="footer"></div>
     </div>
 </body>
