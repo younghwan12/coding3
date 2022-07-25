@@ -79,7 +79,7 @@
             <h3 class="t_tit2">1. 0부터 99까지 출력하기</h3>
             <div class="t_code">
                 <p class="t_desc">시작값 0부터 1씩 증가해서 100보다 작거나 같은 값 까지 구한다</p>
-<pre><code>//0부터 99까지 출력하기
+<pre><code class="language-js">//0부터 99까지 출력하기
 for( let i = 0; i &lt; 100; i++ ){
     document.write(i);
 }
@@ -97,7 +97,7 @@ for( let i = 0; i &lt; 100; i++ ){
             <h3 class="t_tit2">2. 1부터 100까지 출력하기</h3>
             <div class="t_code">
                 <p class="t_desc">시작값 1부터 1씩 증가해서 100보다 작거나 같은 값 까지 구한다</p>
-<pre><code>//1부터 100까지 출력하기
+<pre><code class="language-js">//1부터 100까지 출력하기
 for( let i = 1; i &lt;=100; i++ ){
     document.write(i);    
 }
@@ -115,7 +115,7 @@ for( let i = 1; i &lt;=100; i++ ){
             <h3 class="t_tit2">3. 1부터 100까지 출력하기(짝수)</h3>
             <div class="t_code">
                 <p class="t_desc">시작값 2부터 2씩 증가해서 100보다 작거나 같은 값 까지 구한다</p>
-<pre><code>//1부터 100까지 출력(짝수)
+<pre><code class="language-js">//1부터 100까지 출력(짝수)
 for( let i = 2; i &lt;=100; i+=2 ){
     document.write(i);    
 }
@@ -136,7 +136,7 @@ for( let i = 2; i &lt;=100; i+=2 ){
             <h3 class="t_tit2">4. 1부터 100까지 출력하기(5의배수)</h3>
             <div class="t_code">
                 <p class="t_desc">시작값 1부터 100까지 중 5로 나눈 나머지가 0인 값만 나오게한다</p>
-<pre><code>for(let i = 1; i &lt;=100; i++){
+<pre><code class="language-js">for(let i = 1; i &lt;=100; i++){
     if( i % 5 == 0 ) {
         document.write("<span style='color: blue'>"+i+"</span>");
     }
@@ -155,7 +155,7 @@ for( let i = 2; i &lt;=100; i+=2 ){
         <h3 class="t_tit2">5. for문을 이용해서 1~100까지 출력(짝수는 빨간색, 홀수는 파란색)</h3>
         <div class="t_code">
             <p class="t_desc">1부터 100까지 출력후 짝수는 빨간색으로, 홀수는 파란색으로 나오게한다.</p>
-<pre><code>for(let i = 1; i &lt;= 100; i++){
+<pre><code class="language-js">for(let i = 1; i &lt;= 100; i++){
     if( i % 2 == 0) {
         document.write("<span style='color: red'>"+i+"</span>");
     } else {
@@ -183,12 +183,12 @@ for( let i = 2; i &lt;=100; i+=2 ){
     <h3 class="t_tit2">6. for문을 이용해서 구구단만들기</h3>
     <div class="t_code">
         <p class="t_desc">i는 2가되고 2가 한번 나오는동안 j가 9번 나온다.</p>
-<pre><code>// for문을 이용해서 구구단
+<pre><code class="language-js">// for문을 이용해서 구구단
 // (2, 3, 4, 5, 6, 7, 8, 9) 8번 반복
 // (1, 2, 3, 4, 5, 6, 7, 8, 9) 9번 반복
 
-for( let i = 2; i <=2; i++){
-    for( let j = 1; j <=9; j++){
+for( let i = 2; i &lt;=2; i++){
+    for( let j = 1; j &lt;=9; j++){
         let sum = i * j;
         document.write(i + " * " + j + " = " + sum);
         document.write("<br>");
@@ -276,7 +276,7 @@ document.write(table);
             <h3 class="t_tit2">8. while문(반복문)</h3>
             <div class="t_code">
                 <p class="t_desc">위에서부터 내려오면서 계속반복한다.</p>
-<pre><code> let num = 1;
+<pre><code class="language-js"> let num = 1;
 
 while( num &lt;= 5){
     document.write("실행되었습니다.");
@@ -296,7 +296,7 @@ while( num &lt;= 5){
     <h3 class="t_tit2">9. do while문(반복문)</h3>
             <div class="t_code">
                 <p class="t_desc">while문 과는 다르게 document.write가 앞에있어 무조건 한번은 실행한다. </p>
-<pre><code>let num = 1;
+<pre><code class="language-js">let num = 1;
 
 do {
     document.write("실행되었습니다2.");
@@ -316,7 +316,7 @@ do {
     <h3 class="t_tit2">10. 중첩for문</h3>
             <div class="t_code">
                 <p class="t_desc">for문 안에 for문을 사용한다.</p>
-<pre><code>for( let i=1; i&lt;=2; i++ ){
+<pre><code class="language-js">for( let i=1; i&lt;=2; i++ ){
     document.write(i + "실행");
 for( let j=1; j&lt;=5; j++ ){
     document.write(j + "실행");

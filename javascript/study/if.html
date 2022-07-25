@@ -98,7 +98,7 @@
             <h3 class="t_tit2">01. if문(제어문) //조건문</h3>
             <div class="t_code">
                 <p class="t_desc">if,else문의 기본문이다</p>
-<pre><code>if("0null"){
+<pre><code class="language-js">if("0null"){
     document.write("실행되었습니다(true).");
 } else {
     document.write("실행되었습니다(false).");
@@ -117,7 +117,7 @@
             <h3 class="t_tit2">02. if문 생략</h3>
             <div class="t_code">
                 <p class="t_desc">if문은 생략이 가능하다</p>
-<pre><code>const num = 100;
+<pre><code class="language-js">const num = 100;
 
 if(num) document.write("실행되었습니다(true).");
 else document.write("실행되었습니다(false).");
@@ -135,7 +135,7 @@ else document.write("실행되었습니다(false).");
             <h3 class="t_tit2">03. 다중 if문</h3>
             <div class="t_code">
                 <p class="t_desc">if와 else if를 사용해 다중 if문을 만들수 있다.</p>
-<pre><code>const num = 100;
+<pre><code class="language-js">const num = 100;
 
 if( num == 90) {
     document.write("실행되었습니다(num=90)");
@@ -163,7 +163,7 @@ if( num == 90) {
             <h3 class="t_tit2">4. 중첩if문</h3>
             <div class="t_code">
                 <p class="t_desc">회원가입 및 조건설정할때 주로 사용한다.</p>
-<pre><code>if (num == 100) {
+<pre><code class="language-js">if (num == 100) {
     document.write("실행되었습니다.(1)");
     if(num == 100){
         document.write("실행되었습니다.(2)");
@@ -189,7 +189,7 @@ if( num == 90) {
         <h3 class="t_tit2">5. 조건부 연산자(삼항 연산자)</h3>
         <div class="t_code">
             <p class="t_desc">1부터 100까지 출력후 짝수는 빨간색으로, 홀수는 파란색으로 나오게한다.</p>
-<pre><code>// const num = 100;
+<pre><code class="language-js">// const num = 100;
     // //num값이 100이면 true출력하고 아니면 false를 출력하세요
 
     // if (num == 100) {
@@ -215,7 +215,7 @@ if( num == 90) {
     <h3 class="t_tit2">6. switch문</h3>
     <div class="t_code">
         <p class="t_desc">거의 사용되지 않는다.</p>
-<pre><code>switch( num ){
+<pre><code class="language-js">switch( num ){
 case 100 :
     document.wrtie("실행되었습니다.(num==100)")
     break;
@@ -440,7 +440,7 @@ document.write(classification);
 
     
     </script>
-    <script>
+    <!-- <script>
             let table = "<table class='testTable'>";
         
             for(let i = 0; i<10; i++){
@@ -456,7 +456,7 @@ document.write(classification);
 
             table += "</table>";
             document.write(table);
-    </script>
+    </script> -->
     
 </body>
 </html>
