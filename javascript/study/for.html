@@ -38,6 +38,7 @@
                 <li><a href="for.html">반복문</a></li>
                 <li><a href="if.html">조건문</a></li>
                 <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
             </ul>
         </nav>
     </header>
@@ -45,19 +46,19 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">반복문</h2>
-            <h2 class="t_desc">반복문은 프로그램에서 필요한 결과 값을 도출하기 위해 실행문의 순서를
+            <p class="t_desc">반복문은 프로그램에서 필요한 결과 값을 도출하기 위해 실행문의 순서를
                 반복적으로 실행시키는 문법을 말합니다.
                 반복문에는 while문, do while문, for문이 있으며, for문을 가장 많이 사용합니다
-            </h2>
+            </p>
             <h3 class="t_tit2">for문</h3>
-            <h2 class="t_desc">for문의 기본 형식입니다.</h2>
+            <p class="t_desc">for문의 기본 형식입니다.</p>
             <p class="t_box">
                 for ( 초기값; 조건식; 증가감식){<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
                 }
             </p>
             <h3 class="t_tit2">while문</h3>
-            <h2 class="t_desc">while문의 기본 형식입니다.</h2>
+            <p class="t_desc">while문의 기본 형식입니다.</p>
             <p class="t_box">
                 초기 값<br>
                 while (조건식) ){<br>
@@ -65,7 +66,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;증가감식;<br>}
             </p>
             <h3 class="t_tit2">do while문</h3>
-            <h2 class="t_desc">do while문의 기본 형식입니다.</h2>
+            <p class="t_desc">do while문의 기본 형식입니다.</p>
             <p class="t_box">
                 초기 값<br>
                 do {{<br>
@@ -232,9 +233,9 @@ let table = "&lt;table&gt;";
 for(let i = 0; i&lt;10; i++){
     table += "&lt;tr&gt;"
     
-for(let j = 0; j&lt;10; j++){
-    table += "&lt;td&gt;★&lt;/td&gt;"
-}
+    for(let j = 0; j&lt;10; j++){
+        table += "&lt;td&gt;★&lt;/td&gt;"
+    }
     
     table += "&lt;/tr&gt;"
     
