@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.선언적함수
+        {
+            function func(){
+                document.write("a");
+            }
+            func();
+        }
+        // 2.익명함수
+        {
+            const func = function(){
+                document.write("a");
+            }
+            func();
+        }
+        // 3.매개변수함수
+        {
+            function func(){
+                func("a");
+            }
+        }
+        // 4.리턴함수
+        {
+            function func(){
+                func = "a";
+                return func;
+            }
+            document.write(func());
+        }
+        // 5. 화살표함수
+        {
+            
+        }
+        // 06. 화살표함수
+        // {
+        //     const func = > () {
+        //         document.write("a");
+        //     }
+        //     func();
+        // }
+    </script>
+</body>
+</html>
