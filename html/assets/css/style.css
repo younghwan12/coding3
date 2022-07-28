@@ -26,18 +26,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 기울기 초기화 */
-em,
-i {
+em, i {
     font-style: normal;
 }
 
 /* 테이블 초기화 */
 table {
-
     width: 100%;
     border-spacing: 0;
-    border-collapse: collapse;
-    
+    border-collapse: collapse;  
 }
 
 /* 레이아웃 */
