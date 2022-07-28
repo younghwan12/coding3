@@ -39,6 +39,7 @@
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">데이터 타입</a></li>
                 <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var/function.html">지역변수/전역변수</a></li>
             </ul>
         </nav>
     </header>
@@ -213,7 +214,7 @@ document.write(arr[2]);
 document.write(arr[3]);
 document.write(arr[4]);
 
-for(i = 0; i < arr.length ; i++) {     //for(초기값, 조건식, 증감식)
+for(i = 0; i &lt; arr.length ; i++) {     //for(초기값, 조건식, 증감식)
     document.write(arr[i]);
 }
 </code></pre>
@@ -473,7 +474,7 @@ arr.map(function(el){       //map을 쓰거나 forEach를쓰거나 같은값이�
             // }
         }
 
-        document.write("<br>");
+        // document.write("<br>");
         //09. 배열에 데이터 불러오기 : for in
         {
             // const arr = [100, 200, 300, 400, 500];
@@ -484,7 +485,7 @@ arr.map(function(el){       //map을 쓰거나 forEach를쓰거나 같은값이�
             // }
         }
 
-        document.write("<br>");
+        // document.write("<br>");
         //10. 배열 데이터 불러오기 : map()
         {
             // const arr = [100, 200, 300, 400, 500];
@@ -519,6 +520,37 @@ arr.map(function(el){       //map을 쓰거나 forEach를쓰거나 같은값이�
             // });
 
         }
+        // 
+        const arr = [1,2,3,4,5,6,7,8,9];
+
+        // for문을 이용해서 하나씩 출력해주세요
+        for (i = 0; i <arr.length; i++ ){
+            document.write(arr[i]);
+        }
+        // forEach을 이용해서 하나씩 출력
+        document.write("<br>")
+        {
+            arr.forEach(function(el){
+                document.write(el);
+            })
+        }
+        document.write("<br>")
+        // map을 이용해서 하나씩 출력
+        arr.map(function(el){
+            document.write(el);
+        })
+        document.write("<br>")
+        // for in을 이용해서 하나씩 출력
+        for (const a in arr) {
+            document.write(arr[a]);           
+        }
+        document.write("<br>")
+        // for of을 이용해서 하나씩 출력
+        for (const b of arr) {
+            document.write(b);
+        }
+        
+
     </script>
 </body>
 </html>

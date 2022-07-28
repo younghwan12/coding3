@@ -36,6 +36,7 @@
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">데이터 타입</a></li>
                 <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var/function.html">지역변수/전역변수</a></li>
             </ul>
 
 
@@ -344,7 +345,61 @@ do {  //바로 실행문을 적는다. (조건이 맞든 안맞든 무조건 한
                     </details>
                 </div>
             </div>
-            <!-- sample08 -->
+            <!-- sample10 -->
+            <div id="sample11" class="sample">
+                <h3>11. break문</h3>
+                <p>
+                    for문을 이용해서 출력하고 break문을 사용
+                </p>
+                <div class="script">
+<pre><code class="language-js">// break는 종료의 의미를 가지고있다.
+//그러므로 10에서 종료
+for(i = 1; i&lt;=20; i++){
+    document.write(i);
+    if(i == 10){
+        break;
+    }
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample11_result">
+                            12345678910
+                        </div>
+
+                    </details>
+                </div>
+            </div>
+            <!-- sample11 -->
+            <div id="sample12" class="sample">
+                <h3>12. break문</h3>
+                <p>
+                    for문 안에 break문을 중첩하여 사용
+                </p>
+                <div class="script">
+<pre><code class="language-js">// continue는 그뒤부터 다시 출력한다.
+//10번은 출력안하고 11번부터 출력한다.
+for(i = 1; i&lt;=20; i++){
+    if(i == 10){
+        continue;
+    }
+    document.write(i);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample12_result">
+                            12345678911121314151617181920
+                        </div>
+
+                    </details>
+                </div>
+            </div>
+            <!-- sample12 -->
         
 
 
@@ -364,7 +419,7 @@ do {  //바로 실행문을 적는다. (조건이 맞든 안맞든 무조건 한
         //(제어문 : 조건문, 반복문, 중지, 건너뛰기)
                 // 01. if문(제어문) //조건문
                 {
-                    //false , 0 , undefined, null
+                    //false , 0 , undefined, null, "" <- 빈문자열
                     //true, 1, "0", "1" "0<10", [], {}
                     // if("0null"){
                     //     document.write("실행되었습니다(true).");
@@ -373,17 +428,17 @@ do {  //바로 실행문을 적는다. (조건이 맞든 안맞든 무조건 한
                     // }
                 }
         
-                document.write("<br>");
-                //02. if문 생략
-                {
-                    // const num = 100;
+                // document.write("<br>");
+                // //02. if문 생략
+                // {
+                //     // const num = 100;
         
-                    // if(num) document.write("실행되었습니다(true).");
-                    // else document.write("실행되었습니다(false).");
+                //     // if(num) document.write("실행되었습니다(true).");
+                //     // else document.write("실행되었습니다(false).");
                     
-                }
+                // }
         
-                document.write("<br>");
+                // document.write("<br>");
                 //03. 다중 if문
                 {
                     // const num = 100;
@@ -490,6 +545,40 @@ do {  //바로 실행문을 적는다. (조건이 맞든 안맞든 무조건 한
                     //     }
                     // }
                 // }
+                // 11. break문
+                // while문을 이용해서 1~20까지 출력, while문 ()안에 1이들어가면 무한반복
+                // {
+                //     let num = 1;
+
+                //     while( num <= 20 ){
+                //         document.write(num);
+                //         num++;
+                //     }
+                // }
+                // document.write("<br>")
+                // // for문을 이용해서 1~20까지 출력
+                // {
+                //     // break는 종료의 의미를 가지고있다.
+                //     for(i = 1; i<=20; i++){
+                //         document.write(i);
+                //         if(i == 10){
+                //             break;
+                //         }
+                //     }
+                // }
+                // // 12. continue문
+
+                // for문을 이용해서 1~20까지 출력
+                // {
+                //     // continue는 그뒤부터 다시 출력한다.
+                //     for(i = 1; i<=20; i++){
+                //         if(i == 10){
+                //             continue;
+                //         }
+                //         document.write(i);
+                //     }
+                // }
+                
     </script>
 </body>
 </html>
