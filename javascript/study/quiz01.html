@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 유형</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">퀴즈 효과</h2>
+            <p class="t_desc">정답 확인하기 유형</p>
+
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe">
+                <iframe src="https://codepen.io/younghwan12/embed/bGvvYgB?result" frameborder="no" loading="lazy"
+                    allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/younghwan12/pen/bGvvYgB">
+                        Untitled</a> by younghwan12 (<a href="https://codepen.io/younghwan12">@younghwan12</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <h3 class="t_tit2">script 부분</h3>
+            <p class="t_desc2">
+                float으로 인한 영역깨짐 방지법에는 세가지방법이있는데 그중 가상요소 clearfix 방법을 사용해 만들어보았다.<br>
+                1. 깨지는 영역에 clear: both를 설정한다. 깨지는부분이 눈에보이지 않으므로 좋지않은방법<br>
+                2. 부모 박스 영역에 overflow: hidden을 설정한다.<br>
+                3. clearfix를 설정한다. (가상요소)<br>
+            </p>
+            <div class="t_code">
+<pre><code>
+//선택자
+const quizType = document.querySelector(".quiz__type");                //퀴즈 종류
+const quizNumber = document.querySelector(".quiz__question .number");  //퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask");        //퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm");  //정답 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result");    //정답 결과
+const quizDog = document.querySelector(".quiz__view .dog");            //강아지
+
+//문제 정보
+const answerType = "웹디자인기능사";
+const answerNum = 1;
+const answerAsk = "인접하는 두 색의 경계 구분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가? "
+const answerResult = "연변대비"
+
+//문제 출력
+quizType.innerText = answerType;
+quizNumber.innerText = answerNum + ". ";
+quizAsk.innerText = answerAsk;
+quizResult.innerText = answerResult;
+
+//정답 숨기기
+quizResult.style.display = "none";
+
+//정답 확인
+//정답 버튼을 클릭하면 확인버튼 안보이게... 숨겨진 정답은 보이게...
+//정답을 확인하면 강아지가 웃고 있어야 함 // 클래스 like 추가함
+quizConfirm.addEventListener("click", function(){
+    quizConfirm.style.display = "none";
+    quizResult.style.display = "block";
+    quizDog.classList.add("like");
+});
+
+</code></pre>
+            </div>
+        </div>
+        </div>
+    </main>
+</body>
+<footer>
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</footer>
+
+</html>
