@@ -11,7 +11,12 @@ https://younghwan12.github.io/coding3/javascript/index.html
 https://younghwan12.github.io/coding3/javascript/javascript01.html
 https://younghwan12.github.io/coding3/javascript/javascript02.html
 
+### 퀴즈 이펙트
+https://younghwan12.github.io/coding3/javascript/effect/quizEffect01.html   
+https://younghwan12.github.io/coding3/javascript/effect/quizEffect02.html   
+
 
 ### HTML 메인 페이지
+
 https://younghwan12.github.io/coding3/html/index.html
 https://younghwan12.github.io/coding3/html/alphabet.html
