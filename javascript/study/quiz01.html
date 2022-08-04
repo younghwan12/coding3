@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 유형</title>
-
+    <title>자바스크립트 : 기본 규칙</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
-
+    <style>
+        body {
+            padding-bottom: 600px;
+        }
+    </style>
 </head>
-
 <body>
     <header id="header">
         <h1><a href="../index.html">Javascript</a></h1>
@@ -46,69 +47,87 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">퀴즈 효과</h2>
-            <p class="t_desc">정답 확인하기 유형</p>
-
+            <p class="t_desc">
+                정답 확인하기 유형
+            </p>
+            <hr>
             <h3 class="t_tit2">결과</h3>
-            <div class="t_iframe">
-                <iframe src="https://codepen.io/younghwan12/embed/bGvvYgB?result" frameborder="no" loading="lazy"
-                    allowtransparency="true" allowfullscreen="true">
-                    See the Pen <a href="https://codepen.io/younghwan12/pen/bGvvYgB">
-                        Untitled</a> by younghwan12 (<a href="https://codepen.io/younghwan12">@younghwan12</a>)
-                    on <a href="https://codepen.io">CodePen</a>.
-                </iframe>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://younghwan12.github.io/coding3/javascript/effect/quizEffect02.html"></iframe>
             </div>
-            <h3 class="t_tit2">script 부분</h3>
+            <div class="t_link">
+                <a href="https://github.com/younghwan12/coding3/blob/main/javascript/effect/quizEffect02.html" target="_blank">원본 사이트 보기</a>
+            </div>
+            <hr>
+
+
+            <h3 class="t_tit2">JavaScript</h3>
             <p class="t_desc2">
-                float으로 인한 영역깨짐 방지법에는 세가지방법이있는데 그중 가상요소 clearfix 방법을 사용해 만들어보았다.<br>
-                1. 깨지는 영역에 clear: both를 설정한다. 깨지는부분이 눈에보이지 않으므로 좋지않은방법<br>
-                2. 부모 박스 영역에 overflow: hidden을 설정한다.<br>
-                3. clearfix를 설정한다. (가상요소)<br>
+                정답버튼을 클릭했을 때 사용자 정답과 정답확인버튼이 사라지고 정답결과가 보이게 만들었으며, 사용자 정답을 소문자 대문자 상관없이 정답이 허용되게 하고, 여백을 없앴습니다.
+                if문을 사용해 정답일 때 quizView에 like를 추가해 강아지가 웃게, 오답일 때 dislike를 추가해 강아지가 슬프게 만들었습니다.
             </p>
             <div class="t_code">
-<pre><code>
-//선택자
+<pre><code class="language-js">//선택자
 const quizType = document.querySelector(".quiz__type");                //퀴즈 종류
 const quizNumber = document.querySelector(".quiz__question .number");  //퀴즈 번호
 const quizAsk = document.querySelector(".quiz__question .ask");        //퀴즈 질문
 const quizConfirm = document.querySelector(".quiz__answer .confirm");  //정답 확인 버튼
 const quizResult = document.querySelector(".quiz__answer .result");    //정답 결과
-const quizDog = document.querySelector(".quiz__view .dog");            //강아지
+const quizInput = document.querySelector(".quiz__answer .input");        //사용자 정답
+const quizView = document.querySelector(".quiz__view");            //강아지
 
 //문제 정보
 const answerType = "웹디자인기능사";
-const answerNum = 1;
-const answerAsk = "인접하는 두 색의 경계 구분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가? "
-const answerResult = "연변대비"
+const answerNum = "2";
+const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업이미지통합 전략은 무엇인가요?"
+let answerResult = "CIP";
 
 //문제 출력
-quizType.innerText = answerType;
-quizNumber.innerText = answerNum + ". ";
-quizAsk.innerText = answerAsk;
-quizResult.innerText = answerResult;
+quizType.textContent = answerType;
+quizNumber.textContent = answerNum + ". ";
+quizAsk.textContent = answerAsk;
+quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
 
 //정답 숨기기
 quizResult.style.display = "none";
 
 //정답 확인
-//정답 버튼을 클릭하면 확인버튼 안보이게... 숨겨진 정답은 보이게...
-//정답을 확인하면 강아지가 웃고 있어야 함 // 클래스 like 추가함
-quizConfirm.addEventListener("click", function(){
-    quizConfirm.style.display = "none";
-    quizResult.style.display = "block";
-    quizDog.classList.add("like");
-});
+quizConfirm.addEventListener("click", () => {           //정답버튼을 클릭했을 때
+    quizInput.style.display = "none";                  //사용자 정답 사라지게
+    quizResult.style.display = "block";                //정답 결과 보이게
+    quizConfirm.style.display = "none";                //정답 확인버튼 사라지게
+    //사용자 정답
+    const userWord = quizInput.value.toLowerCase().trim();    //소문자로 치환  , 여백 없앰
+    answerResult = answerResult.toLowerCase().trim();         //우변을 좌변으로 대입해서 변경시킨다.
 
+    console.log(userWord)  //입력확인 
+    console.log(answerResult)  //정답확인
+
+    //사용자 정답 == 문제 정답
+    if(userWord == answerResult){
+        //정답일 때
+        quizView.classList.add("like");
+        // alert("정답입니다.")
+    } else {
+        //오답일 때
+        quizView.classList.add("dislike");
+        // alere("오답입니다.")
+    }
+});
 </code></pre>
             </div>
         </div>
-        </div>
+        
     </main>
-</body>
-<footer>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:leesh3432@naver.com">leesh3432@naver.com</a>
+    </footer>
+    <!-- //footer -->
     <script src="../assets/js/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>
-</footer>
-
+    
+</body>
 </html>
