@@ -1,76 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        // {
-        //     var kor = 90;
-        //     function func(){
-        //         kor = 100;
-        //         console.log(kor);
-        //     }
-        //     func();
-        //     document.write(kor);
-        // }
-        // {
-        //     var kor = 90;
+        const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-        //     function func(){
-        //         var kor = 100; // 지역변수
-        //         document.write(kor); // 100
-        //     }
-        //     func();
-        //     document.write(kor);
-        // }
-        // {
-        //     function func(){
-        //         kor = 100; // 전역변수
-        //         // document.write(kor); // 100
-        //     }
-        //     func();
-        //     document.write(kor);
-        // }
+        //for문을 이용해서 하나씩 출력
+        for(i=0; i<arr.length; i++){
+            document.write(arr[i]);
+        }
+
+        document.write("<br>");
+        //forEach문을 이용해서 하나씩 출력
+        arr.forEach(function(e, i, a){
+            document.write(e);
+        })
 
 
-        //함수의 전역변수
         
-        var sum1 = 10;
-        function add1() {
-            sum1 = 20;
-        }
-        add1();
-        document.write('전역' + sum1);        //답 전역20
-
-        document.write("<br>")
-
-        //함수의 지역변수
-
-        var sum2 = 30;
-        function add2() {
-            var sum2 = 40;
-            document.write('지역' + sum2);
-        }
-        add2();
-        document.write('전역' + sum2)        //답 지역40 전역30
-
-        document.write("<br>")
-        //블록의 지역변수
-        var num1 = 50;
-        if (num1 ===50) {
-            var num1 =60;
-        }
-        document.write('전역' + num1);
-        let num2 = 70;
-        if (num2 === 70) {
-            let num2 = 80;
-            document.write('지역' + num2);
-        }
-        document.write('전역' + num2);          //답 전역60 지역80 전역70
     </script>
 </body>
+
 </html>

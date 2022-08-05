@@ -117,11 +117,12 @@ body {
 /* quiz__wrap */
 .quiz__wrap {
     display: flex;
-    align-items: center;
+    align-items: flex-start;    /*위를 기준으로 맞출수있다*/
     /*aic, jcc 가운데정렬*/
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 150px;
+    flex-wrap: wrap;            /*0805*/
 }
 
 .quiz {
