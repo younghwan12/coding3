@@ -1,102 +1,38 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-
 &lt;body&gt;
-    &lt;script&gt;
-        const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-        //for문을 이용해서 하나씩 출력
-        for(i=0; i&lt;arr.length; i++){
-            document.write(arr[i]);
-        }
-
-        document.write("&lt;br&gt;");
-        //forEach문을 이용해서 하나씩 출력
-        arr.forEach(function(e, i, a){
-            document.write(e);
-        })
-
-
-        
-    &lt;/script&gt;
+    &lt;section id="cardType" class="card__wrap nexon section"&gt;
+        &lt;h2&gt;축구 강의⚽&lt;/h2&gt;
+        &lt;p&gt;축구에 관한 기초, 드리블, 슈팅 강의 리스트 입니다.&lt;/p&gt;
+        &lt;div class="card_inner container"&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/card_bg01.jpg" alt="축구 기초 강의"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;축구 기초 강의&lt;/h3&gt;
+                    &lt;p class="desc"&gt;축구는 열한명의 선수가 한 팀이되어서 하는 구기종목입니다. 볼라인 아웃, 반칙, 오프사이드, 등등 다양한 규칙이 있으며, 공격수 미드필더 수비수 골키퍼로 나뉩니다...&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/card_bg02.jpg" alt="드리블 기초 강의"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;드리블 기초 강의&lt;/h3&gt;
+                    &lt;p class="desc"&gt;드리블 할 때는 툭툭 발 바로 앞에 공이 있다고 생각을 하면서 합니다. 드리블 하면서 공을 보면서 하지 말고 시선을 정면으로 유지한채 연습하도록 합시다...&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/card_bg03.jpg" alt="슈팅 기초 강의"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;슈팅 기초 강의&lt;/h3&gt;
+                    &lt;p class="desc"&gt;슈팅 할 때는 일단 어디로 찰지 한번 확인 후에 발등으로 찰지 인사이드, 인스텝으로 찰지 고민후에 공을 보면서 차면 됩니다. 너도.. 찰 수 있어....&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
 &lt;/body&gt;
-
-&lt;/html&gt;
-
-
-
-
-//선택자
-        const quizType = document.querySelector(".quiz__type");                //퀴즈 종류
-        const quizNumber = document.querySelector(".quiz__question .number");  //퀴즈 번호
-        const quizAsk = document.querySelector(".quiz__question .ask");        //퀴즈 질문
-        const quizConfirm = document.querySelector(".quiz__answer .confirm");  //정답 확인 버튼
-        const quizResult = document.querySelector(".quiz__answer .result");    //정답 결과
-        const quizView = document.querySelector(".quiz__view");                //강아지
-        const quizSelects = document.querySelector(".quiz__selects");          //객관식 보기
-        const quizChoice = quizSelects.querySelectorAll(".choice");            //객관식 보기 (보기가4개이므로 querySelectorAll 사용)
-        const quizSelect = quizSelects.querySelectorAll(".select");            //객관식 보기
-
-        //문제정보
-        const quizInfo = [
-            {
-                answerType : "웹디자인기능사 2020년 01회",
-                answerNum : "1",
-                answerAsk : "분신, 화신이라는 의미로 채팅, 온라인 게임 등 네트워크 환경에서 자신을 대신하여 커뮤니케이션에 참여하는 가상의 그림 또는 아이콘을 뜻하는 인터넷 용어는?",
-                answerChoice : ["아바타", "쿠키", "포털", "허브"],
-                answerResult : "1",
-                answerEx : "분신, 화신이라는 의미로 채팅, 온라인 게임 등 네트워크 환경에서 자신을 대신하여 커뮤니케이션에 참여하는 가상의 그림 또는 아이콘을 뜻하는 인터넷 용어는 아바타 입니다."
-            }
-        ]
-
-        // 문제출력(문제출력과 보기출력을 함수로 묶었다.)
-        function updateQuiz(){
-            //문제 출력
-            quizType.textContent = quizInfo[0].answerType;
-            quizNumber.textContent = quizInfo[0].answerNum + ". ";
-            quizAsk.textContent = quizInfo[0].answerAsk;
-            quizResult.textContent = quizInfo[0].answerEx;
-
-            //보기 출력
-            for(let i = 0; i&lt;quizSelect.length; i++){
-                quizChoice[i].textContent = quizInfo[0].answerChoice[i];
-            }
-
-            //해설 숨기기
-            quizResult.style.display = "none"
-        }
-        
-        updateQuiz();
-
-
-
-        //정답 확인
-        function answerQuiz(){
-            //사용자가 선택한 정답 == 문제 정답
-            //사용자가 클릭한 input --&gt; checked
-
-            for(let i = 0; i&lt;quizSelect.length; i++){
-                if(quizSelect[i].checked == true){  //보기에 체크가 된 상태
-                    //체크된 번호랑 ==문제 번호
-                    if(quizSelect[i].value == quizInfo[0].answerResult){
-                        // alert("정답");
-                        quizView.classList.add("like");
-                    } else {
-                        // alert("오답");
-                        quizView.classList.add("dislike");
-                        quizResult.style.display = "block";            //틀렸을때 정답 보여주기
-                        quizConfirm.style.display = "none";            //정답버튼 숨기기
-                    }
-                }
-            }
-        }
-
-        //정답 클릭
-        quizConfirm.addEventListener("click", answerQuiz);

@@ -46,121 +46,144 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">퀴즈 효과</h2>
+            <h2 class="t_tit">사이트 만들기</h2>
             <p class="t_desc">
-                객관식(한문제) 유형
+                카드 유형
             </p>
-            <hr>
+            <hr>            
             <h3 class="t_tit2">결과</h3>
             <div class="t_iframe" style="height: 1000px; padding-top: 0;">
-                <iframe src="https://younghwan12.github.io/coding3/javascript/effect/quizEffect04.html"></iframe>
+                <iframe src="https://younghwan12.github.io/coding3/site/cardType/cardType01.html"></iframe>
             </div>
             <div class="t_link">
                 <a href="https://github.com/younghwan12/coding3/blob/main/javascript/effect/quizEffect04.html" target="_blank">원본 사이트 보기</a>
             </div>
             <hr>
-            <h3 class="t_tit2">body</h3>
-            <p class="t_desc2">퀴즈 보기쪽은 input type을 버튼타입으로, 각각 id 값을 select(..)로 설정하였으며 class값과 name에 select, 벨류값을(..)해서 설정하였습니다.
+            <h3 class="t_tit2">Figma</h3>
+            <p class="t_desc2">일단 피그마를 이용해서 레이아웃의 틀을 잡아줍니다.</p>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FIujxiKogj1TySALcZgYT9Y%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fpage-id%3D3%253A77%26node-id%3D3%253A78"></iframe>
+            </div>
+            <h3 class="t_tit2">HTML 작성</h3>
+            <p class="t_desc2">시멘틱 태그를 이용해서 구역에 맞게 태그를 작성합니다. 큰 틀을 만들면서 확인해 가면서 제작합니다.
             </p>
             <div class="t_code">
-<pre><code class="language-js">&lt;div class="quiz__answer"&gt;
-    &lt;div class="quiz__selects"&gt;
-        &lt;label for="select1"&gt;
-            &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;
-            &lt;span class="choice"&gt;&lt;/span&gt;
-        &lt;/label&gt;
-        &lt;label for="select2"&gt;
-            &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;
-            &lt;span class="choice"&gt;&lt;/span&gt;
-        &lt;/label&gt;
-        &lt;label for="select3"&gt;
-            &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;
-            &lt;span class="choice"&gt;&lt;/span&gt;
-        &lt;/label&gt;
-        &lt;label for="select4"&gt;
-            &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;
-            &lt;span class="choice"&gt;&lt;/span&gt;
-        &lt;/label&gt;                    
-    &lt;/div&gt;
-
-    &lt;button class="confirm"&gt;정답 확인하기&lt;/button&gt;
-    &lt;div class="result"&gt;&lt;/div&gt;
+<pre><code class="language-js">&lt;section id="cardType" class="card__wrap nexon section"&gt;
+&lt;h2&gt;축구 강의⚽&lt;/h2&gt;
+&lt;p&gt;축구에 관한 기초, 드리블, 슈팅 강의 리스트 입니다.&lt;/p&gt;
+&lt;div class="card_inner container"&gt;
+    &lt;article class="card"&gt;
+        &lt;figure class="card__header"&gt;
+            &lt;img src="img/card_bg01.jpg" alt="축구 기초 강의"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;축구 기초 강의&lt;/h3&gt;
+            &lt;p class="desc"&gt;축구는 열한명의 선수가 한 팀이되어서 하는 구기종목입니다. 볼라인 아웃, 반칙, 오프사이드, 등등 다양한 규칙이 있으며, 공격수 미드필더 수비수 골키퍼로 나뉩니다...&lt;/p&gt;
+            &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class="card"&gt;
+        &lt;figure class="card__header"&gt;
+            &lt;img src="img/card_bg02.jpg" alt="드리블 기초 강의"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;드리블 기초 강의&lt;/h3&gt;
+            &lt;p class="desc"&gt;드리블 할 때는 툭툭 발 바로 앞에 공이 있다고 생각을 하면서 합니다. 드리블 하면서 공을 보면서 하지 말고 시선을 정면으로 유지한채 연습하도록 합시다...&lt;/p&gt;
+            &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class="card"&gt;
+        &lt;figure class="card__header"&gt;
+            &lt;img src="img/card_bg03.jpg" alt="슈팅 기초 강의"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;슈팅 기초 강의&lt;/h3&gt;
+            &lt;p class="desc"&gt;슈팅 할 때는 일단 어디로 찰지 한번 확인 후에 발등으로 찰지 인사이드, 인스텝으로 찰지 고민후에 공을 보면서 차면 됩니다. 너도.. 찰 수 있어....&lt;/p&gt;
+            &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
 &lt;/div&gt;
+&lt;/section&gt;
 </div>
 </code></pre>
         
-        <h3 class="t_tit2">Javascript</h3>
-        <p class="t_desc2">선택자는 이전예시와 같으며 객관식 보기를 추가하였습니다. 문제출력은 직접작성하고 보기출력은 for문을 이용해 출력했기에 두개를 updateQuiz라는 함수로 묶어
-            한번에 출력하였습니다. 정답 확인쪽은 사용자가 선택한 정답과 문제 정답이 맞는지, 그다음에 그 체크된 번호와 문제 번호가 같은지를 확인하기위해 if문 안에 if문을 사용해 표시했습니다.
+        <h3 class="t_tit2">CSS 작성</h3>
+        <p class="t_desc2">넥슨lv1고딕 폰트를 import를 이용해 넣은 후 클래스에 nexon을 작성하면 폰트를 사용할수있게 만들었고.
+            틀과, 간격은 피그마를 보면서 미리 제작해놓은 레이아웃과 똑같이 제작해줍니다.
         </p>
         <div class="t_code">
-<pre><code class="language-js">//선택자
-    const quizType = document.querySelector(".quiz__type");                //퀴즈 종류
-    const quizNumber = document.querySelector(".quiz__question .number");  //퀴즈 번호
-    const quizAsk = document.querySelector(".quiz__question .ask");        //퀴즈 질문
-    const quizConfirm = document.querySelector(".quiz__answer .confirm");  //정답 확인 버튼
-    const quizResult = document.querySelector(".quiz__answer .result");    //정답 결과
-    const quizView = document.querySelector(".quiz__view");                //강아지
-    const quizSelects = document.querySelector(".quiz__selects");          //객관식 보기
-    const quizChoice = quizSelects.querySelectorAll(".choice");            //객관식 보기 (보기가4개이므로 querySelectorAll 사용)
-    const quizSelect = quizSelects.querySelectorAll(".select");            //객관식 보기
+<pre><code class="language-js">/* fonts */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
 
-    //문제정보
-    const quizInfo = [
-        {
-            answerType : "웹디자인기능사 2015년 04회",
-            answerNum : "1",
-            answerAsk : "애니메이션에서 사용되는 정지화면 하나하나를 무엇이라 하는가요?",
-            answerChoice : ["Frame", "Key Frame", "Tweening", "Onion Skin"],
-            answerResult : "1",
-            answerEx : "애니메이션에서 사용되는 정지화면은 Frame 입니다."
-        }
-    ]
+.nexon {
+    font-family: "NexonLv1Gothic";
+    font-weight: 400;
+}
 
-    // 문제출력(문제출력과 보기출력을 함수로 묶었다.)
-    function updateQuiz(){
-        //문제 출력
-        quizType.textContent = quizInfo[0].answerType;
-        quizNumber.textContent = quizInfo[0].answerNum + ". ";
-        quizAsk.textContent = quizInfo[0].answerAsk;
-        quizResult.textContent = quizInfo[0].answerEx;
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
 
-        //보기 출력
-        for(let i = 0; i&lt;quizSelect.length; i++){
-            quizChoice[i].textContent = quizInfo[0].answerChoice[i];
-        }
-
-        //해설 숨기기
-        quizResult.style.display = "none"
-    }
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+img {
+    width: 100%;
+}
+/* common */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
     
-    updateQuiz();
+}
+.section {
+    padding: 120px 0;
+}
+.section > h2 {
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section > p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
 
-
-
-    //정답 확인
-    function answerQuiz(){
-        //사용자가 선택한 정답 == 문제 정답
-        //사용자가 클릭한 input --&gt; checked
-
-        for(let i = 0; i&lt;quizSelect.length; i++){
-            if(quizSelect[i].checked == true){  //보기에 체크가 된 상태
-                //체크된 번호랑 ==문제 번호
-                if(quizSelect[i].value == quizInfo[0].answerResult){
-                    // alert("정답");
-                    quizView.classList.add("like");
-                } else {
-                    // alert("오답");
-                    quizView.classList.add("dislike");
-                    quizResult.style.display = "block";            //틀렸을때 정답 보여주기
-                    quizConfirm.style.display = "none";            //정답버튼 숨기기
-                }
-            }
-        }
-    }
-
-    //정답 클릭
-    quizConfirm.addEventListener("click", answerQuiz);             //quizConfirm(정답확인 버튼)을 클릭했을 때 answerQuiz함수 실행
+/* cardType */
+.card_inner {
+    display: flex;
+    justify-content: space-between;           /*양쪽 정렬*/
+}
+.card {
+    width: 32%;
+    background: #f5f5f5;
+}
+.card__body {
+    padding: 24px;
+}
+.card__body .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.card__body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+.card__body .btn {}
 </div>
 </code></pre>
     </div>
