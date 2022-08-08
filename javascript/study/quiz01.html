@@ -48,149 +48,124 @@
         <div class="document">
             <h2 class="t_tit">퀴즈 효과</h2>
             <p class="t_desc">
-                주관식(여러문제) 유형
+                객관식(한문제) 유형
             </p>
             <hr>
             <h3 class="t_tit2">결과</h3>
             <div class="t_iframe" style="height: 1000px; padding-top: 0;">
-                <iframe src="https://younghwan12.github.io/coding3/javascript/effect/quizEffect03.html"></iframe>
+                <iframe src="https://younghwan12.github.io/coding3/javascript/effect/quizEffect04.html"></iframe>
             </div>
             <div class="t_link">
-                <a href="https://github.com/younghwan12/coding3/blob/main/javascript/effect/quizEffect03.html" target="_blank">원본 사이트 보기</a>
+                <a href="https://github.com/younghwan12/coding3/blob/main/javascript/effect/quizEffect04.html" target="_blank">원본 사이트 보기</a>
             </div>
             <hr>
-
-
-            <h3 class="t_tit2">JavaScript</h3>
-            <p class="t_desc2">문제 출력, 정답 숨기기, 정답 확인쪽 스크립트는 문제가 2개이상 복수형태이므로 직접 텍스트를 치거나, for문을 이용하거나
-                forEach문을 이용해서 출력하였습니다. 자세한 설명은 주석표시로 확인하겠습니다.
-                
+            <h3 class="t_tit2">body</h3>
+            <p class="t_desc2">퀴즈 보기쪽은 input type을 버튼타입으로, 각각 id 값을 select(..)로 설정하였으며 class값과 name에 select, 벨류값을(..)해서 설정하였습니다.
             </p>
             <div class="t_code">
-<pre><code class="language-js">//선택자
-//선택자
-const quizType = document.querySelectorAll(".quiz__type");                //퀴즈 종류, 다중선택을위해 querySelector에 All을 붙힌다.
-const quizNumber = document.querySelectorAll(".quiz__question .number");  //퀴즈 번호
-const quizAsk = document.querySelectorAll(".quiz__question .ask");        //퀴즈 질문
-const quizConfirm = document.querySelectorAll(".quiz__answer .confirm");  //정답 확인 버튼
-const quizResult = document.querySelectorAll(".quiz__answer .result");    //정답 결과
-const quizInput = document.querySelectorAll(".quiz__answer .input");        //사용자 정답
-const quizView = document.querySelectorAll(".quiz__view");            //강아지
+<pre><code class="language-js">&lt;div class="quiz__answer"&gt;
+    &lt;div class="quiz__selects"&gt;
+        &lt;label for="select1"&gt;
+            &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;
+            &lt;span class="choice"&gt;&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select2"&gt;
+            &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;
+            &lt;span class="choice"&gt;&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select3"&gt;
+            &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;
+            &lt;span class="choice"&gt;&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select4"&gt;
+            &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;
+            &lt;span class="choice"&gt;&lt;/span&gt;
+        &lt;/label&gt;                    
+    &lt;/div&gt;
 
-//문제정보
-const quizInfo = [
-    {
-        answerType: "웹디자인기능사 2015년 1회",
-        answerNum: "1",
-        answerAsk: "색광에서 Red, Green, Blue가 혼합될 때 그 결과 색은 무엇인가요?",
-        answerResult: "White"
-    },
-    {
-        answerType: "웹디자인기능사 2015년 1회",
-        answerNum: "2",
-        answerAsk: "다양한 구성 요소끼리 하나의 규칙으로 단일화시키는 원리는 무엇인가요?",
-        answerResult: "통일"
-    },
-    {
-        answerType: "웹디자인기능사 2015년 1회",
-        answerNum: "3",
-        answerAsk: "계통 생명이라고도 하며 색상, 명도, 채도를 표시하는 색명은 무엇인가요?",
-        answerResult: "일반색명"
-    },
-    {
-        answerType: "웹디자인기능사 2015년 1회",
-        answerNum: "4",
-        answerAsk: "유사, 대비, 균일, 강약 등의 디자인 요소가 포함되어 있는 디자인 원리는 무엇인가요?",
-        answerResult: "조화"
-    },
-]
-
-//문제 출력
-
-//for문 이용해서 출력
-// for(i = 0; i&lt;quizInfo.length; i++){
-//     quizType[i].textContent = quizInfo[i].answerType;
-//     quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
-//     quizAsk[i].textContent = quizInfo[i].answerAsk;
-//     quizResult[i].textContent = quizInfo[i].answerResult;
-// }
-
-//직접 텍스트 치는 방법
-// quizType[0].textContent = quizInfo[0].answerType;   /*quizType의 첫번째에 퀴즈인포 첫번째 answerType을 넣는다*/
-// quizType[1].textContent = quizInfo[1].answerType;   /*quizType의 두번째에 퀴즈인포 두번째 answerType을 넣는다*/
-// quizType[2].textContent = quizInfo[2].answerType;   /*quizType의 세번째에 퀴즈인포 세번째 answerType을 넣는다*/
-// quizType[3].textContent = quizInfo[3].answerType;   /*quizType의 네번째에 퀴즈인포 네번째 answerType을 넣는다*/
-
-// quizNumber[0].textContent = quizInfo[0].answerNum + ". ";   /*quizNumber의 첫번째에 퀴즈인포 첫번째 answerNum를 넣는다*/
-// quizNumber[1].textContent = quizInfo[1].answerNum + ". ";
-// quizNumber[2].textContent = quizInfo[2].answerNum + ". ";
-// quizNumber[3].textContent = quizInfo[3].answerNum + ". ";
-
-// quizAsk[0].textContent = quizInfo[0].answerAsk;   /*quizAsk의 첫번째에 퀴즈인포 첫번째 answerAsk를 넣는다*/
-// quizAsk[1].textContent = quizInfo[1].answerAsk;
-// quizAsk[2].textContent = quizInfo[2].answerAsk;
-// quizAsk[3].textContent = quizInfo[3].answerAsk;
-
-// quizResult[0].textContent = quizInfo[0].answerResult;    /*quizResult의 첫번째에 퀴즈인포 첫번째 answerResul를 넣는다*/
-// quizResult[1].textContent = quizInfo[1].answerResult;
-// quizResult[2].textContent = quizInfo[2].answerResult;
-// quizResult[3].textContent = quizInfo[3].answerResult;
-
-//forEach문 이용해서 출력
-quizInfo.forEach((e,i) =&gt; {
-    quizType[i].textContent = quizInfo[i].answerType;
-    quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
-    quizAsk[i].textContent = quizInfo[i].answerAsk;
-    quizResult[i].textContent = quizInfo[i].answerResult;
-});
-
-//정답 숨기기 직접 텍스트 치기
-// quizResult[0].style.display = "none";
-// quizResult[1].style.display = "none";
-// quizResult[2].style.display = "none";
-// quizResult[3].style.display = "none";
-
-//for문 이용해서 정답 숨기기
-// for(let i = 0; i&lt;quizInfo.length; i++){
-//     quizResult[i].style.display = "none";
-// }
-
-//forEach문 이용해서 정답 숨기기
-quizInfo.forEach((e, i) =&gt; {
-    quizResult[i].style.display = "none";
-});
-
-//정답 확인
-// quizConfirm.addEventListener("click", () =&gt; {   /*정답이 4개인거를 인식시켜줘야하기때문에 forEach문 사용*/
-//     alert("ddd");
-// });
-
-quizConfirm.forEach((btn, num) =&gt; {
-    btn.addEventListener("click", () =&gt; {
-        
-        // 사용자 정답
-        const userWord = quizInput[num].value.toLowerCase().trim();              //소문자로 치환  , 여백 없앰
-
-
-        //사용자 정답 == 문제 정답
-        if(userWord == quizInfo[num].answerResult){
-            //정답인경우
-            // alert("정답")
-            quizView[num].classList.add("like");
-            quizConfirm[num].style.display = "none";
-        } else {
-            //오답인경우
-            // alert("오답")
-            quizView[num].classList.add("dislike");       /*quizView(강아지)에 dislike 추가*/
-            quizConfirm[num].style.display = "none";      /*quizConfirm(정답 확인 버튼)을 안보이게 설정*/
-            quizResult[num].style.display = "block";      /*quizResult(정답 결과)을 안보이게 설정*/
-            quizInput[num].style.display = "none";        /*quizConfirm(정답 확인 버튼)을 안보이게 설정*/ 
-        }   
-    })
-});
+    &lt;button class="confirm"&gt;정답 확인하기&lt;/button&gt;
+    &lt;div class="result"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</div>
 </code></pre>
-            </div>
-        </div>
+        
+        <h3 class="t_tit2">Javascript</h3>
+        <p class="t_desc2">선택자는 이전예시와 같으며 객관식 보기를 추가하였습니다. 문제출력은 직접작성하고 보기출력은 for문을 이용해 출력했기에 두개를 updateQuiz라는 함수로 묶어
+            한번에 출력하였습니다. 정답 확인쪽은 사용자가 선택한 정답과 문제 정답이 맞는지, 그다음에 그 체크된 번호와 문제 번호가 같은지를 확인하기위해 if문 안에 if문을 사용해 표시했습니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">//선택자
+    const quizType = document.querySelector(".quiz__type");                //퀴즈 종류
+    const quizNumber = document.querySelector(".quiz__question .number");  //퀴즈 번호
+    const quizAsk = document.querySelector(".quiz__question .ask");        //퀴즈 질문
+    const quizConfirm = document.querySelector(".quiz__answer .confirm");  //정답 확인 버튼
+    const quizResult = document.querySelector(".quiz__answer .result");    //정답 결과
+    const quizView = document.querySelector(".quiz__view");                //강아지
+    const quizSelects = document.querySelector(".quiz__selects");          //객관식 보기
+    const quizChoice = quizSelects.querySelectorAll(".choice");            //객관식 보기 (보기가4개이므로 querySelectorAll 사용)
+    const quizSelect = quizSelects.querySelectorAll(".select");            //객관식 보기
+
+    //문제정보
+    const quizInfo = [
+        {
+            answerType : "웹디자인기능사 2015년 04회",
+            answerNum : "1",
+            answerAsk : "애니메이션에서 사용되는 정지화면 하나하나를 무엇이라 하는가요?",
+            answerChoice : ["Frame", "Key Frame", "Tweening", "Onion Skin"],
+            answerResult : "1",
+            answerEx : "애니메이션에서 사용되는 정지화면은 Frame 입니다."
+        }
+    ]
+
+    // 문제출력(문제출력과 보기출력을 함수로 묶었다.)
+    function updateQuiz(){
+        //문제 출력
+        quizType.textContent = quizInfo[0].answerType;
+        quizNumber.textContent = quizInfo[0].answerNum + ". ";
+        quizAsk.textContent = quizInfo[0].answerAsk;
+        quizResult.textContent = quizInfo[0].answerEx;
+
+        //보기 출력
+        for(let i = 0; i&lt;quizSelect.length; i++){
+            quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+        }
+
+        //해설 숨기기
+        quizResult.style.display = "none"
+    }
+    
+    updateQuiz();
+
+
+
+    //정답 확인
+    function answerQuiz(){
+        //사용자가 선택한 정답 == 문제 정답
+        //사용자가 클릭한 input --&gt; checked
+
+        for(let i = 0; i&lt;quizSelect.length; i++){
+            if(quizSelect[i].checked == true){  //보기에 체크가 된 상태
+                //체크된 번호랑 ==문제 번호
+                if(quizSelect[i].value == quizInfo[0].answerResult){
+                    // alert("정답");
+                    quizView.classList.add("like");
+                } else {
+                    // alert("오답");
+                    quizView.classList.add("dislike");
+                    quizResult.style.display = "block";            //틀렸을때 정답 보여주기
+                    quizConfirm.style.display = "none";            //정답버튼 숨기기
+                }
+            }
+        }
+    }
+
+    //정답 클릭
+    quizConfirm.addEventListener("click", answerQuiz);             //quizConfirm(정답확인 버튼)을 클릭했을 때 answerQuiz함수 실행
+</div>
+</code></pre>
+    </div>
+</div>
+
         
     </main>
     <!-- //main -->
