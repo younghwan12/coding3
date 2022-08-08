@@ -21,3 +21,7 @@ https://younghwan12.github.io/coding3/javascript/effect/quizEffect04.html
 
 https://younghwan12.github.io/coding3/html/index.html
 https://younghwan12.github.io/coding3/html/alphabet.html
+
+### 사이트 만들기
+
+https://younghwan12.github.io/coding3/site/cardType/cardType01.html   
