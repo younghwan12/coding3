@@ -25,3 +25,4 @@ https://younghwan12.github.io/coding3/html/alphabet.html
 ### 사이트 만들기
 
 https://younghwan12.github.io/coding3/site/cardType/cardType01.html   
+https://younghwan12.github.io/coding3/site/cardType/cardType02.html   
