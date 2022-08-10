@@ -21,7 +21,7 @@ https://younghwan12.github.io/coding3/javascript/effect/quizEffect04.html
 https://younghwan12.github.io/coding3/html/alphabet.html
 
 ### CSS 메인 페이지
-https://younghwan12.github.io/coding3/CSS/index.html   
+https://younghwan12.github.io/coding3/css/index.html   
 
 ### 사이트 만들기
 
