@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형03</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .Score {
+            font-family: "SCoreDream";
+            font-weight: 500;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        .type2 {
+            padding-top: 10px;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .blue {
+            width: 100%;
+            background-color: #2254C3;
+        }
+        /* ir 효과(이미지 대체 효과 == alt)  */ /* 중요함 */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        /* cardType03 */
+        .right {
+            text-align: right;
+        }
+        .card__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #fff;
+        }
+        .card__inner .card {
+            width: 333.5px;
+            height: 470px;
+            padding: 26px 26px;
+            position: relative;
+            border-right: 0.5px solid #eeeeee;
+        }
+        .card__inner .card img {
+            margin-bottom: 19px;
+            border-radius: 10px;
+        }
+        .card__inner .card .tit {
+            font-size: 20px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .card__inner .card .desc {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #666;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+        .card__inner .card .desc2 {
+            position: absolute;
+            left: 235px;
+            top: 457px;
+            color: #dd2a2a;
+            font-size: 16px;
+        }
+        .card__inner .card .desc3 {
+            position: absolute;
+            left: 211px;
+            bottom: 25px;
+            font-size: 16px;
+        }
+        .card__inner .card .more {
+            width: 37px;
+            height: 40px;
+            background-image: url(img/people1.svg);
+            display: block;
+            position: absolute;
+            right: 30px;
+            top: 457px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType03" class="card__wrap Score section blue">
+        <div class="card__inner container">
+            <article class="card">
+                <img src="img/Card_bg03_01.jpg" alt="나무">
+                <h3 class="tit">축은 건물이나 다른 구조물을 계획하고 설계하고 건설하는 과정과 그 결과..</h3>
+                <p class="desc">주로 Tree라고 하면 살아 있거나 직립해 있는 나무(樹)를 가리키고, 목재로서의 나무(木)는 우드라고 한다.</p>
+                <p class="desc2">김나무에오</p>
+                <p class="desc3">18 resources</p>
+                <a href="#" class="more"><span class="ir">더보기</span></a>
+            </article>
+            <article class="card">
+                <img src="img/Card_bg03_02.jpg" alt="딸기">
+                <h3 class="tit">나는 딸기 입니다..스트로우베리쓰 딸기가좋아 딸기딸기 게임</h3>
+                <p class="desc">주로 Tree라고 하면 살아 있거나 직립해 있는 나무(樹)를 가리키고, 목재로서의 나무(木)는 우드라고 한다.</p>
+                <p class="desc2">김나무에오</p>
+                <p class="desc3">18 resources</p>
+                <a href="#" class="more"><span class="ir">더보기</span></a>
+            </article>
+            <article class="card">
+                <img src="img/Card_bg03_03.jpg" alt="과일">
+                <h3 class="tit">나는 종합과일입니다..정말로 맛있습니다.</h3>
+                <p class="desc">주로 Tree라고 하면 살아 있거나 직립해 있는 나무(樹)를 가리키고, 목재로서의 나무(木)는 우드라고 한다.</p>
+                <p class="desc2">김나무에오</p>
+                <p class="desc3">18 resources</p>
+                <a href="#" class="more"><span class="ir">더보기</span></a>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
