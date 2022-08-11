@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+    
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NanumSquareRound/NanumSquareRound.css" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a><em> 객관식(한문제) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li class="active"><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:leesh3432@naver.com">leesh3432@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // const num = [100, 200, 300, 400, 500];
+
+        // num.forEach((el) => {
+        //     console.log(el);
+        //     document.querySelector(".quiz__wrap").textContent += el;
+        // });
+
+        //문제 정보 2010년 2회
+        const quizInfo = [
+            {
+                answerType : "웹디자인기능사 2010년 02회",
+                answerNum : "1",
+                answerAsk : "통일성을 주는 방법과 거리가 먼 것은?",
+                answerChoice : {
+                    1: "각 요소들을 근접시킨다.",
+                    2: "각 요소들을 반복시킨다.",
+                    3: "각 요소들을 연속시킨다.",
+                    4: "각 요소들을 분리시킨다."
+                },
+                answerResult : "4",
+                answerEx : "통일감을 갖기 위해서는 각 요소들이 근접, 반복, 연속되어야하므로 답은 4번입니다."
+            },
+            {
+                answerType : "웹디자인기능사 2010년 02회",
+                answerNum : "2",
+                answerAsk : "디자인의 원리 중 율동(Rhythm)의 요소와 거리가 먼 것은?",
+                answerChoice : {
+                    1: "대칭",
+                    2: "점증",
+                    3: "반복",
+                    4: "변칙"
+                },
+                answerResult : "1",
+                answerEx : "율동에는 반복, 교차, 방사, 점이(점증)=그라데이션 등이 있으므로 답은 1번입니다."
+            },
+            {
+                answerType : "웹디자인기능사 2010년 02회",
+                answerNum : "3",
+                answerAsk : "일반적인 디자인의 조건을 나열한 것으로 옳은 것은?",
+                answerChoice : {
+                    1: "합목적성, 유행성, 질서성, 독창성",
+                    2: "합목적성, 심미성, 독창성, 경제성",
+                    3: "합목적성, 심미성, 경제성, 국제성",
+                    4: "합목적성, 창조성, 심미성, 질서성"
+                },
+                answerResult : "2",
+                answerEx : "디자인의 조건 : 합목적성, 심미성, 독창성, 경제성 이므로 답은 2번입니다."
+            },
+            {
+                answerType : "웹디자인기능사 2010년 02회",
+                answerNum : "4",
+                answerAsk : "색의 활용 효과에 대한 설명으로 틀린 것은?",
+                answerChoice : {
+                    1: "밝은 바탕에 어두운 색 글자보다 어두운 바탕에 밝은 색글자가 더 굻고 커보인다.",
+                    2: "같은 크기의 검정색 상자와 흰 상자를 비교하면 흰색 상자가 더 가볍게 느껴 진다.",
+                    3: "천장을 더높게 보이게 하려면 벽면과 동일계열의 고명도 색을 천장에 칠한다.",
+                    4: "상의를 하의보다 더 어두운 색으로 하면 키가 더 커 보인다."
+                },
+                answerResult : "4",
+                answerEx : "상의를 하의보다 더 어두운 색으로 하면 키가 더 커 보일수없습니다."
+            },
+            {
+                answerType : "웹디자인기능사 2010년 02회",
+                answerNum : "5",
+                answerAsk : "바우하우스의 설립자이며, 근대 건축과 디자인 운동의 대표적 지도자는?",
+                answerChoice : {
+                    1: "모리스(MORRIS, WILLIAM)",
+                    2: "그로피우스(GROPLUS, WALTER)",
+                    3: "로위(ROWEY, RAYMOND)",
+                    4: "팹스너(PRVSNER, NIKOLAUS)"
+                },
+                answerResult : "4",
+                answerEx : "바우하우스의 설립자이며, 근대 건축과 디자인 운동의 대표적 지도자는 펩스너 입니다."
+            },
+            {
+                answerType : "웹디자인기능사 2010년 02회",
+                answerNum : "6",
+                answerAsk : "어떤 착시 현상을 나타낸 것인가?<br>&lt;-----&gt;<br>&gt;-----&lt;",
+                answerChoice : {
+                    1: "거리의 착시",
+                    2: "방향의 착시",
+                    3: "길이의 착시",
+                    4: "대비의 착시"
+                },
+                answerResult : "3",
+                answerEx : "선의 길이가 같은데 달라보이므로 길이의 착시입니다."
+            }
+        ];
+
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        function updateQuiz(){
+            const exam = [];      /*exam을 빈 배열로 선언한다.*/
+
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                <div class="quiz">
+                    <span class="quiz__type">${question.answerType}</span>
+                    <h2 class="quiz__question">
+                        <span class="number">${question.answerNum}. </span>
+                        <div class="ask">${question.answerAsk}</div>
+                    </h2>
+                    <div class="quiz__view">
+                        <div class="true">정답입니다!</div>
+                        <div class="false">틀렸습니다!</div>
+                        <div class="dog">
+                            <div class="head">
+                                <div class="ears"></div>
+                                <div class="face"></div>
+                                <div class="eyes">
+                                    <div class="teardrop"></div>
+                                </div>
+                                <div class="nose"></div>
+                                <div class="mouth">
+                                    <div class="tongue"></div>
+                                </div>
+                                <div class="chin"></div>
+                            </div>
+                            <div class="body">
+                                <div class="tail"></div>
+                                <div class="legs"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__answer">
+                        <div class="quiz__selects">
+                            <label for="select1${number}">
+                                <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">
+                                <span class="choice">${question.answerChoice[1]}</span>
+                            </label>
+                            <label for="select2${number}">
+                                <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">
+                                <span class="choice">${question.answerChoice[2]}</span>
+                            </label>
+                            <label for="select3${number}">
+                                <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">
+                                <span class="choice">${question.answerChoice[3]}</span>
+                            </label>
+                            <label for="select4${number}">
+                                <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">
+                                <span class="choice">${question.answerChoice[4]}</span>
+                            </label>                    
+                        </div>
+                    </div>
+                </div>
+                `);
+            });
+            
+            exam.push(`
+                <div class="quiz__confirm">
+                    <button class="check">정답 확인하기</button>
+                    <div class="ex"></div>    
+                </div>
+            `)
+            
+            quizWrap.innerHTML = exam.join('');
+        }
+        updateQuiz();
+
+        // 정답 확인
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".quiz__selects");   //보기
+            const quizView = document.querySelectorAll(".quiz__view");         //강아지
+
+
+        }
+        answerQuiz();
+    </script>
+</body>
+
+</html>

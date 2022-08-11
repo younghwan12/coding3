@@ -48,133 +48,99 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">벡터와 비트맵</h2>
-            <p class="t_box">컴퓨터 그래픽에서 이미지 표현방식은 크게 두가지로 구분되는데, <i>백터</i>와 <i>비트맵</i> 방식입니다.
-                이 둘에 대해서 알아봅시다.
+            <h2 class="t_tit">배열 관련 메서드</h2>
+            <p class="t_box">자바스크립트 배열 관련 메서드중 오늘은 join(), push(), pop()에 대해서 소개드리려고 합니다.
             </p>
             <hr>
-            <h3 class="t_tit2">벡터</h3>
-            <p class="t_box">
-                벡터 방식은 점과 점을 연결함으로써 수학적 함수관계에 의해 이미지를 표현하여 선과 면을 만들어냅니다.
-                이렇게 만들어진 선이 두껫값과 색상 값, 곡률값을 갖거나 면이 색상 값을 가지면서 이런 점, 선, 면의 요소들이 모여 그래픽을
-                만들게 되는 것입니다.
+            <h3 class="t_tit2">join()</h3>
+            <p class="t_desc2">
+                배열 요소 문자열을 결합할 수 있고, 문자열을 반환할 수 있습니다. <i>자주쓰이며 중요합니다!</i> 예시로 설명 드리겠습니다.
             </p>
             <br>
+            <div class="t_code">
+<pre><code class="language-js">// 예시입니다.
+const arrNum = [100, 200, 300, 400, 500];
+
+const text1 = arrNum.join('');  //리턴값이 공백 없이 나옵니다.
+const text2 = arrNum.join(' '); //리턴값이 공백을 추가해서 나옵니다.
+const text3 = arrNum.join('★'); //리턴값에 ★을 추가해서 나옵니다.
+const text4 = arrNum.join('-'); //리턴값에 -을 추가해서 나옵니다.
+</code></pre>
+            </div>
+            <div class="t_result">
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div>100200300400500<br>
+                        100,200,300,400,500<br>
+                        100★200★300★400★500<br>
+                        100-200-300-400-500
+                    </div>
+                </details>               
+            </div>
+            <h3 class="t_tit2">push()</h3>
             <p class="t_desc2">
-                <i>여기서 벡터의 점은 좌표계(x,y)로 구성되기 때문에 비트맵의 픽셀과 달리 이미지의 크기 조절이나 변형 때문에 해상도가 깨지지 않습니다.</i>
-                돋보기로 봐야 할 만큼 크기를 줄이거나 건물에 붙일 만큼 크기를 키워도 깨짐 현상이 없습니다. 그러므로 크기조절이 자유로워야 하는
-                로고나 여러 포인트로 조정되어야 하는 서체, 캐릭터 등 제작할 때 사용합니다.
-            </p>
-            <h3 class="t_tit2">비트맵</h3>
-            <p class="t_box">
-                비트맵은 각 픽셀에 저장된 비트 정보가 집합된 것입니다. 비트맵 이미지는 정사각형 모양의 픽셀 수백개가 모여 전체 이미지를 구성하는 방식입니다.<i>JPG, PNG, GIF 모두 비트맵 확장자입니다.</i>
+                push() 메서드는 배열 마지막 요소에 추가 하고, pop() 메서드는 배열 마지막 요소를 삭제합니다. 예시로 설명드리겠습니다.
             </p>
             <br>
+            <div class="t_code">
+<pre><code class="language-js">// 예시입니다.
+const arrNum = [100, 200, 300, 400, 500];
+const arrPush = arrNum.push(600);
+
+document.write(arrNum);     //리턴값은 배열의 갯수를
+document.write(arrPush);    //100,200,300,400,500,600 결과값은 전체 출력
+</code></pre>
+            </div>
+            <div class="t_result">
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div>6<br>
+                        100,200,300,400,500,600
+                    </div>
+                </details>               
+            </div>
+            <h3 class="t_tit2">pop()</h3>
             <p class="t_desc2">
-                비트맵은 벡터와 다르게 픽셀의 점 하나하나가 이미지를 이루는 요소이기 때문에 벡터보다 정교한 이미지 표현이 가능합니다. 하지만 픽셀의 수가 많아질수록
-                화질은 뛰어나지만, 용량 또한 커지게 되고 이미지를 확대하거나 축소하면 기존 이루고 있던 픽셀의 수가 변하게 되는데 이로 인해 깨짐 현상과 이미지 품질 저하가 발생하게 됩니다.
-                <i>비트맵 방식의 대표적인 프로그램으로는 어도비에서 만든 포토샵 그리고 페인터 등이 있습니다.</i>
+                배열의 아이템을 삭제할 수 있습니다. push메서드와 마찬가지로 배열의 끝을 삭제합니다. 예시로 설명드리겠습니다.
             </p>
-            <hr>
-            <h3 class="t_tit2">백터와 비트맵의 차이점</h3>
+            <br>
+            <div class="t_code">
+<pre><code class="language-js">// 예시입니다.
+const arrNum2 = [100, 200, 300, 400, 500];
+const arrPush2 = arrNum2.pop();
+
+document.write(arrPush2) //500 리턴값은 마지막요소를
+document.write(arrNum2) //100,200,300,400 결과값은 리턴값을 제외한 나머지를 출력
+</code></pre>
+            </div>
+            <div class="t_result">
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div>500<br>
+                        100,200,300,400                   
+                    </div>
+                </details>               
+            </div>
+            <div class="t_tit2">표</div>
             <table class="t_table">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th>비트맵(Bitmap)</th>
-                        <th>벡터(Vector)</th>
+                        <th>메서드</th>
+                        <th>설명</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="ce">정의</td>
-                        <td>정사각형의 픽셀에 저장된 비트 정보의 집합</td>
-                        <td>수학적인 함수 관계로 만든 그래픽 이미지</td>
+                        <td class="ce">join()</td>
+                        <td>배열의 아이템을 합칠 수 있다.이때 각 아이템의 구분자를 지정할수있다.<br>(ex: join(''),,)</td>
                     </tr>
                     <tr>
-                        <td class="ce">확대</td>
-                        <td>계단현상</td>
-                        <td>뚜렷한 외곽선</td>
+                        <td class="ce">push()</td>
+                        <td>배열에 아이템을 밀어 넣을 수 있다.<br>(배열의 끝에 추가)</td>
                     </tr>
                     <tr>
-                        <td class="ce">변화/회전</td>
-                        <td>이미지 품질 손상</td>
-                        <td>변화 없음</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">특징</td>
-                        <td>사실적인 표현, 특수 효과, 풍부한 색감 표현</td>
-                        <td>선명한 표현, 효과적인 응용작업</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">단점</td>
-                        <td>이미지의 축소, 확대로 인한 이미지 품질 손상</td>
-                        <td>사진과 같은 이미지 그래픽의 정교한 작업의 한계점</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">확장자</td>
-                        <td>JPG, PNG, GIF..</td>
-                        <td>AI, SVG, VML..</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">프로그램</td>
-                        <td>포토샵, 페인터</td>
-                        <td>일러스트레이터, 플래시</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h3 class="t_tit2">이미지의 종류 및 특징</h3>
-            <table class="t_table">
-                <thead>
-                    <tr>
-                        <th>종류</th>
-                        <th>특징</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ce">JPG<br>(JPEG)</td>
-                        <td>1. 표현 색상도(24비트 컬러, 약 1600만 색상)가 뛰어나 고해상도 표시 장치에 적합함.<br>
-                            2. 이미지의 품질과 용량을 쉽게 조절 가능.<br>
-                            3. 가장 널리 쓰이는 이미지 포맷.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">GIF</td>
-                        <td>
-                            1. 비손실 압축<br>
-                            2. 이미지 파일 내에 이미지 및 문자열 같은 정보들을 저장할 수 있음.<br>
-                            3. 8비트 컬러만 지원
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">PNG</td>
-                        <td>
-                            1. .gif의 대체 포맷으로 개발됨.<br>
-                            2. 비손실 압축.<br>
-                            3. 8비트(256 색상)/24비트(약 1600만 색상) 컬러 이미지 동시 지원 및 처리.<br>
-                            4. W3C의 권장 포맷.                      
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">WEBP</td>
-                        <td>
-                            구글에서 개발한 .jpg, .png, .gif를 모두 대체할 수 있는 이미지 포맷.<br>
-                            1. 완벽한 손실/비손실 압축 동시 지원(선택 사용 가능).<br>
-                            2. .gif와 같은 애니메이션 지원.<br>
-                            3. Alpha Channel(투명도) 지원(손실/비손실 모두).<br>
-                            4. 지원 브라우저에 제한이 있음(Explorer에서는 지원하지 않음).
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ce">SVG</td>
-                        <td>
-                            1. 마크업 언어(HTML/XML) 기반의 Vector 그래픽을 표현하는 포맷.<br>
-                            2. 해상도의 영향에서 자유로움<br>
-                            3. CSS로 어느 정도의 스타일링 가능.<br>
-                            4. JavaScript로 Event Handling 가능.<br>
-                            5. 코드 혹은 파일로 사용 가능.
-                        </td>
+                        <td class="ce">pop()</td>
+                        <td>배열에 아이템을 삭제할 수 있다.<br>(push메서드와 마찬가지로 배열의 끝을 삭제)</td>
                     </tr>
                 </tbody>
             </table>
