@@ -115,18 +115,15 @@
     font-family: "SCoreDream";
     font-weight: 400;
 }
-
 /* reset */
 * {
     margin: 0;
     padding: 0;
 }
-
 a {
     text-decoration: none;
     color: #000;
 }
-
 h1,
 h2,
 h3,
@@ -135,31 +132,25 @@ h5,
 h6 {
     font-weight: normal;
 }
-
 img {
     width: 100%;
 }
-
 /* common */
 .container {
     width: 1160px;
     padding: 0 20px;
     margin: 0 auto;
     min-width: 1160px;
-
 }
-
 .section {
     padding: 120px 0;
 }
-
 .section>h2 {
     font-size: 50px;
     line-height: 1;
     text-align: center;
     margin-bottom: 20px;
 }
-
 .section>p {
     font-size: 20px;
     font-weight: 300;
@@ -167,7 +158,6 @@ img {
     text-align: center;
     margin-bottom: 70px;
 }
-
 /* blind : 접근성때문에 눈에 보이지 않게 제작 */
 .blind {
     position: absolute;
@@ -177,16 +167,13 @@ img {
     margin: -1px;
     overflow: hidden;
 }
-
 /* cardType03 */
 body {
     background-color: #2254c3;
 }
-
 .card__inner {
     display: flex;
 }
-
 .card__inner .card {
     padding: 26px;
     width: 33.3333%;
@@ -277,40 +264,7 @@ body {
                 <a href="https://younghwan12.github.io/coding3/site/cardType/cardType03.html" target="_blank">원본 사이트 보기</a>
             </div>
 <hr>
-<h3 class="t_tit2">ir 효과(이미지 대체 효과 == alt)</h3>
-            <p class="t_desc2">
-                웹 표준을 준수하기위해서 사용합니다. 스크린 리더기에는 읽혀야하고 눈에 보일 필요는 없습니다. 글씨위에 사진을 올렸을 때 만약 사진이 업로드가 되지않는다면 글씨가 보이게 설정하고,
-                평소에는 글씨가 보이지 않게 설정합니다.
-            </p>
-        <div class="t_code">
-<pre><code>.ir {
-    display: block;
-    overflow: hidden;
-    font-size: 0;
-    line-height: 0;
-    text-indent: -9999px;
-}
-</code></pre>
-        </div>
-<h3 class="t_tit2">글자를 한줄로 나오게 하기</h3>
-            <p class="t_desc2">
-                글자가 한줄만 보이고싶은데, 두줄 이상인경우 한줄만 출력하고 짤리는 부분은 ... 으로 나오게 표현합니다. 세줄 이상인경우 -webkit-line-clamp로 줄 수를 설정할 수 있다.
-            </p>
-        <div class="t_code">
-<pre><code>/* 한줄효과 */
-overflow: hidden;
-white-space: nowrap;
-text-overflow: ellipsis;
-padding-right: 20px;
 
-/* 세줄이상이면 ...으로 보이게 */
-overflow: hidden;
-text-overflow: ellipsis;
-display: -webkit-box;
--webkit-line-clamp: 3; 
--webkit-box-orient: vertical;
-</code></pre>
-        </div>
 </div> 
     </main>
     <!-- //main -->
