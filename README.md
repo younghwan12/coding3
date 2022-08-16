@@ -17,6 +17,10 @@ https://younghwan12.github.io/coding3/javascript/effect/quizEffect02.html
 https://younghwan12.github.io/coding3/javascript/effect/quizEffect03.html   
 https://younghwan12.github.io/coding3/javascript/effect/quizEffect04.html   
 
+### 서치 이펙트
+https://younghwan12.github.io/coding3/javascript/effect/searchEffect01_html.html   
+
+
 ### HTML 메인 페이지
 https://younghwan12.github.io/coding3/html/alphabet.html
 
@@ -32,3 +36,4 @@ https://younghwan12.github.io/coding3/site/cardType/cardType03.html
 
 ### 블로그 예제보기
 https://younghwan12.github.io/coding3/javascript/study/htmltest.html   
+ 
