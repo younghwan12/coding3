@@ -18,7 +18,7 @@ https://younghwan12.github.io/coding3/javascript/effect/quizEffect03.html
 https://younghwan12.github.io/coding3/javascript/effect/quizEffect04.html   
 
 ### 서치 이펙트
-https://younghwan12.github.io/coding3/javascript/effect/searchEffect01_html.html   
+https://younghwan12.github.io/coding3/javascript/effect/searchEffect01.html   
 
 
 ### HTML 메인 페이지
