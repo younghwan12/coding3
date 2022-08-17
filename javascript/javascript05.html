@@ -535,31 +535,15 @@ const currentStr26 = str1.lastIndexOf("reference", 12);    //11
                     "문자열".includes(검색값, 시작값)
                 </div>
                 <div class="script">
-<pre><code class="language-js">const str1 = "456";
-const currentStr1 = str1.padStart(1, "0");    //456
-const currentStr2 = str1.padStart(2, "0");    //456
-const currentStr3 = str1.padStart(3, "0");    //456
-const currentStr4 = str1.padStart(4, "0");    //0456
-const currentStr5 = str1.padStart(5, "0");    //00456
-const currentStr6 = str1.padStart(6, "0");    //000456
-const currentStr7 = str1.padStart(6, "1");        //111456
-const currentStr8 = str1.padStart(6, "12");       //121456
-const currentStr9 = str1.padStart(6, "123");      //123456
-const currentStr10 = str1.padStart(6, "1234");    //123456
-const currentStr11 = str1.padStart(6);            //   456
+<pre><code class="language-js">const str1 = "javascript reference";
 
-
-const currentStr12 = str1.padEnd(1, "0");         //456
-const currentStr13 = str1.padEnd(2, "0");         //456
-const currentStr14 = str1.padEnd(3, "0");         //456
-const currentStr15 = str1.padEnd(4, "0");         //4560
-const currentStr16 = str1.padEnd(5, "0");         //45600
-const currentStr17 = str1.padEnd(6, "0");         //456000
-const currentStr18 = str1.padEnd(6, "1");         //456111
-const currentStr19 = str1.padEnd(6, "12");        //456121
-const currentStr20 = str1.padEnd(6, "123");       //456123
-const currentStr21 = str1.padEnd(6, "1234");      //456123
-const currentStr22 = str1.padEnd(6);              //456___
+const currentStr1 = str1.includes("javascript");    //true
+const currentStr2 = str1.includes("j");             //true
+const currentStr3 = str1.includes("b");             //false
+const currentStr4 = str1.includes("reference");     //true
+const currentStr5 = str1.includes("reference", 1);  //true
+const currentStr6 = str1.includes("reference", 11); //true
+const currentStr7 = str1.includes("reference", 12); //false
 </code></pre>
                 </div>
             </div>
