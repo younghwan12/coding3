@@ -7,11 +7,11 @@
     <title>이미지 유형02</title>
     <style>
         /* fonts */
-        @import url('https://webfontworld.github.io/GothicA1/GothicA1.css');
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
 
-        .A1 {
-            font-family: "GothicA1";
-            font-weight: 500;
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 400;
         }
 
         /* reset */
@@ -50,75 +50,98 @@
         .section > p {
             font-size: 20px;
             font-weight: 300;
+            color: #666;
             text-align: center;
             margin-bottom: 70px;
         }
+        /* imageType */
         .image__inner {
             display: flex;
-            justify-content: space-between;           /*양쪽 정렬*/
+            justify-content: space-between;
         }
         .image {
             width: 32%;
-            height: 520px;
-            box-sizing: border-box;
             position: relative;
+            overflow: hidden;
         }
-        .image.img1 {
-            background: url(img/card_bg_02_01.jpg);
+        .image__box {}
+        .image__box img {
+            vertical-align: top;
+            transition: all 0.6s ease-in-out;
+
         }
-        .image.img2 {
-            background: url(img/card_bg_02_02.jpg);
-        }
-        .image.img3 {
-            background: url(img/card_bg_02_03.jpg);
-        }
-        .image__title {
-            font-size: 24px;
+        .image__desc {
             color: #fff;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .image__btn {
-            font-size: 16px;
-            color: #fff;
-            text-align: center;
-        }
-        .image__more {
-            text-align: center;
-            color: #fff;
-            margin-top: 5px;
-        }
-        .image__box {
-            width: 100%;
-            height: 100px;
-            background: #947A7A;
             position: absolute;
-            top: 420px;
             left: 0;
+            bottom: -100px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .image:hover .image__desc {
+            bottom: 0;
+        }
+        .image:hover .image__box img {
+            transform: scale(1.03);
+        }
+
+        .img1 .image__desc {
+            background: rgba(148,122,122,40%);
+        }
+        .img2 .image__desc {
+            background: rgba(69,15,15,50%);
+        }
+        .img3 .image__desc {
+            background: rgba(149,125,125,60%);
+        }
+        .image__desc h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .image__desc .more {
+            font-size: 16px;
+        }
+        .image__desc .more:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
-    <section id="cardType01" class="card__wrap A1 section">
+    <section id="imageType02" class="image__wrap gmark section">
         <h2>사진 포즈</h2>
         <p>사진 찍히는 방법에 대해서 설명드리겠습니다. 포즈는 다양합니다.</p>
         <div class="image__inner container">
             <article class="image img1">
-                <div class="image__box">
-                    <h3 class="image__title">우측 사선형</h3>
-                    <p class="image__more">자세히보기</p>
+                <figure class="image__box">
+                    <img src="img/card_bg_02_01.jpg" alt="">
+                </figure>
+                <div class="image__desc">
+                    <h3>우측 사선형</h3>
+                    <a href="/" class="more" title="자세히보기" style="color: #fff;">자세히보기</a>
                 </div>
             </article>
             <article class="image img2">
-                <div class="image__box">
-                    <h3 class="image__title">정면 시선형</h3>
-                    <p class="image__more"><a href="">자세히보기</a></p>
+                <figure class="image__box">
+                    <img src="img/card_bg_02_02.jpg" alt="">
+                </figure>
+                <div class="image__desc">
+                    <h3>정면 시선형</h3>
+                    <a href="/" class="more" title="자세히보기" style="color: #fff;" >자세히보기</a>
                 </div>
             </article>
             <article class="image img3">
-                <div class="image__box">
-                    <h3 class="image__title">얼짱 미녀형</h3>
-                    <p class= "image__more">자세히보기</p>
+                <figure class="image__box">
+                    <img src="img/card_bg_02_03.jpg" alt="">
+                </figure>
+                <div class="image__desc">
+                    <h3>얼짱 미녀형</h3>
+                    <a href="/" class="more" title="자세히보기" style="color: #fff;">자세히보기</a>
                 </div>
             </article>
         </div>
