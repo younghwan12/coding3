@@ -111,13 +111,29 @@ li {
     border-radius: 50px;
     font-size: 20px;
 }
-.search__list {}
 .search__list li {
     text-align: left;
     line-height: 1.7;
 }
 .search__list li.hide {
     display: none;
+}
+.search__list li {
+
+}
+
+.search__list li.show {
+    display: block;
+}
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
 }
 @media (max-width: 600px) {
     .search__wrap {

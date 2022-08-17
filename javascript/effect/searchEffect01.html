@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/search.css">
+
+    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em></em></h1>
+        <nav>
+            <ul>
+                <li class="active"><a href="searchEffect01_css.html">1</a>
+                </li>
+                <li><a href="searchEffect02_css.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="search__wrap">
+            <span>indexOf()를 이용하여 검색하기</span>
+            <h1>CSS 속성 검색하기</h1>
+            <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="CSS 속성을 입력해주세요!">
+            </div>
+            <div class="search__info">
+                <div>CSS 속성 갯수 : <span class="num">0</span></div>
+            </div>
+            <div class="search__list">
+                <div class="html">
+                    <ul>
+                        <li data-name="align-color"><strong>align-color</strong> : align-color 속성은 콘텐츠 아이템의 색상을 설정합니다.</li>
+                        <li data-name="align-content"><strong>align-content</strong> : align-content 속성은 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="align-items"><strong>align-items</strong> : align-items 속성은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="align-self"><strong>align-self</strong> : align-self 속성은 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.</li>
+                        <li data-name="all"><strong>all</strong> : all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다.</li>
+                        <li data-name="animation"><strong>animation</strong> : animation 속성은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="animation-delay"><strong>animation-delay</strong> : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.</li>
+                        <li data-name="animation-direction"><strong>animation-direction</strong> : animation-direction 속성은 애니메이션 움직임 방향을 설정합니다.</li>
+                        <li data-name="animation-duration"><strong>animation-duration</strong> : animation-duration 속성은 애니메이션 움직임 시간을 설정합니다.</li>
+                        <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다.</li>
+                        <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong> : animation-iteration-count 속성은 애니메이션 반복 횟수 설정합니다.</li>
+                        <li data-name="animation-name"><strong>animation-name</strong> : animation-name 속성은 애니메이션 keyframe 이름을 설정합니다.</li>
+                        <li data-name="animation-play-state"><strong>animation-play-state</strong> : animation-play-state 속성은 애니메이션 진행상태를 설정합니다.</li>
+                        <li data-name="animation-timing-function"><strong>animation-timing-function</strong> : animation-timing-function 속성은 애니메이션 움직임의 속도를 설정합니다.</li>
+                        <li data-name="backdrop-filter"><strong>backdrop-filter</strong> : backdrop-filter 속성은 배경에 그래픽 효과를 설정합니다.</li>
+                        <li data-name="backface-visibility"><strong>backface-visibility</strong> : backface-visibility 속성은 요소의 뒷면을 설정합니다.</li>
+                        <li data-name="background"><strong>background</strong> : background 속성은 백그라운드 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="background-attachment"><strong>background-attachment</strong> : background-attachment 속성은 배경 이미지의 고정 여부를 설정합니다.</li>
+                        <li data-name="background-blend-mode"><strong>background-blend-mode</strong> : background-blend-mode 속성은 배경을 혼합했을 때의 상태를 설정합니다.</li>
+                        <li data-name="background-clip"><strong>background-clip</strong> : background-clip 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
+                        <li data-name="background-color"><strong>background-color</strong> : background-color 속성은 백그라운드 색을 설정합니다.</li>
+                        <li data-name="background-image"><strong>background-image</strong> : background-image 속성은 백그라운드 이미지 및 배경 속성을 설정합니다.</li>
+                        <li data-name="background-origin"><strong>background-origin</strong> : background-origin 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
+                        <li data-name="background-position"><strong>background-position</strong> : background-position 속성은 백그라운드 이미지의 위치 영역을 설정합니다.</li>
+                        <li data-name="background-position-x"><strong>background-position-x</strong> : background-position-x 속성은 백그라운드 이미지의 x축 위치 영역을 설정합니다.</li>
+                        <li data-name="background-position-y"><strong>background-position-y</strong> : background-position-y 속성은 백그라운드 이미지의 y축 위치 영역을 설정합니다.</li>
+                        <li data-name="background-repeat"><strong>background-repeat</strong> : background-repeat 속성은 백그라운드 이미지 반복 여부를 설정합니다.</li>
+                        <li data-name="background-size"><strong>background-size</strong> : background-size 속성은 백그라운드 이미지 사이즈를 설정합니다.</li>
+                        <li data-name="border"><strong>border</strong> : border 속성은 테두리 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="border-bottom"><strong>border-bottom</strong> : border-bottom 속성은 테두리 아래쪽 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="data"><strong>data</strong> : data 태그는 주어진 요소의 데이터 값을 설정합니다.</li>
+                        <li data-name="datalist"><strong>datalist</strong> : datalist 태그는 선택 목록과 자동 완성 기능을 설정합니다.</li>
+                        <li data-name="dd"><strong>dd</strong> : dd 태그는 설명 목록의 항목을 설정합니다.</li>
+                        <li data-name="del"><strong>del</strong> : del 태그는 문서의 삭제된 텍스트를 설정합니다.</li>
+                        <li data-name="details"><strong>details</strong> : details 태그는 접기/펼치기 목록을 설정합니다.</li>
+                        <li data-name="dfn"><strong>dfn</strong> : dfn 태그는 용어를 정의할 때 설정합니다.</li>
+                        <li data-name="dialog"><strong>dialog</strong> : dialog 태그는 팝업 정보을 설정합니다.</li>
+                        <li data-name="dir"><strong>dir</strong> : dir 태그는 파일 및 폴더의 디렉토리를 설정합니다. 현재는 사용하지 않습니다.</li>
+                        <li data-name="div"><strong>div</strong> : div 태그는 문서의 영역을 나누거나 그룹화 할 때 설정합니다.</li>
+                        <li data-name="dl"><strong>dl</strong> : dl 태그는 설명 목록을 설정합니다.</li>
+                        <li data-name="dt"><strong>dt</strong> : dt 태그는 설명 목록 항목의 제목을 설정합니다.</li>
+                        <li data-name="em"><strong>em</strong> : em 태그는 텍스트를 강조할 때 설정합니다.</li>
+                        <li data-name="embed"><strong>embed</strong> : embed 태그는 외부 콘텐츠를 사용할 수 있도록 설정합니다.</li>
+                        <li data-name="fieldset"><strong>fieldset</strong> : fieldset 태그는 폼 컨트롤 요소의 내부 영역을 설정합니다.</li>
+                        <li data-name="figcaption"><strong>figcaption</strong> : figcaption 태그는 figure 요소의 설명 또는 제목을 설정합니다.</li>
+                        <li data-name="figure"><strong>figure</strong> : figure 태그는 인용, 도표, 사진, 코드 등의 독립적인 콘텐츠를 설정합니다.</li>
+                        <li data-name="font"><strong>font</strong> : font 태그는 폰트의 크기, 색, 종류를 설정합니다.</li>
+                        <li data-name="footer"><strong>footer</strong> : footer 태그는 사이트 관련 정보 및 관련 링크 콘텐츠 섹션을 설정합니다.</li>
+                        <li data-name="form"><strong>form</strong> : form 태그는 웹 서버에 정보를 제공하는 폼 컨트롤 유형을 설정합니다.</li>
+                        <li data-name="frame"><strong>frame</strong> : frame 태그는 다른 HTML문서가 표시 될 수 있는 특정 영역을 설정합니다.</li>
+                        <li data-name="frameset"><strong>frameset</strong> : frameset 태그는 레이아웃 구성을 위한 프레임을 설정합니다.</li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:leesh3432@naver.com">leesh3432@naver.com</a>
+    </footer>
+
+    <script>
+        //선택자
+        const searchBox = document.querySelector(".search__box input");   //input 박스
+        const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
+
+        //전체 갯수 구하기
+        searchInfo.textContent = searchList.length;
+
+        //검색 영역
+        searchBox.addEventListener("keyup", () => {
+            const searchWord = searchBox.value;     //사용자가 입력한 키워드
+
+            searchList.forEach(el => {
+                const cssName = el.dataset.name;
+
+
+
+                if (cssName.indexOf(searchWord)) {
+                    el.classList.add("hide");
+                } else {
+                    el.classList.remove("hide");    //indexOf()값이 0(false)이되는 값만 hide를 지워줍니다.
+                }
+
+            });
+
+        });
+
+    </script>
+    <!-- //footer -->
+</body>
+</html>
