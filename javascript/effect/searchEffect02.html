@@ -38,7 +38,7 @@
                 <input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!">
             </div>
             <div class="search__info">
-                <div class="type">플렉스, 애니메이션, 백그라운드, 기타 등등 유형 별로 검색해보세요!</div>
+                <div class="type">플렉스, 애니메이션, 백그라운드, 폰트, 그리드, 마진, 마스크, 오버플로우, 패딩, 스크롤, 텍스트, 기타 등등 유형 별로 검색해보세요!</div>
                 <div>전체 속성 갯수 : <span class="num">0</span></div>
             </div>
             <div class="search__list">
@@ -89,36 +89,349 @@
                         <li data-name="border-block-start-width" data-type="보더"><strong>border-block-start-width</strong> : border-block-start-width 속성은 블록 처음 크기값을 정의합니다.</li>
                         <li data-name="border-block-style" data-type="보더"><strong>border-block-style</strong> : border-block-style 속성은 블록의 테두리 스타일 속성을 정의합니다.</li>
                         <li data-name="border-block-width" data-type="보더"><strong>border-block-width</strong> : border-block-width 속성은 블록의 테두리 크기값을 정의합니다.</li>
-
-                        
                         <li data-name="border-bottom" data-type="보더"><strong>border-bottom</strong> : border-bottom 속성은 테두리 아래쪽 속성을 일괄적으로 설정합니다.</li>
-                        <li data-name="data" data-type="기타"><strong>data</strong> : data 태그는 주어진 요소의 데이터 값을 설정합니다.</li>
-                        <li data-name="datalist" data-type="기타"><strong>datalist</strong> : datalist 태그는 선택 목록과 자동 완성 기능을 설정합니다.</li>
-                        <li data-name="dd" data-type="기타"><strong>dd</strong> : dd 태그는 설명 목록의 항목을 설정합니다.</li>
-                        <li data-name="del" data-type="기타"><strong>del</strong> : del 태그는 문서의 삭제된 텍스트를 설정합니다.</li>
-                        <li data-name="details" data-type="기타"><strong>details</strong> : details 태그는 접기/펼치기 목록을 설정합니다.</li>
-                        <li data-name="dfn" data-type="기타"><strong>dfn</strong> : dfn 태그는 용어를 정의할 때 설정합니다.</li>
-                        <li data-name="dialog" data-type="기타"><strong>dialog</strong> : dialog 태그는 팝업 정보을 설정합니다.</li>
-                        <li data-name="dir" data-type="기타"><strong>dir</strong> : dir 태그는 파일 및 폴더의 디렉토리를 설정합니다. 현재는 사용하지 않습니다.</li>
-                        <li data-name="div" data-type="기타"><strong>div</strong> : div 태그는 문서의 영역을 나누거나 그룹화 할 때 설정합니다.</li>
-                        <li data-name="dl" data-type="기타"><strong>dl</strong> : dl 태그는 설명 목록을 설정합니다.</li>
-                        <li data-name="dt" data-type="기타"><strong>dt</strong> : dt 태그는 설명 목록 항목의 제목을 설정합니다.</li>
-                        <li data-name="em" data-type="기타"><strong>em</strong> : em 태그는 텍스트를 강조할 때 설정합니다.</li>
-                        <li data-name="embed" data-type="기타"><strong>embed</strong> : embed 태그는 외부 콘텐츠를 사용할 수 있도록 설정합니다.</li>
-                        <li data-name="fieldset" data-type="기타"><strong>fieldset</strong> : fieldset 태그는 폼 컨트롤 요소의 내부 영역을 설정합니다.</li>
-                        <li data-name="figcaption" data-type="기타"><strong>figcaption</strong> : figcaption 태그는 figure 요소의 설명 또는 제목을 설정합니다.</li>
-                        <li data-name="figure" data-type="기타"><strong>figure</strong> : figure 태그는 인용, 도표, 사진, 코드 등의 독립적인 콘텐츠를 설정합니다.</li>
-                        <li data-name="font" data-type="기타"><strong>font</strong> : font 태그는 폰트의 크기, 색, 종류를 설정합니다.</li>
-                        <li data-name="footer" data-type="기타"><strong>footer</strong> : footer 태그는 사이트 관련 정보 및 관련 링크 콘텐츠 섹션을 설정합니다.</li>
-                        <li data-name="form" data-type="기타"><strong>form</strong> : form 태그는 웹 서버에 정보를 제공하는 폼 컨트롤 유형을 설정합니다.</li>
-                        <li data-name="frame" data-type="기타"><strong>frame</strong> : frame 태그는 다른 HTML문서가 표시 될 수 있는 특정 영역을 설정합니다.</li>
-                        <li data-name="frameset" data-type="기타"><strong>frameset</strong> : frameset 태그는 레이아웃 구성을 위한 프레임을 설정합니다.</li>
+                        <li data-name="border-bottom-color" data-type="보더"><strong>border-bottom-color</strong> : border-bottom-color 속성은 테두리 아래쪽 색 속성을 설정합니다.</li>
+                        <li data-name="border-bottom-left-radius" data-type="보더"><strong>border-bottom-left-radius</strong> : border-bottom-left-radius 속성은 아래 왼쪽 모서리 굴곡을 설정합니다.</li>
+                        <li data-name="border-bottom-right-radius" data-type="보더"><strong>border-bottom-right-radius</strong> : border-bottom-right-radius 속성은 아래 오른쪽 모서리 굴곡을 설정합니다.</li>
+                        <li data-name="border-bottom-style" data-type="보더"><strong>border-bottom-style</strong> : border-bottom-style 속성은 테두리 아래쪽 속성을 설정합니다.</li>
+                        <li data-name="border-bottom-width" data-type="보더"><strong>border-bottom-width</strong> : border-bottom-width 속성은 테두리 아래쪽 두께 속성을 설정합니다.</li>
+                        <li data-name="border-collapse" data-type="보더"><strong>border-collapse</strong> : border-collapse 속성은 테두리가 분리또는 상쇄될 지를 결정합니다.</li>
+                        <li data-name="border-color" data-type="보더"><strong>border-color</strong> : border-color 속성은 테두리의 색상을 설정합니다.</li>
+                        <li data-name="border-end-end-radius" data-type="보더"><strong>border-end-end-radius</strong> : border-end-end-radius 속성은.</li>
+                        <li data-name="border-end-start-radius" data-type="보더"><strong>border-end-start-radius</strong> : border-end-start-radius 속성은.</li>
+                        <li data-name="border-image" data-type="보더"><strong>border-image</strong> : border-image 속성은.</li>
+                        <li data-name="border-image-outset" data-type="보더"><strong>border-image-outset</strong> : border-image-outset 속성은.</li>
+                        <li data-name="border-image-repeat" data-type="보더"><strong>border-image-repeat</strong> : border-image-repeat	속성은.</li>
+                        <li data-name="border-image-slice" data-type="보더"><strong>border-image-slice</strong> : border-image-slice 속성은.</li>
+                        <li data-name="border-image-source" data-type="보더"><strong>border-image-source</strong> : border-image-source	속성은.</li>
+                        <li data-name="border-image-width" data-type="보더"><strong>border-image-width</strong> : border-image-width 속성은.</li>
+                        <li data-name="border-inline" data-type="보더"><strong>border-inline</strong> : border-inline 속성은.</li>
+                        <li data-name="border-inline-color" data-type="보더"><strong>border-inline-color</strong> : border-inline-color	속성은.</li>
+                        <li data-name="border-inline-end" data-type="보더"><strong>border-inline-end</strong> : border-inline-end 속성은.</li>
+                        <li data-name="border-inline-end-color" data-type="보더"><strong>border-inline-end-color</strong> : border-inline-end-color 속성은.</li>
+                        <li data-name="border-inline-end-style" data-type="보더"><strong>border-inline-end-style</strong> : border-inline-end-style 속성은.</li>
+                        <li data-name="border-inline-end-width" data-type="보더"><strong>border-inline-end-width</strong> : border-inline-end-width 속성은.</li>
+                        <li data-name="border-inline-start" data-type="보더"><strong>border-inline-start</strong> : border-inline-start 속성은.</li>
+                        <li data-name="border-inline-start-color" data-type="보더"><strong>border-inline-start-color</strong> : border-inline-start-color 속성은.</li>
+                        <li data-name="border-inline-start-style" data-type="보더"><strong>border-inline-start-style</strong> : border-inline-start-style 속성은.</li>
+                        <li data-name="border-inline-start-width" data-type="보더"><strong>border-inline-start-width</strong> : border-inline-start-width 속성은.</li>
+                        <li data-name="border-inline-style" data-type="보더"><strong>border-inline-style</strong> : border-inline-style 속성은.</li>
+                        <li data-name="border-inline-width" data-type="보더"><strong>border-inline-width</strong> : border-inline-width 속성은.</li>
+                        <li data-name="border-left" data-type="보더"><strong>border-left</strong> : border-left 속성은 테두리 왼쪽의 속성을 설정합니다..</li>
+                        <li data-name="border-left-color" data-type="보더"><strong>border-left-color</strong> : border-left-color 속성은 테두리 왼쪽 색상을 설정합니다.</li>
+                        <li data-name="border-left-style" data-type="보더"><strong>border-left-style</strong> : border-left-style 속성은 테두리 왼쪽 스타일을 설정합니다.</li>
+                        <li data-name="border-left-width" data-type="보더"><strong>border-left-width</strong> : border-left-width 속성은 테두리 왼쪽 두께 속성을 설정합니다.</li>
+                        <li data-name="border-radius" data-type="보더"><strong>border-radius</strong> : border-radius 속성은 테두리 모서리를 둥글게 설정합니다.</li>
+                        <li data-name="border-right" data-type="보더"><strong>border-right</strong> : border-right 속성은 테두리 오른쪽의 속성을 설정합니다.</li>
+                        <li data-name="border-right-color" data-type="보더"><strong>border-right-color</strong> : border-right-color 속성은 테두리 오른쪽 색상을 설정합니다.</li>
+                        <li data-name="border-right-style" data-type="보더"><strong>border-right-style</strong> : border-right-style 속성은 테두리 오른쪽 스타일을 설정합니다..</li>                       
+                        <li data-name="border-right-width" data-type="보더"><strong>border-right-width</strong> : border-right-width 속성은 테두리 오른쪽 두께 속성을 설정합니다..</li>                               
+                        <li data-name="border-spacing" data-type="보더"><strong>border-spacing</strong> : border-spacing 속성은.</li>
+                        <li data-name="border-start-end-radius" data-type="보더"><strong>border-start-end-radius</strong> : border-start-end-radius 속성은.</li>
+                        <li data-name="border-start-start-radius" data-type="보더"><strong>border-start-start-radius</strong> : border-start-start-radius 속성은.</li> -->
+                        <li data-name="border-style" data-type="보더"><strong>border-style</strong> : border-style 속성은 테두리의 스타일을 일괄적으로 설정합니다.</li>
+                        <li data-name="border-top" data-type="보더"><strong>border-top</strong> : border-top 속성은 위쪽의 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="border-top-color" data-type="보더"><strong>border-top-color</strong> : border-top-color 속성은 위쪽의 색상을 일괄적으로 설정합니다.</li>
+                        <li data-name="border-top-left-radius" data-type="보더"><strong>border-top-left-radius</strong> : border-top-left-radius 속성은 0000</li>
+                        <li data-name="border-top-right-radius" data-type="보더"><strong>border-top-right-radius</strong> : border-top-right-radius 속성은 0000</li>
+                        <li data-name="border-top-style" data-type="보더"><strong>border-top-style</strong> : border-top-style 속성은 테두리 위쪽의 스타일을 설정합니다.</li>
+                        <li data-name="border-top-width" data-type="보더"><strong>border-top-width</strong> : border-top-width 속성은 테두리 위쪽 두께 속성을 설정합니다.</li>
+                        <li data-name="border-width" data-type="보더"><strong>border-width</strong> : border-width 속성은 테두리 두께 속성을 설정합니다.</li>
+                        <li data-name="bottom" data-type="기타"><strong>bottom</strong> : bottom 속성은 배치된 요소의 아래쪽 위치설정에 참여합니다.</li>
+                        <li data-name="box-decoration-break" data-type="박스"><strong>box-decoration-break</strong> : box-decoration-break 속성은 0000</li>
+                        <li data-name="box-shadow" data-type="박스"><strong>box-shadow</strong> : box-shadow 속성은 0000</li>
+                        <li data-name="box-sizing" data-type="박스"><strong>box-sizing</strong> : box-sizing 속성은 박스의 크기를 설정합니다.</li>
+                        <li data-name="break-after" data-type="기타"><strong>break-after</strong> : break-after 속성은 0000</li>
+                        <li data-name="break-before" data-type="기타"><strong>break-before</strong> : break-before 속성은 0000</li>
+                        <li data-name="break-inside" data-type="기타"><strong>break-inside</strong> : break-inside 속성은 0000</li>
+                        <li data-name="caption-side" data-type="기타"><strong>caption-side</strong> : caption-side 속성은 0000</li>
+                        <li data-name="caret-color" data-type="기타"><strong>caret-color</strong> : caret-color 속성은 0000</li>
+                        <li data-name="clear" data-type="기타"><strong>clear</strong> : clear 속성은 0000</li>
+                        <li data-name="clip" data-type="기타"><strong>clip</strong> : clip 속성은 0000</li>
+                        <li data-name="clip-path" data-type="기타"><strong>clip-path</strong> : clip-path 속성은 0000</li>
+                        <li data-name="color" data-type="기타"><strong>color</strong> : color 속성은 0000</li>
+                        <li data-name="color-scheme" data-type="컬럼"><strong>color-scheme</strong> : color-scheme 속성은 0000</li>
+                        <li data-name="column-count" data-type="컬럼"><strong>column-count</strong> : column-count 속성은 0000</li>
+                        <li data-name="column-fill" data-type="컬럼"><strong>column-fill</strong> : column-fill 속성은 0000</li>
+                        <li data-name="column-gap (grid-column-gap)" data-type="컬럼"><strong>column-gap (grid-column-gap)</strong> : column-gap (grid-column-gap) 속성은 0000</li>
+                        <li data-name="column-rule" data-type="컬럼"><strong>column-rule</strong> : column-rule 속성은 0000</li>
+                        <li data-name="column-rule-color" data-type="컬럼"><strong>column-rule-color</strong> : column-rule-color 속성은 0000</li>
+                        <li data-name="column-rule-style" data-type="컬럼"><strong>column-rule-style</strong> : column-rule-style 속성은 0000</li>
+                        <li data-name="column-rule-width" data-type="컬럼"><strong>column-rule-width</strong> : column-rule-width 속성은 0000</li>
+                        <li data-name="column-span" data-type="컬럼"><strong>column-span</strong> : column-span 속성은 0000</li>
+                        <li data-name="column-width" data-type="컬럼"><strong>column-width</strong> : column-width 속성은 열 너비를 설정합니다.</li>
+                        <li data-name="columns" data-type="컬럼"><strong>columns</strong> : columns 속성은 열 수와 열 너비를 설정합니다.</li>
+                        <li data-name="contain" data-type="기타"><strong>contain</strong> : contain 속성은 0000</li>
+                        <li data-name="content" data-type="기타"><strong>content</strong> : content 속성은 0000</li>
+                        <li data-name="content-visibility" data-type="기타"><strong>content-visibility</strong> : content-visibility 속성은 0000</li>
+                        <li data-name="counter-increment" data-type="기타"><strong>counter-increment</strong> : counter-increment 속성은 0000</li>
+                        <li data-name="counter-reset" data-type="기타"><strong>counter-reset</strong> : counter-reset 속성은 0000</li>
+                        <li data-name="counter-set" data-type="기타"><strong>counter-set</strong> : counter-set 속성은 0000</li>
+                        <li data-name="cursor" data-type="기타"><strong>cursor</strong> : cursor 속성은 마우스 커서를 설정합니다.</li>
+                        <li data-name="direction" data-type="기타"><strong>direction</strong> : direction 속성은 0000</li>
+                        <li data-name="display" data-type="기타"><strong>display</strong> : display 속성은 요소의 블록, 인라인요소 처리여부와 레이아웃을 설정합니다.</li>
+                        <li data-name="empty-cells" data-type="기타"><strong>empty-cells</strong> : empty-cells 속성은 0000</li>
+                        <li data-name="filter" data-type="기타"><strong>filter</strong> : filter 속성은 0000</li>
+                        <li data-name="flex" data-type="플렉스"><strong>flex</strong> : flex 속성은 0000</li>
+                        <li data-name="flex-basis" data-type="플렉스"><strong>flex-basis</strong> : flex-basis 속성은 0000</li>
+                        <li data-name="flex-direction" data-type="플렉스"><strong>flex-direction</strong> : flex-direction 속성은 0000</li>
+                        <li data-name="flex-flow" data-type="플렉스"><strong>flex-flow</strong> : flex-flow 속성은 0000</li>
+                        <li data-name="flex-grow" data-type="플렉스"><strong>flex-grow</strong> : flex-grow 속성은 0000</li>
+                        <li data-name="flex-shrink" data-type="플렉스"><strong>flex-shrink</strong> : flex-shrink 속성은 0000</li>
+                        <li data-name="flex-wrap" data-type="플렉스"><strong>flex-wrap</strong> : flex-wrap 속성은 플렉스 항목을 한 줄로 강제 적용할지 아니면 여러 줄로 줄바꿈할 수 있는지 설정합니다.</li>
+                        <li data-name="float" data-type="기타"><strong>float</strong> : float 속성은 float컨테이너의 왼쪽 또는 오른쪽에 요소를 배치하여 텍스트 및 인라인 요소가 요소 주위를 둘러쌀 수 있도록 합니다.</li>
+                        <li data-name="font" data-type="폰트"><strong>font</strong> : font 속성은 폰트의 속성을 설정합니다.</li>
+                        <li data-name="font-family" data-type="폰트"><strong>font-family</strong> : font-family 속성은 선택된 요소에 대한 하나 이상의 글꼴 패밀리 이름 및/또는 일반 패밀리 이름의 우선 순위 목록을 지정합니다.</li>
+                        <li data-name="font-feature-settings" data-type="폰트"><strong>font-feature-settings</strong> : font-feature-settings 속성은 0000</li>
+                        <li data-name="font-kerning" data-type="폰트"><strong>font-kerning</strong> : font-kerning 속성은 0000</li>
+                        <li data-name="font-language-override" data-type="폰트"><strong>font-language-override</strong> : font-language-override 속성은 0000</li>
+                        <li data-name="font-optical-sizing" data-type="폰트"><strong>font-optical-sizing</strong> : font-optical-sizing 속성은 0000</li>
+                        <li data-name="font-size" data-type="폰트"><strong>font-size</strong> : font-size 속성은 폰트의 크기를 설정합니다.</li>
+                        <li data-name="font-size-adjust" data-type="폰트"><strong>font-size-adjust</strong> : font-size-adjust 속성은 0000</li>
+                        <li data-name="font-stretch" data-type="폰트"><strong>font-stretch</strong> : font-stretch 속성은 0000</li>
+                        <li data-name="font-style" data-type="폰트"><strong>font-style</strong> : font-style 속성은 폰트의 스타일을 설정합니다.</li>
+                        <li data-name="font-synthesis" data-type="폰트"><strong>font-synthesis</strong> : font-synthesis 속성은 0000</li>
+                        <li data-name="font-variant" data-type="폰트"><strong>font-variant</strong> : font-variant 속성은 0000</li>
+                        <li data-name="font-variant-alternates" data-type="폰트"><strong>font-variant-alternates</strong> : font-variant-alternates 속성은 0000</li>
+                        <li data-name="font-variant-caps" data-type="폰트"><strong>font-variant-caps</strong> : font-variant-caps 속성은 0000</li>
+                        <li data-name="font-variant-east-asian" data-type="폰트"><strong>font-variant-east-asian</strong> : font-variant-east-asian 속성은 0000</li>
+                        <li data-name="font-variant-ligatures" data-type="폰트"><strong>font-variant-ligatures</strong> : font-variant-ligatures 속성은 0000</li>
+                        <li data-name="font-variant-numeric" data-type="폰트"><strong>font-variant-numeric</strong> : font-variant-numeric 속성은 0000</li>
+                        <li data-name="font-variant-position" data-type="폰트"><strong>font-variant-position</strong> : font-variant-position 속성은 0000</li>
+                        <li data-name="font-variation-settings" data-type="폰트"><strong>font-variation-settings</strong> : font-variation-settings 속성은 0000</li>
+                        <li data-name="font-weight" data-type="폰트"><strong>font-weight</strong> : font-weight 속성은 폰트 두께 속성을 설정합니다.</li>
+                        <li data-name="forced-color-adjust" data-type="폰트"><strong>forced-color-adjust</strong> : forced-color-adjust 속성은 0000</li>
+                        <li data-name="gap (grid-gap)" data-type="그리드"><strong>gap (grid-gap)</strong> : gap (grid-gap) 속성은 0000</li>
+                        <li data-name="grid" data-type="그리드"><strong>grid</strong> : grid 속성은 0000</li>
+                        <li data-name="grid-area" data-type="그리드"><strong>grid-area</strong> : grid-area 속성은 0000</li>
+                        <li data-name="grid-auto-columns" data-type="그리드"><strong>grid-auto-columns</strong> : grid-auto-columns 속성은 0000</li>
+                        <li data-name="grid-auto-flow" data-type="그리드"><strong>grid-auto-flow</strong> : grid-auto-flow 속성은 0000</li>
+                        <li data-name="grid-auto-rows" data-type="그리드"><strong>grid-auto-rows</strong> : grid-auto-rows 속성은 0000</li>
+                        <li data-name="grid-column" data-type="그리드"><strong>grid-column</strong> : grid-column 속성은 0000</li>
+                        <li data-name="grid-column-end" data-type="그리드"><strong>grid-column-end</strong> : grid-column-end 속성은 0000</li>
+                        <li data-name="grid-column-start" data-type="그리드"><strong>grid-column-start</strong> : grid-column-start 속성은 0000</li>
+                        <li data-name="grid-row" data-type="그리드"><strong>grid-row</strong> : grid-row 속성은 0000</li>
+                        <li data-name="grid-row-end" data-type="그리드"><strong>grid-row-end</strong> : grid-row-end 속성은 0000</li>
+                        <li data-name="grid-row-start" data-type="그리드"><strong>grid-row-start</strong> : grid-row-start 속성은 0000</li>
+                        <li data-name="grid-template" data-type="그리드"><strong>grid-template</strong> : grid-template 속성은 0000</li>
+                        <li data-name="grid-template-areas" data-type="그리드"><strong>grid-template-areas</strong> : grid-template-areas 속성은 명명된 격자 영역 을 지정하고 격자에 셀을 설정하고 이름을 할당합니다.</li>
+                        <li data-name="grid-template-columns" data-type="그리드"><strong>grid-template-columns</strong> : grid-template-columns 속성은 그리드 열의 크기를 설정합니다.</li>
+                        <li data-name="grid-template-rows" data-type="그리드"><strong>grid-template-rows</strong> : grid-template-rows 속성은 그리드 행의 크기를 설정합니다</li>
+                        <li data-name="hanging-punctuation" data-type="기타"><strong>hanging-punctuation</strong> : hanging-punctuation 속성은 0000</li>
+                        <li data-name="height" data-type="기타"><strong>height</strong> : height 속성은 높이를 설정합니다.</li>
+                        <li data-name="hyphenate-character" data-type="기타"><strong>hyphenate-character</strong> : hyphenate-character 속성은 0000</li>
+                        <li data-name="hyphens" data-type="기타"><strong>hyphens</strong> : hyphens 속성은 0000</li>
+                        <li data-name="image-orientation" data-type="기타"><strong>image-orientation</strong> : image-orientation 속성은 0000</li>
+                        <li data-name="image-rendering" data-type="기타"><strong>image-rendering</strong> : image-rendering 속성은 0000</li>
+                        <li data-name="Experimental image-resolution!" data-type="기타"><strong>Experimental image-resolution!</strong> : Experimental image-resolution! 속성은 0000</li>
+                        <li data-name="ime-mode" data-type="기타"><strong>ime-mode</strong> : ime-mode 속성은 0000</li>
+                        <li data-name="initial-letter!" data-type="기타"><strong>initial-letter!</strong> : initial-letter! 속성은 0000</li>
+                        <li data-name="initial-letter-align!" data-type="기타"><strong>initial-letter-align!</strong> : initial-letter-align! 속성은 0000</li>
+                        <li data-name="inline-size" data-type="기타"><strong>inline-size</strong> : inline-size 속성은 0000</li>
+                        <li data-name="inset" data-type="기타"><strong>inset</strong> : inset 속성은 0000</li>
+                        <li data-name="inset-block" data-type="기타"><strong>inset-block</strong> : inset-block 속성은 0000</li>
+                        <li data-name="inset-block-end" data-type="기타"><strong>inset-block-end</strong> : inset-block-end 속성은 0000</li>
+                        <li data-name="inset-block-start" data-type="기타"><strong>inset-block-start</strong> : inset-block-start 속성은 0000</li>
+                        <li data-name="inset-inline" data-type="기타"><strong>inset-inline</strong> : inset-inline 속성은 0000</li>
+                        <li data-name="inset-inline-end" data-type="기타"><strong>inset-inline-end</strong> : inset-inline-end 속성은 0000</li>
+                        <li data-name="inset-inline-start" data-type="기타"><strong>inset-inline-start</strong> : inset-inline-start 속성은 0000</li>
+                        <li data-name="isolation" data-type="기타"><strong>isolation</strong> : isolation 속성은 0000</li>
+                        <li data-name="justify-content" data-type="기타"><strong>justify-content</strong> : justify-content 속성은 0000</li>
+                        <li data-name="justify-items" data-type="기타"><strong>justify-items</strong> : justify-items 속성은 0000</li>
+                        <li data-name="justify-self" data-type="기타"><strong>justify-self</strong> : justify-self 속성은 0000</li>
+                        <li data-name="left" data-type="기타"><strong>left</strong> : left 속성은 0000</li>
+                        <li data-name="letter-spacing" data-type="기타"><strong>letter-spacing</strong> : letter-spacing 속성은 0000</li>
+                        <li data-name="line-break" data-type="기타"><strong>line-break</strong> : line-break 속성은 0000</li>
+                        <li data-name="line-height" data-type="기타"><strong>line-height</strong> : line-height 속성은 줄의 간격 크기를 설정합니다.</li>
+                        <li data-name="line-height-step" data-type="기타"><strong>line-height-step</strong> : line-height-step 속성은 0000</li>
+                        <li data-name="list-style" data-type="기타"><strong>list-style</strong> : list-style 속성은 0000</li>
+                        <li data-name="list-style-image" data-type="기타"><strong>list-style-image</strong> : list-style-image 속성은 0000</li>
+                        <li data-name="list-style-position" data-type="기타"><strong>list-style-position</strong> : list-style-position 속성은 0000</li>
+                        <li data-name="list-style-type" data-type="기타"><strong>list-style-type</strong> : list-style-type 속성은 0000</li>
+                        <li data-name="margin" data-type="마진"><strong>margin</strong> : margin 속성은 여백 영역을 설정합니다.</li>
+                        <li data-name="margin-block" data-type="마진"><strong>margin-block</strong> : margin-block 속성은 0000</li>
+                        <li data-name="margin-block-end" data-type="마진"><strong>margin-block-end</strong> : margin-block-end 속성은 0000</li>
+                        <li data-name="margin-block-start" data-type="마진"><strong>margin-block-start</strong> : margin-block-start 속성은 0000</li>
+                        <li data-name="margin-bottom" data-type="마진"><strong>margin-bottom</strong> : margin-bottom 속성은 아래 여백 영역을 설정합니다.</li>
+                        <li data-name="margin-inline" data-type="마진"><strong>margin-inline</strong> : margin-inline 속성은 0000</li>
+                        <li data-name="margin-inline-end" data-type="마진"><strong>margin-inline-end</strong> : margin-inline-end 속성은 0000</li>
+                        <li data-name="margin-inline-start" data-type="마진"><strong>margin-inline-start</strong> : margin-inline-start 속성은 0000</li>
+                        <li data-name="margin-left" data-type="마진"><strong>margin-left</strong> : margin-left 속성은 왼쪽 여백 영역을 설정합니다.</li>
+                        <li data-name="margin-right" data-type="마진"><strong>margin-right</strong> : margin-right 속성은 오른쪽 여백 영역을 설정합니다.</li>
+                        <li data-name="margin-top" data-type="마진"><strong>margin-top</strong> : margin-top 속성은 위쪽 여백 영역을 설정합니다.</li>
+                        <li data-name="Experimental margin-trim" data-type="마진"><strong>Experimental margin-trim</strong> : Experimental margin-trim 속성은 0000</li>
+                        <li data-name="mask" data-type="마스크"><strong>mask</strong> : mask 속성은 0000</li>
+                        <li data-name="mask-border" data-type="마스크"><strong>mask-border</strong> : mask-border 속성은 0000</li>
+                        <li data-name="mask-border-mode" data-type="마스크"><strong>mask-border-mode</strong> : mask-border-mode 속성은 0000</li>
+                        <li data-name="mask-border-outset" data-type="마스크"><strong>mask-border-outset</strong> : mask-border-outset 속성은 0000</li>
+                        <li data-name="mask-border-repeat" data-type="마스크"><strong>mask-border-repeat</strong> : mask-border-repeat 속성은 0000</li>
+                        <li data-name="mask-border-slice" data-type="마스크"><strong>mask-border-slice</strong> : mask-border-slice 속성은 0000</li>
+                        <li data-name="mask-border-source" data-type="마스크"><strong>mask-border-source</strong> : mask-border-source 속성은 0000</li>
+                        <li data-name="mask-border-width" data-type="마스크"><strong>mask-border-width</strong> : mask-border-width 속성은 0000</li>
+                        <li data-name="mask-clip" data-type="마스크"><strong>mask-clip</strong> : mask-clip 속성은 0000</li>
+                        <li data-name="mask-composite" data-type="마스크"><strong>mask-composite</strong> : mask-composite 속성은 0000</li>
+                        <li data-name="mask-image" data-type="마스크"><strong>mask-image</strong> : mask-image 속성은 0000</li>
+                        <li data-name="mask-mode" data-type="마스크"><strong>mask-mode</strong> : mask-mode 속성은 0000</li>
+                        <li data-name="mask-origin" data-type="마스크"><strong>mask-origin</strong> : mask-origin 속성은 0000</li>
+                        <li data-name="mask-position" data-type="마스크"><strong>mask-position</strong> : mask-position 속성은 0000</li>
+                        <li data-name="mask-repeat" data-type="마스크"><strong>mask-repeat</strong> : mask-repeat 속성은 0000</li>
+                        <li data-name="mask-size" data-type="마스크"><strong>mask-size</strong> : mask-size 속성은 0000</li>
+                        <li data-name="mask-type" data-type="마스크"><strong>mask-type</strong> : mask-type 속성은 0000</li>
+                        <li data-name="max-block-size" data-type="기타"><strong>max-block-size</strong> : max-block-size 속성은 0000</li>
+                        <li data-name="max-height" data-type="기타"><strong>max-height</strong> : max-height 속성은 최대 높이를 설정합니다.</li>
+                        <li data-name="max-inline-size" data-type="기타"><strong>max-inline-size</strong> : max-inline-size 속성은 0000</li>
+                        <li data-name="max-width" data-type="기타"><strong>max-width</strong> : max-width 속성은 최대 너비를 설정합니다.</li>
+                        <li data-name="min-block-size" data-type="기타"><strong>min-block-size</strong> : min-block-size 속성은 0000</li>
+                        <li data-name="min-height" data-type="기타"><strong>min-height</strong> : min-height 속성은 최소 높이를 설정합니다.</li>
+                        <li data-name="min-inline-size" data-type="기타"><strong>min-inline-size</strong> : min-inline-size 속성은 0000</li>
+                        <li data-name="min-width" data-type="기타"><strong>min-width</strong> : min-width 속성은 최소 너비를 설정합니다.</li>
+                        <li data-name="mix-blend-mode" data-type="기타"><strong>mix-blend-mode</strong> : mix-blend-mode 속성은 0000</li>
+                        <li data-name="object-fit" data-type="기타"><strong>object-fit</strong> : object-fit 속성은 0000</li>
+                        <li data-name="object-position" data-type="기타"><strong>object-position</strong> : object-position 속성은 0000</li>
+                        <li data-name="offset" data-type="기타"><strong>offset</strong> : offset 속성은 0000</li>
+                        <li data-name="offset-anchor" data-type="기타"><strong>offset-anchor</strong> : offset-anchor 속성은 0000</li>
+                        <li data-name="offset-distance" data-type="기타"><strong>offset-distance</strong> : offset-distance 속성은 0000</li>
+                        <li data-name="offset-path" data-type="기타"><strong>offset-path</strong> : offset-path 속성은 0000</li>
+                        <li data-name="Experimental offset-position" data-type="기타"><strong>Experimental offset-position</strong> : Experimental offset-position 속성은 0000</li>
+                        <li data-name="offset-rotate" data-type="기타"><strong>offset-rotate</strong> : offset-rotate 속성은 0000</li>
+                        <li data-name="opacity" data-type="기타"><strong>opacity</strong> : opacity 속성은 0000</li>
+                        <li data-name="order" data-type="기타"><strong>order</strong> : order 속성은 0000</li>
+                        <li data-name="orphans" data-type="기타"><strong>orphans</strong> : orphans 속성은 0000</li>
+                        <li data-name="outline" data-type="기타"><strong>outline</strong> : outline 속성은 0000</li>
+                        <li data-name="outline-color" data-type="기타"><strong>outline-color</strong> : outline-color 속성은 0000</li>
+                        <li data-name="outline-offset" data-type="기타"><strong>outline-offset</strong> : outline-offset 속성은 0000</li>
+                        <li data-name="outline-style" data-type="기타"><strong>outline-style</strong> : outline-style 속성은 0000</li>
+                        <li data-name="outline-width" data-type="기타"><strong>outline-width</strong> : outline-width 속성은 0000</li>
+                        <li data-name="overflow" data-type="오버플로우"><strong>overflow</strong> : overflow 속성은 오버플로우 동작을 설정합니다.</li>
+                        <li data-name="overflow-anchor" data-type="오버플로우"><strong>overflow-anchor</strong> : overflow-anchor 속성은 0000</li>
+                        <li data-name="overflow-block" data-type="오버플로우"><strong>overflow-block</strong> : overflow-block 속성은 0000</li>
+                        <li data-name="overflow-clip-margin" data-type="오버플로우"><strong>overflow-clip-margin</strong> : overflow-clip-margin 속성은 0000</li>
+                        <li data-name="overflow-inline" data-type="오버플로우"><strong>overflow-inline</strong> : overflow-inline 속성은 0000</li>
+                        <li data-name="overflow-wrap" data-type="오버플로우"><strong>overflow-wrap</strong> : overflow-wrap 속성은 0000</li>
+                        <li data-name="overflow-x" data-type="오버플로우"><strong>overflow-x</strong> : overflow-x 속성은 0000</li>
+                        <li data-name="overflow-y" data-type="오버플로우"><strong>overflow-y</strong> : overflow-y 속성은 0000</li>
+                        <li data-name="overscroll-behavior" data-type="기타"><strong>overscroll-behavior</strong> : overscroll-behavior 속성은 0000</li>
+                        <li data-name="overscroll-behavior-block" data-type="기타"><strong>overscroll-behavior-block</strong> : overscroll-behavior-block 속성은 0000</li>
+                        <li data-name="overscroll-behavior-inline" data-type="기타"><strong>overscroll-behavior-inline</strong> : overscroll-behavior-inline 속성은 0000</li>
+                        <li data-name="overscroll-behavior-x" data-type="기타"><strong>overscroll-behavior-x</strong> : overscroll-behavior-x 속성은 0000</li>
+                        <li data-name="overscroll-behavior-y" data-type="기타"><strong>overscroll-behavior-y</strong> : overscroll-behavior-y 속성은 0000</li>
+                        <li data-name="padding" data-type="패딩"><strong>padding</strong> : padding 속성은 패딩값을 설정합니다.</li>
+                        <li data-name="padding-block-end" data-type="패딩"><strong>padding-block-end</strong> : padding-block-end 속성은 0000</li>
+                        <li data-name="padding-block-start" data-type="패딩"><strong>padding-block-start</strong> : padding-block-start 속성은 0000</li>
+                        <li data-name="padding-bottom" data-type="패딩"><strong>padding-bottom</strong> : padding-bottom 속성은 아래 패딩값을 설정합니다.</li>
+                        <li data-name="padding-inline-end" data-type="패딩"><strong>padding-inline-end</strong> : padding-inline-end 속성은 0000</li>
+                        <li data-name="padding-inline-start" data-type="패딩"><strong>padding-inline-start</strong> : padding-inline-start 속성은 0000</li>
+                        <li data-name="padding-left" data-type="패딩"><strong>padding-left</strong> : padding-left 속성은 왼쪽 패딩값을 설정합니다.</li>
+                        <li data-name="padding-right" data-type="패딩"><strong>padding-right</strong> : padding-right 속성은 오른쪽 패딩값을 설정합니다.</li>
+                        <li data-name="padding-top" data-type="패딩"><strong>padding-top</strong> : padding-top 속성은 위쪽 패딩값을 설정합니다.</li>
+                        <li data-name="page-break-after" data-type="기타"><strong>page-break-after</strong> : page-break-after 속성은 0000</li>
+                        <li data-name="page-break-before" data-type="기타"><strong>page-break-before</strong> : page-break-before 속성은 0000</li>
+                        <li data-name="page-break-inside" data-type="기타"><strong>page-break-inside</strong> : page-break-inside 속성은 0000</li>
+                        <li data-name="perspective" data-type="기타"><strong>perspective</strong> : perspective 속성은 0000</li>
+                        <li data-name="perspective-origin" data-type="기타"><strong>perspective-origin</strong> : perspective-origin 속성은 0000</li>
+                        <li data-name="place-content" data-type="기타"><strong>place-content</strong> : place-content 속성은 0000</li>
+                        <li data-name="place-items" data-type="기타"><strong>place-items</strong> : place-items 속성은 0000</li>
+                        <li data-name="place-self" data-type="기타"><strong>place-self</strong> : place-self 속성은 0000</li>
+                        <li data-name="pointer-events" data-type="기타"><strong>pointer-events</strong> : pointer-events 속성은 0000</li>
+                        <li data-name="position" data-type="기타"><strong>position</strong> : position 속성은 위치를 설정합니다.</li>
+                        <li data-name="print-color-adjust" data-type="기타"><strong>print-color-adjust</strong> : print-color-adjust 속성은 0000</li>
+                        <li data-name="quotes" data-type="기타"><strong>quotes</strong> : quotes 속성은 0000</li>
+                        <li data-name="resize" data-type="기타"><strong>resize</strong> : resize 속성은 0000</li>
+                        <li data-name="right" data-type="기타"><strong>right</strong> : right 속성은 오른쪽을 설정합니다.</li>
+                        <li data-name="rotate" data-type="기타"><strong>rotate</strong> : rotate 속성은 회전을 설정합니다.</li>
+                        <li data-name="row-gap (grid-row-gap)" data-type="기타"><strong>row-gap (grid-row-gap)</strong> : row-gap (grid-row-gap) 속성은 0000</li>
+                        <li data-name="ruby-align" data-type="기타"><strong>ruby-align</strong> : ruby-align 속성은 0000</li>
+                        <li data-name="ruby-position" data-type="기타"><strong>ruby-position</strong> : ruby-position 속성은 0000</li>
+                        <li data-name="scale" data-type="기타"><strong>scale</strong> : scale 속성은 스케일을 설정합니다.</li>
+                        <li data-name="scroll-behavior" data-type="스크롤"><strong>scroll-behavior</strong> : scroll-behavior 속성은 0000</li>
+                        <li data-name="scroll-margin" data-type="스크롤"><strong>scroll-margin</strong> : scroll-margin 속성은 0000</li>
+                        <li data-name="scroll-margin-block" data-type="스크롤"><strong>scroll-margin-block</strong> : scroll-margin-block 속성은 0000</li>
+                        <li data-name="scroll-margin-block-end" data-type="스크롤"><strong>scroll-margin-block-end</strong> : scroll-margin-block-end 속성은 0000</li>
+                        <li data-name="scroll-margin-block-start" data-type="스크롤"><strong>scroll-margin-block-start</strong> : scroll-margin-block-start 속성은 0000</li>
+                        <li data-name="scroll-margin-bottom" data-type="스크롤"><strong>scroll-margin-bottom</strong> : scroll-margin-bottom 속성은 0000</li>
+                        <li data-name="scroll-margin-inline" data-type="스크롤"><strong>scroll-margin-inline</strong> : scroll-margin-inline 속성은 0000</li>
+                        <li data-name="scroll-margin-inline-end" data-type="스크롤"><strong>scroll-margin-inline-end</strong> : scroll-margin-inline-end 속성은 0000</li>
+                        <li data-name="scroll-margin-inline-start" data-type="스크롤"><strong>scroll-margin-inline-start</strong> : scroll-margin-inline-start 속성은 0000</li>
+                        <li data-name="scroll-margin-left" data-type="스크롤"><strong>scroll-margin-left</strong> : scroll-margin-left 속성은 0000</li>
+                        <li data-name="scroll-margin-right" data-type="스크롤"><strong>scroll-margin-right</strong> : scroll-margin-right 속성은 0000</li>
+                        <li data-name="scroll-margin-top" data-type="스크롤"><strong>scroll-margin-top</strong> : scroll-margin-top 속성은 0000</li>
+                        <li data-name="scroll-padding" data-type="스크롤"><strong>scroll-padding</strong> : scroll-padding 속성은 0000</li>
+                        <li data-name="scroll-padding-block" data-type="스크롤"><strong>scroll-padding-block</strong> : scroll-padding-block 속성은 0000</li>
+                        <li data-name="scroll-padding-block-end" data-type="스크롤"><strong>scroll-padding-block-end</strong> : scroll-padding-block-end 속성은 0000</li>
+                        <li data-name="scroll-padding-block-start" data-type="스크롤"><strong>scroll-padding-block-start</strong> : scroll-padding-block-start 속성은 0000</li>
+                        <li data-name="scroll-padding-bottom" data-type="스크롤"><strong>scroll-padding-bottom</strong> : scroll-padding-bottom 속성은 0000</li>
+                        <li data-name="scroll-padding-inline" data-type="스크롤"><strong>scroll-padding-inline</strong> : scroll-padding-inline 속성은 0000</li>
+                        <li data-name="scroll-padding-inline-end" data-type="스크롤"><strong>scroll-padding-inline-end</strong> : scroll-padding-inline-end 속성은 0000</li>
+                        <li data-name="scroll-padding-inline-start" data-type="스크롤"><strong>scroll-padding-inline-start</strong> : scroll-padding-inline-start 속성은 0000</li>
+                        <li data-name="scroll-padding-left" data-type="스크롤"><strong>scroll-padding-left</strong> : scroll-padding-left 속성은 0000</li>
+                        <li data-name="scroll-padding-right" data-type="스크롤"><strong>scroll-padding-right</strong> : scroll-padding-right 속성은 0000</li>                        
+                        <li data-name="scroll-padding-top" data-type="스크롤"><strong>scroll-padding-top</strong> : scroll-padding-top 속성은 0000</li>
+                        <li data-name="scroll-snap-align" data-type="스크롤"><strong>scroll-snap-align</strong> : scroll-snap-align 속성은 0000</li>
+                        <li data-name="scroll-snap-coordinate" data-type="스크롤"><strong>scroll-snap-coordinate</strong> : scroll-snap-coordinate 속성은 0000</li>
+                        <li data-name="scroll-snap-destination" data-type="스크롤"><strong>scroll-snap-destination</strong> : scroll-snap-destination 속성은 0000</li>
+                        <li data-name="scroll-snap-points-x" data-type="스크롤"><strong>scroll-snap-points-x</strong> : scroll-snap-points-x 속성은 0000</li>
+                        <li data-name="scroll-snap-points-y" data-type="스크롤"><strong>scroll-snap-points-y</strong> : scroll-snap-points-y 속성은 0000</li>
+                        <li data-name="scroll-snap-stop" data-type="스크롤"><strong>scroll-snap-stop</strong> : scroll-snap-stop 속성은 0000</li>
+                        <li data-name="scroll-snap-type" data-type="스크롤"><strong>scroll-snap-type</strong> : scroll-snap-type 속성은 0000</li>
+                        <li data-name="scrollbar-color" data-type="스크롤"><strong>scrollbar-color</strong> : scrollbar-color 속성은 0000</li>
+                        <li data-name="scrollbar-width" data-type="스크롤"><strong>scrollbar-width</strong> : scrollbar-width 속성은 0000</li>
+                        <li data-name="shape-image-threshold" data-type="기타"><strong>shape-image-threshold</strong> : shape-image-threshold 속성은 0000</li>
+                        <li data-name="shape-margin" data-type="기타"><strong>shape-margin</strong> : shape-margin 속성은 0000</li>
+                        <li data-name="shape-outside" data-type="기타"><strong>shape-outside</strong> : shape-outside 속성은 0000</li>
+                        <li data-name="tab-size" data-type="기타"><strong>tab-size</strong> : tab-size 속성은 0000</li>
+                        <li data-name="table-layout" data-type="기타"><strong>table-layout</strong> : table-layout 속성은 0000</li>
+                        <li data-name="text-align" data-type="텍스트"><strong>text-align</strong> : text-align 속성은 블록 요소나 표의 칸 상자의 가로 정렬을 설정합니다</li>
+                        <li data-name="text-align-last" data-type="텍스트"><strong>text-align-last</strong> : text-align-last 속성은 강제 줄 바꿈 직전의 블록이나 줄의 마지막 줄을 정렬하는 방법을 설정합니다.</li>
+                        <li data-name="text-combine-upright" data-type="텍스트"><strong>text-combine-upright</strong> : text-combine-upright 속성은 0000</li>
+                        <li data-name="text-decoration" data-type="텍스트"><strong>text-decoration</strong> : text-decoration 속성은 텍스트의 장식 선 모양을 설정합니다</li>
+                        <li data-name="text-decoration-color" data-type="텍스트"><strong>text-decoration-color</strong> : text-decoration-color 속성은 속성 은 에 의해 텍스트에 추가되는 장식의 색상을 설정합니다 </li>
+                        <li data-name="text-decoration-line" data-type="텍스트"><strong>text-decoration-line</strong> : text-decoration-line 속성은 속성 은 밑줄이나 윗줄과 같이 요소의 텍스트에 사용되는 장식의 종류를 설정합니다.</li>
+                        <li data-name="Experimental text-decoration-skip" data-type="텍스트"><strong>Experimental text-decoration-skip</strong> : Experimental text-decoration-skip 속성은 0000</li>
+                        <li data-name="text-decoration-skip-ink" data-type="텍스트"><strong>text-decoration-skip-ink</strong> : text-decoration-skip-ink 속성은 0000</li>
+                        <li data-name="text-decoration-style" data-type="텍스트"><strong>text-decoration-style</strong> : text-decoration-style 속성은 0000</li>
+                        <li data-name="text-emphasis" data-type="텍스트"><strong>text-emphasis</strong> : text-emphasis 속성은 0000</li>
+                        <li data-name="text-emphasis-color" data-type="텍스트"><strong>text-emphasis-color</strong> : text-emphasis-color 속성은 0000</li>
+                        <li data-name="text-emphasis-position" data-type="텍스트"><strong>text-emphasis-position</strong> : text-emphasis-position 속성은 0000</li>
+                        <li data-name="text-emphasis-style" data-type="텍스트"><strong>text-emphasis-style</strong> : text-emphasis-style 속성은 0000</li>
+                        <li data-name="text-indent" data-type="텍스트"><strong>text-indent</strong> : text-indent 속성은 0000</li>
+                        <li data-name="text-justify" data-type="텍스트"><strong>text-justify</strong> : text-justify 속성은 0000</li>
+                        <li data-name="text-orientation" data-type="텍스트"><strong>text-orientation</strong> : text-orientation 속성은 0000</li>
+                        <li data-name="text-overflow" data-type="텍스트"><strong>text-overflow</strong> : text-overflow 속성은 0000</li>
+                        <li data-name="text-rendering" data-type="텍스트"><strong>text-rendering</strong> : text-rendering 속성은 0000</li>
+                        <li data-name="text-shadow" data-type="텍스트"><strong>text-shadow</strong> : text-shadow 속성은 0000</li>
+                        <li data-name="Experimental text-size-adjust" data-type="텍스트"><strong>Experimental text-size-adjust</strong> : Experimental text-size-adjust 속성은 0000</li>
+                        <li data-name="text-transform" data-type="텍스트"><strong>text-transform</strong> : text-transform 속성은 0000</li>
+                        <li data-name="text-underline-position" data-type="텍스트"><strong>text-underline-position</strong> : text-underline-position 속성은 0000</li>
+                        <li data-name="top" data-type="기타"><strong>top</strong> : top 속성은 위쪽 속성을 설정합니다.</li>
+                        <li data-name="touch-action" data-type="기타"><strong>touch-action</strong> : touch-action 속성은 0000</li>
+                        <li data-name="transform" data-type="기타"><strong>transform</strong> : transform 속성은 요소를 회전, 크기 조정, 기울이기 또는 변환할 수 있습니다 .</li>
+                        <li data-name="transform-box" data-type="기타"><strong>transform-box</strong> : transform-box 속성은 속성이 관련된 transform-box레이아웃 상자를 정의합니다</li>
+                        <li data-name="transform-origin" data-type="기타"><strong>transform-origin</strong> : transform-origin 속성은 0000</li>
+                        <li data-name="transform-style" data-type="기타"><strong>transform-style</strong> : transform-style 속성은 요소의 자식이 3D 공간에 배치되는지 또는 요소 평면에서 병합되는지 여부를 설정합니다.</li>
+                        <li data-name="transition" data-type="기타"><strong>transition</strong> : transition 속성은 속성은 , , 및 의 약식 속성 입니다 .</li>
+                        <li data-name="transition-delay" data-type="기타"><strong>transition-delay</strong> : transition-delay 속성은 값이 변경될 때 transition-delay속성의 전환 효과 를 시작하기 전에 대기할 기간을 지정합니다.</li>
+                        <li data-name="transition-duration" data-type="기타"><strong>transition-duration</strong> : transition-duration 속성은 0000</li>
+                        <li data-name="transition-property" data-type="기타"><strong>transition-property</strong> : transition-property 속성은 0000</li>
+                        <li data-name="transition-timing-function" data-type="기타"><strong>transition-timing-function</strong> : transition-timing-function 속성은 0000</li>
+                        <li data-name="translate" data-type="기타"><strong>translate</strong> : translate 속성은 0000</li>
+                        <li data-name="unicode-bidi" data-type="기타"><strong>unicode-bidi</strong> : unicode-bidi 속성은 0000</li>
+                        <li data-name="user-select" data-type="기타"><strong>user-select</strong> : user-select 속성은 0000</li>
+                        <li data-name="vertical-align" data-type="기타"><strong>vertical-align</strong> : vertical-align 속성은 0000</li>
+                        <li data-name="visibility" data-type="기타"><strong>visibility</strong> : visibility 속성은 0000</li>
+                        <li data-name="white-space" data-type="기타"><strong>white-space</strong> : white-space 속성은 요소 내부의 공백을 처리하는 방법을 설정 합니다.</li>
+                        <li data-name="widows" data-type="기타"><strong>widows</strong> : widows 속성은 0000</li>
+                        <li data-name="width" data-type="기타"><strong>width</strong> : width 속성은 두께 속성을 설정합니다.</li>
+                        <li data-name="will-change" data-type="기타"><strong>will-change</strong> : will-change 속성은 0000</li>
+                        <li data-name="word-break" data-type="기타"><strong>word-break</strong> : word-break 속성은 0000</li>
+                        <li data-name="word-spacing" data-type="기타"><strong>word-spacing</strong> : word-spacing 속성은 0000</li>
+                        <li data-name="writing-mode" data-type="기타"><strong>writing-mode</strong> : writing-mode 속성은 0000</li>
+                        <li data-name="z-index" data-type="기타"><strong>z-index</strong> : z-index 속성은 z축의 순서를 설정합니다.</li>
                     </ul>
                 </div>                
             </div>
         </div>
     </main>
-    <!-- //main -->
+    <!--//main -->
 
     <footer id="footer">
         <a href="mailto:leesh3432@naver.com">leesh3432@naver.com</a>
