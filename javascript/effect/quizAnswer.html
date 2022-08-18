@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+    
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NanumSquareRound/NanumSquareRound.css" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a><em> 객관식(한문제) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li class="active"><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:leesh3432@naver.com">leesh3432@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // const num = [100, 200, 300, 400, 500];
+
+        // num.forEach((el) => {
+        //     console.log(el);
+        //     document.querySelector(".quiz__wrap").textContent += el;
+        // });
+
+        //문제 정보 2010년 2회
+        const quizInfo = [
+            {
+                answerType : "웹디자인기능사 2013년 01회",
+                answerNum : "1",
+                answerAsk : "시각적 질감의 예로 성격이 다른 하나는??",
+                answerChoice : {
+                    1: "사진의 망점",
+                    2: "인쇄상의 스크린 톤",
+                    3: "대리석 무늬",
+                    4: "모니터 주사선"
+                },
+                answerResult : "3",
+                answerEx : "대리석 무늬가 아무래도 다르죠"
+            },
+            {
+               answerType: "웹디자인 기능사 2013년 01회",
+               answerNum: 7,
+               answerAsk: "디자인 원리 중 율동(Rhythm)에 해당하지 않는 것은?",
+               answerChoice: {
+                   1 : "비례",
+                   2 : "반복",
+                   3 : "강조",
+                   4 : "점이",
+               },
+               answerResult: "1",
+               answerEx: "율동의 효과는 강한 힘과 약한 힘이 '규칙적'으로 생겨나는 '움직임' 입니다. 비례랑은 상관없습니다.",
+           },
+           {
+               answerType: "웹디자인 기능사 2013년 01회",
+               answerNum: 8,
+               answerAsk: "어둠이 시작될 때 물체의 상이 흐리게 나타나는 현상과 가장 관계가 깊은 것은?",
+               answerChoice: {
+                   1 : "색순응",
+                   2 : "푸르킨예 현상",
+                   3 : "박명시",
+                   4 : "조건등색",
+               },
+               answerResult: "3",
+               answerEx: "명순응은 어두운 -> 밝은곳 갈 때 눈의 적응 암순응은 밝은 -> 어두운 곳 갈 때 눈의 적응입니다. 박명시란 그 중간에 눈의 적응입니다. 그 상태에선 물체가 흐리게 보여요",
+           },
+           {
+               answerType: "웹디자인 기능사 2013년 01회",
+               answerNum: 10,
+               answerAsk: "모든 사물은 구, 원기둥 및 원뿔 형태와 같은 기하학적 형태로 구성되어 있다고 주장한 사람은?",
+               answerChoice: {
+                   1 : "파파넥",
+                   2 : "고흐",
+                   3 : "세잔",
+                   4 : "오장팡",
+               },
+               answerResult: "3",
+               answerEx: "세잔이 그랬습니다. 세잔은 큐비즘(입체파) 대표적인 인물이죠",
+           },
+           {
+               answerType: "웹디자인 기능사 2013년 01회",
+               answerNum: 12,
+               answerAsk: "빨간색이 가장 선명하고 뚜렷해 보일 수 있는 배경색으로 적합한 것은?",
+               answerChoice: {
+                   1 : "주황",
+                   2 : "노랑",
+                   3 : "회색",
+                   4 : "보라",
+               },
+               answerResult: "3",
+               answerEx: "이거 제가 주관식문제에도 냈던 문제인데 틀리신분 없으시죠?",
+           },
+           {
+               answerType: "웹디자인 기능사 2013년 01회",
+               answerNum: 13,
+               answerAsk: "디자인 원리 중 균형(balance)에 해당하지 않는 것은?",
+               answerChoice: {
+                   1 : "대칭",
+                   2 : "비례",
+                   3 : "율동",
+                   4 : "주도와 종속",
+               },
+               answerResult: "3",
+               answerEx: "율동은 다른 파트의 원리입니다. 나머지는 다 균형에 포함된 느낌이죠?",
+           },
+           {
+               answerType: "웹디자인 기능사 2013년 01회",
+               answerNum: 15,
+               answerAsk: "다음 중 굿 디자인(Good Design)의 조건이 아닌 것은?",
+               answerChoice: {
+                   1 : "심미성",
+                   2 : "독창성",
+                   3 : "대중성",
+                   4 : "경제성",
+               },
+               answerResult: "3",
+               answerEx: "굿디자인 4가지 외우세요 : 심미성, 독창성, 합목적성, 경제성 입니다.",
+           },
+           {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 19,
+                answerAsk: "신문광고의 구성요소 중 조형적 요소가 아닌 것은?",
+                answerChoice: {
+                    1 : "헤드라인",
+                    2 : "일러스트레이션",
+                    3 : "심볼 마크",
+                    4 : "보더 라인",
+                },
+                answerResult: "가나다",
+                answerEx: "?",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 20,
+                answerAsk: "가시광선에 대한 설명으로 틀린 것은?",
+                answerChoice: {
+                    1 : "빛의 파장 중 380nm에서 780nm 사이의 범위로 눈으로 지각되는 영역을 말한다.",
+                    2 : "백색광이 프리즘을 통해 나타나는 색띠를 말한다.",
+                    3 : "라디오나 텔레비전, 휴대폰의 파장범위를 포함한다.",
+                    4 : "전자기파 스펙트럼이라고도 한다.",
+                },
+                answerResult: "3",
+                answerEx: "라디오나 텔레비전은 훨씬 파장이 낮습니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 21,
+                answerAsk: "HTML 작성 시 프레임(Frame)의 크기를 설정하기 위한 방법이 아닌 것은?",
+                answerChoice: {
+                    1 : "백분율로 구분하는 방법",
+                    2 : "픽셀 수로 설정하는 방법",
+                    3 : "파일 크기로 설정하는 방법",
+                    4 : "상대 비율로 설정하는 방법",
+                },
+                answerResult: "3",
+                answerEx: "%, px, vw 같은 단위 배웠었죠? 파일 크기로 설정하는 방법은 처음들어봅니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 22,
+                answerAsk: "웹서버의 일반적인 동작 과정으로 옳은 것은?",
+                answerChoice: {
+                    1 : "연결설정→클라이언트가 정보요청→서버의 응답→연결종료",
+                    2 : "연결설정→서버의 응답→클라이언트가 정보요청→연결종료",
+                    3 : "클라이언트가 정보요청→연결설정→서버의 응답→연결종료",
+                    4 : "클라이언트가 정보요청→서버의 응답→연결설정→연결종료",
+                },
+                answerResult: "2",
+                answerEx: "연결을 설정해야 연결이 되겠죠? 정보를 요청해야 응답을 할 수 가 있겠습니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 23,
+                answerAsk: "하나의 회선을 다수의 아주 짧은 시간 간격으로 분할하여 다중화 하는 전송 방식은?",
+                answerChoice: {
+                    1 : "FCM",
+                    2 : "TDM",
+                    3 : "CSM",
+                    4 : "FDD",
+                },
+                answerResult: "2",
+                answerEx: "시분할 다중화 (Time-division multiplexing), 시분할 다중화란 전송로를 점유하는 시간을 분할하여 한 개의 전송로에 여러 개의 가상 경로를 구성하는 통신 방식이다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 24,
+                answerAsk: "컴퓨터 그래픽에서 객체의 위치를 정확히 표현하기 위한 좌표계 중 좌표 위에 있는 점과 원점으로 규정하는 기준점과의 거리와 각도의 크기에 따라 좌표를 정의하는 좌표계는?",
+                answerChoice: {
+                    1 : "2차원 그래픽 좌표계",
+                    2 : "3차원 그래픽 좌표계",
+                    3 : "직교 좌표계",
+                    4 : "극 좌표계",
+                },
+                answerResult: "4",
+                answerEx: "?",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 25,
+                answerAsk: "자바스크립트의 함수 중 사용자로부터 임의의 문자를 입력받기 위한 창을 화면에 띄워 입력한 문자열을 사용할 수 있도록 하는 것은?",
+                answerChoice: {
+                    1 : "prompt()",
+                    2 : "escape()",
+                    3 : "confirm()",
+                    4 : "alert()",
+                },
+                answerResult: "1",
+                answerEx: "prompt() 쓰면 입력창이 나옵니다. confirm()은 예 아니오 느낌의 메서드 입니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 27,
+                answerAsk: "인터넷 익스플로러 6.0에서 [도구]-[인터넷 옵션]-[내용] 탭에서 설정할 수 있는 것은?",
+                answerChoice: {
+                    1 : "쿠키 편집",
+                    2 : "언어 추가",
+                    3 : "게시자",
+                    4 : "HTML 편집",
+                },
+                answerResult: "3",
+                answerEx: "?",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 29,
+                answerAsk: "웹 브라우저의 주소창에 URL을 잘못 입력한 것은?",
+                answerChoice: {
+                    1 : "http://www.abc.or.kr",
+                    2 : "webamil://abc123@abc.co.kr",
+                    3 : "ftp://ftp.abc.com",
+                    4 : "file:///c:\abc.hwp",
+                },
+                answerResult: "2",
+                answerEx: "스펠링이 이상하죠? webamil 이게 뭔지 저도 모르겠습니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 31,
+                answerAsk: "인터넷 익스플로러 6.0에서 웹페이지의 글자가 깨져 보이는 경우에는 [보기]-[인코딩] 메뉴에서 무엇을 선택해야 하는가",
+                answerChoice: {
+                    1 : "자동선택",
+                    2 : "자동복구",
+                    3 : "오류복구",
+                    4 : "오류보기",
+                },
+                answerResult: "1",
+                answerEx: "?",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 33,
+                answerAsk: "인터넷의 시조이며, 미 국방성이 군사목적으로 UCLA, 스탠포드 대학 등이 보유한 컴퓨터 네트워크로 연결한 것은 무엇일까?",
+                answerChoice: {
+                    1 : "USENET",
+                    2 : "FTP",
+                    3 : "WAIS",
+                    4 : "ARPANET",
+                },
+                answerResult: "4",
+                answerEx: "인터넷의 시조 = 알파넷.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 34,
+                answerAsk: "다음과 관련 있는 TCP/IP 프로토콜 계층으로 옳은 것은? SMTP, FTP, Telnet, HTTP",
+                answerChoice: {
+                    1 : "물리 계층",
+                    2 : "네트워크 계층",
+                    3 : "전송 계층",
+                    4 : "응용 계층",
+                },
+                answerResult: "4",
+                answerEx: "여러가지 프로토콜들이 나오면 응용계층을 생각해주세요.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 36,
+                answerAsk: "자바스크립트의 일반적인 장점으로 틀린 것은?",
+                answerChoice: {
+                    1 : "운영체제의 제한을 받지 않는다.",
+                    2 : "문법이 간단해 손쉽게 프로그램을 만들 수 있다.",
+                    3 : "HTML 문서 내에 직접 코드를 삽입하므로 신속하게 작성할 수 있다.",
+                    4 : "게임, 메신저, 채팅방 등을 개발하는데 적합하다.",
+                },
+                answerResult: "2",
+                answerEx: "메신저나 채팅방은 서버 프로그램이 필요하겠죠? 일반적인 장점으로 적합하진 않은 것 같아요.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 39,
+                answerAsk: "위지웍(WYSIWYG) 기반의 웹 에디터가 아닌 것은?",
+                answerChoice: {
+                    1 : "Namo Web Editor",
+                    2 : "FrontPage",
+                    3 : "Edit Plus",
+                    4 : "Netscape Composer",
+                },
+                answerResult: "3",
+                answerEx: "에딧플러스는 메모장 같은 형식으로 하드코딩에 특화되어있죠, 위지위그란\
+                이미지 같은걸 드래그앤 드롭같은 사용자 편의기능을 제공하는 방식의 에디터를 말합니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 41,
+                answerAsk: "컴퓨터그래픽스의 역사 중 제4세대에 해당하는 래스터 스캔형 CRT 시대에 대한 설명으로 거리가 먼 것은?",
+                answerChoice: {
+                    1 : "색, 면으로 입체물의 표면을 도색할 수 있게 되었다.",
+                    2 : "프랙탈 이론을 실천한 여러 사례가 발표되었다.",
+                    3 : "슈퍼리얼리즘과 사실주의적인 경향을 갖고 있다.",
+                    4 : "보잉사가 CRT를 구사하여 제트 여객기 보잉 737을 설계하였다.",
+                },
+                answerResult: "4",
+                answerEx: "보잉737 은 1964년 부터 생산되었고 래스터스캔 CRT는 1980년도의 기술이다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 43,
+                answerAsk: "웹페이지를 작성할 때 배경이미지와 메뉴에 관한 설명으로 틀린 것은?",
+                answerChoice: {
+                    1 : "스타일 시트를 이용하여 배경 이미지의 반복 횟수를 증가시킨다.",
+                    2 : "배경 이미지가 클 경우 용량 증가로 로딩이 늦어진다.",
+                    3 : "메뉴는 메타포를 이용하여 디자인한다.",
+                    4 : "배경의 색상을 분할시켜 사용하면 프레임이 사용된 것처럼 보인다.",
+                },
+                answerResult: "1",
+                answerEx: "배경이미지의 반복 횟수를 증가시키면 그만큼 로딩시간이 길어지겠죠?",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 44,
+                answerAsk: "웹 페이지 저작에 필요한 S/W 중 웹에디터가 아닌 것은?",
+                answerChoice: {
+                    1 : "Internet Space Builder",
+                    2 : "EditPlus",
+                    3 : "Hotdog Professional",
+                    4 : "Dramweaver",
+                },
+                answerResult: "1",
+                answerEx: "Internet Space Builder은 3D 기술을 제작하는 쪽이라고 하네요.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 45,
+                answerAsk: `
+                다음 설명과 같은 애니메이션 기법은?
+                <br>- 배경그림은 그래도 두고 캐릭터만 움직이게 하는 기법
+                <br>- 1915년 허드(Earl Hurd)가 고안
+                <br>- 종이에 그린 그림을 셀룰로이드에 옳긴 뒤, 그 뒷면에 채색을 한 다음 배경 위에 놓고 촬영하는 기법
+                `,
+                answerChoice: {
+                    1 : "셀 애니메이션",
+                    2 : "그림 애니메이션",
+                    3 : "모델 애니메이션",
+                    4 : "컴퓨터 애니메이션",
+                },
+                answerResult: "1",
+                answerEx: "배경은 그대로 두고 캐릭터만 움직인다? => 셀 애니메이션",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 49,
+                answerAsk: "2차원 컴퓨터그래픽스에서 한 색상에서 다른 색상으로 점차적으로 색을 변화시켜가며 특정 구역 안에 색을 칠해주는 기법은?",
+                answerChoice: {
+                    1 : "그라데이션(Gradation)",
+                    2 : "모델링(Modeling)",
+                    3 : "스캔(Scan)",
+                    4 : "샘플링(Sampling)",
+                },
+                answerResult: "1",
+                answerEx: "색상이 점진적으로 변화하는것은 그라데이션이죠",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 53,
+                answerAsk: "애니메이션에서 대상의 움직임을 개별적인 단위요소로 세분화한 기본 단위는?",
+                answerChoice: {
+                    1 : "프레임",
+                    2 : "필름",
+                    3 : "콤마",
+                    4 : "컷 아웃",
+                },
+                answerResult: "1",
+                answerEx: "애니메이션의 기본 한단위는 프레임이라고 부릅니다. 프레임을 연결해서 애니메이션을 만들겠죠?",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 54,
+                answerAsk: "곡선(곡면)이나 사선(사면)을 표현할 때 바탕과 이미지 사이의 경계를 부드럽게 처리해 주는 것은?",
+                answerChoice: {
+                    1 : "매핑",
+                    2 : "앨리어싱",
+                    3 : "안티앨리어싱",
+                    4 : "디더링",
+                },
+                answerResult: "3",
+                answerEx: "픽셀 이미지의 계단현상을 부드럽게 처리해주는 기법을 안티엘리어싱이라고 합니다.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 55,
+                answerAsk: "웹디자인에 사용하기 위하여 사진이나 그림 등을 스캔 받을 때 나타나는 현상으로 스캔 받은 이미지에 물결무늬가 격자처럼 교차되어 보이는 것을 무엇이라고 하는가?",
+                answerChoice: {
+                    1 : "Dithering",
+                    2 : "Scanning",
+                    3 : "Moire",
+                    4 : "Water Mark",
+                },
+                answerResult: "3",
+                answerEx: "모아레(Moire) 란 두 개 이상의 주기적인 패턴(Periodic Pattern)이 겹쳐질 때 만들어지는 간섭무늬(Interference Fringe)를 지칭하는 것으로 다양한 분야에서 매우 광범위하게 사용되어 지고 있죠.",
+            },
+            {
+                answerType: "웹디자인 기능사 2013년 01회",
+                answerNum: 58,
+                answerAsk: "시각 디자인 영역의 한 영역으로서 글자체, 글자크기, 행간, 여백, 간격, 단락, 그리드 등을 통해 전달된다.",
+                answerChoice: {
+                    1 : "내비게이션 디자인(Navigation Design)",
+                    2 : "웹 타이포그래피 디자인(Web Typographic Design)",
+                    3 : "웹 컬러 디자인(Web Color Design)",
+                    4 : "웹 인터페이스 디자인(Web Interface Design)",
+                },
+                answerResult: "2",
+                answerEx: "글씨체 = 타이포 그래피 입니다.",
+            },
+
+        ];
+
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        function updateQuiz(){
+            const exam = [];      /*exam을 빈 배열로 선언한다.*/
+
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                <div class="quiz">
+                    <span class="quiz__type">${question.answerType}</span>
+                    <h2 class="quiz__question">
+                        <span class="number">${question.answerNum}. </span>
+                        <div class="ask">${question.answerAsk}</div>
+                    </h2>
+                    <div class="quiz__view">
+                        <div class="true">정답입니다!</div>
+                        <div class="false">틀렸습니다!</div>
+                        <div class="dog">
+                            <div class="head">
+                                <div class="ears"></div>
+                                <div class="face"></div>
+                                <div class="eyes">
+                                    <div class="teardrop"></div>
+                                </div>
+                                <div class="nose"></div>
+                                <div class="mouth">
+                                    <div class="tongue"></div>
+                                </div>
+                                <div class="chin"></div>
+                            </div>
+                            <div class="body">
+                                <div class="tail"></div>
+                                <div class="legs"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__answer">
+                        <div class="quiz__selects">
+                            <label for="select1${number}">
+                                <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">
+                                <span class="choice">${question.answerChoice[1]}</span>
+                            </label>
+                            <label for="select2${number}">
+                                <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">
+                                <span class="choice">${question.answerChoice[2]}</span>
+                            </label>
+                            <label for="select3${number}">
+                                <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">
+                                <span class="choice">${question.answerChoice[3]}</span>
+                            </label>
+                            <label for="select4${number}">
+                                <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">
+                                <span class="choice">${question.answerChoice[4]}</span>
+                            </label>                    
+                        </div>
+                    </div>
+                </div>
+                `);
+            });
+            
+            exam.push(`
+                <div class="quiz__confirm">
+                    <button class="check">정답 확인하기</button>
+                    <div class="ex"></div>    
+                </div>
+            `)
+            
+            quizWrap.innerHTML = exam.join('');
+        }
+        updateQuiz();
+
+        //정답 확인
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".quiz__selects");    //보기
+            const quizView = document.querySelectorAll(".quiz__view");          //강아지
+            //사용자가 체크한 라디오 박스  == 문제 정답
+            quizInfo.forEach((question, number) => {
+                const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
+                const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
+                const quizView = document.querySelectorAll(".quiz__view");
+                console.log(quizSelects)
+                if(userAnswer == question.answerResult){
+                    console.log("정답")
+                    quizView[number].classList.add("like");
+                } else {
+                    console.log("오답")
+                    quizView[number].classList.add("dislike");
+                    const div = document.createElement("div");
+                    quizSelectsWrap.appendChild(div).innerHTML = `<p class="result">${question.answerEx}</p>`;
+                }
+            });
+        }
+        document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
+    </script>
+</body>
+
+</html>
