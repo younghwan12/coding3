@@ -442,6 +442,7 @@
         const searchBox = document.querySelector(".search__box input");   //input 박스
         const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
         const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
+        let count = 0;
 
         //전체 갯수 구하기
         searchInfo.textContent = searchList.length;
@@ -454,17 +455,17 @@
                 const cssName = el.dataset.name;
 
 
-
                 if (cssName.indexOf(searchWord)) {
                     el.classList.add("hide");
+                    
                 } else {
                     el.classList.remove("hide");    //indexOf()값이 0(false)이되는 값만 hide를 지워줍니다.
+                    count++
                 }
-
+                searchInfo.textContent = count;
             });
-
+            count = 0;
         });
-
     </script>
     <!-- //footer -->
 </body>
