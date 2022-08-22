@@ -20,6 +20,7 @@ https://younghwan12.github.io/coding3/javascript/effect/quizEffect04.html
 ### 서치 이펙트
 https://younghwan12.github.io/coding3/javascript/effect/searchEffect01.html   
 https://younghwan12.github.io/coding3/javascript/effect/searchEffect02.html   
+https://younghwan12.github.io/coding3/javascript/effect/searchEffect03.html   
 
 ### HTML 메인 페이지
 https://younghwan12.github.io/coding3/html/alphabet.html
