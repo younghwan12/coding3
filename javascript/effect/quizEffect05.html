@@ -18,7 +18,7 @@
 
 <body>
     <header id="header">
-        <h1><a href="../javascript01.html">Quiz</a><em> 객관식(한문제) 유형</em></h1>
+        <h1><a href="../javascript01.html">Quiz</a><em> 객관식(여러문제) 유형</em></h1>
         <nav>
             <ul>
                 <li><a href="quizEffect01.html">1</a></li>
@@ -907,6 +907,7 @@
         }
         updateQuiz();
 
+        let cnt = 0;
         //정답 확인
         function answerQuiz(){
             const quizSelects = document.querySelectorAll(".quiz__selects");    //보기
@@ -917,10 +918,11 @@
                 const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
                 const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
                 const quizView = document.querySelectorAll(".quiz__view");
-                console.log(quizSelects)
+                // console.log(quizSelects)
                 if(userAnswer == question.answerResult){
-                    console.log("정답")
+                    // console.log("정답")
                     quizView[number].classList.add("like");
+                    cnt++;
                 } else {
                     console.log("오답")
                     quizView[number].classList.add("dislike");
@@ -928,6 +930,11 @@
                     quizSelectsWrap.appendChild(div).innerHTML = `<p class="result">${question.answerEx}</p>`;
                 }
             });
+            document.querySelector(".quiz__confirm .check").removeEventListener('click', answerQuiz);
+            document.querySelector(".quiz__confirm .check").innerHTML = `${cnt} / ${quizInfo.length} 맞았습니다`;
+            document.querySelector(".quiz__confirm .check").addEventListener('click', () => {
+                location.href = location.href;
+            })
         }
         document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
     </script>
