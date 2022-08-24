@@ -47,152 +47,174 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">퀴즈 효과</h2>
-            <p class="t_desc">객관식(여러문제) 확인하기 : 슬라이드 형식</p>
-            <p class="t_box">오늘은 화면에 한문제씩 나오면서 문제를 풀면 다음문제로 넘어가는 스크립트를 만들어보겠습니다.</p>
+            <p class="t_desc">객관식(여러문제 유형)</p>
+            <p class="t_box">오늘은 화면에 여러문제를 표현한뒤 마지막에 결과확인 버튼을 누르면 점수가 나오는 유형을 만들어보겠습니다. 또한 quizScore라는 변수를 0으로 설정하고 맞을때마다 quizScore++를 사용해 마지막 정답버튼을 눌렀을 때 총 맞은 개수가 나오게 출력하였습니다.</p>
             <hr>
             <h3 class="t_tit2">결과</h3>
             <div class="t_iframe" style="height: 1000px; padding-top: 0;">
-                <iframe src="https://younghwan12.github.io/coding3/javascript/effect/quizEffect06.html"></iframe>
+                <iframe src="https://younghwan12.github.io/coding3/javascript/effect/quizEffect05.html"></iframe>
             </div>
             <div class="t_link" style="display: flex;">
-                <a href="https://github.com/younghwan12/coding3/blob/main/javascript/effect/quizEffect06.html" target="_blank">원본 소스 보기</a>
-                <a href="https://younghwan12.github.io/coding3/javascript/effect/quizEffect06.html" target="_blank">원본 사이트 보기</a>
+                <a href="https://github.com/younghwan12/coding3/blob/main/javascript/effect/quizEffect05.html" target="_blank">원본 소스 보기</a>
+                <a href="https://younghwan12.github.io/coding3/javascript/effect/quizEffect05.html" target="_blank">원본 사이트 보기</a>
             </div>
             <hr>
             <h3 class="t_tit2">HTML 작성</h3>
-            <p class="t_desc2">문제번호와 문제, 보기는 공통요소이므로 HTML에서 지우고 스크립트로 넣어주겠습니다.</p>
+            <p class="t_desc2">기존에 body태그에 있던 코드들은 script로 넣어줄것이므로 quiz__wrap만 빼고 전부 지워줍니다.</p>
             <div class="t_code">
 <pre><code class="language-html">&lt;main id="main"&gt;
-&lt;div class="quiz__wrap"&gt;
-    &lt;div class="quiz"&gt;
-        &lt;span class="quiz__type"&gt;&lt;/span&gt;
-        &lt;h2 class="quiz__question"&gt;
-            &lt;span class="number"&gt;&lt;/span&gt;
-            &lt;div class="ask"&gt;&lt;/div&gt;
-        &lt;/h2&gt;
-        &lt;div class="quiz__view"&gt;
-            &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
-            &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
-            &lt;div class="dog"&gt;
-                &lt;div class="head"&gt;
-                    &lt;div class="ears"&gt;&lt;/div&gt;
-                    &lt;div class="face"&gt;&lt;/div&gt;
-                    &lt;div class="eyes"&gt;
-                        &lt;div class="teardrop"&gt;&lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="nose"&gt;&lt;/div&gt;
-                    &lt;div class="mouth"&gt;
-                        &lt;div class="tongue"&gt;&lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="chin"&gt;&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class="body"&gt;
-                    &lt;div class="tail"&gt;&lt;/div&gt;
-                    &lt;div class="legs"&gt;&lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="quiz__answer"&gt;
-            &lt;div class="quiz__selects"&gt;
-            &lt;/div&gt;
-            &lt;div class="result"&gt;&lt;/div&gt;
-            &lt;button class="confirm"&gt;다음 문제 보기&lt;/button&gt;
-        &lt;/div&gt;
+    &lt;div class="quiz__wrap"&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-&lt;/main&gt;
+&lt;/main&gt;            
 </code></pre>
 </div>
 <h3 class="t_tit2">CSS 작성</h3>
 <p class="t_desc2">기존과 딱히 변화 없습니다.</p>
             
 <h3 class="t_tit2">JS 작성</h3>
-<p class="t_desc2">문제 번호를 클릭하면 문제의 정답 유무를 파악하고 다음문제로 넘어갈 수 있는 버튼을 보이게 설정하였으며, 마지막 문제를 풀었을 때 총 문제 수 중에 맞은 문제를 출력할 수 있도록 제작하였습니다.
+<p class="t_desc2">퀴즈 번호와 문제, 보기는 공통이므로 (``)템플릿 리터럴을 사용해 넣어줍니다. question(element)값을 입력해서 배열의 순서대로 값이 출력되게 만들었습니다.
 </p>
 <div class="t_result">
     <details>
         <summary>펼쳐 보기</summary>
         <div class="t_code">
-<pre><code class="language-js">//선택자
-const quizType = document.querySelector(".quiz__type")                  //유형
-const quizQuestion = document.querySelector(".quiz__question");         //문제 번호, 질문
-const quizSelects = document.querySelector(".quiz__selects");           //객관식 보기
-const quizResult = document.querySelector(".quiz__answer .result")      //해설
-const quizConfirm = document.querySelector(".quiz__answer .confirm")    //정답 확인버튼
-const quizView = document.querySelector(".quiz__view")                 //강아지
-
-let quizCount = 0;  // 변수의 시작값 설정
+<pre><code class="language-js">const quizInfo = [
+{
+    answerType: "웹디자인기능사 2010년 02회",
+    answerNum: "1",
+    answerAsk: "통일성을 주는 방법과 거리가 먼 것은?",
+    answerChoice: {
+        1: "각 요소들을 근접시킨다.",
+        2: "각 요소들을 반복시킨다.",
+        3: "각 요소들을 연속시킨다.",
+        4: "각 요소들을 분리시킨다."
+    },
+    answerResult: "4",
+    answerEx: "통일감을 갖기 위해서는 각 요소들이 근접, 반복, 연속되어야하므로 답은 4번입니다."
+},
+{
+    answerType: "웹디자인기능사 2010년 02회",
+    answerNum: "2",
+    answerAsk: "디자인의 원리 중 율동(Rhythm)의 요소와 거리가 먼 것은?",
+    answerChoice: {
+        1: "대칭",
+        2: "점증",
+        3: "반복",
+        4: "변칙"
+    },
+    answerResult: "1",
+    answerEx: "율동에는 반복, 교차, 방사, 점이(점증)=그라데이션 등이 있으므로 답은 1번입니다."
+},...
+]
+const quiz__wrap = document.querySelector(".quiz__wrap");
 let quizScore = 0;
 
-//문제 출력
-const updateQuiz = (index) =&gt; {
-    const questionTag = `
-        &lt;span class="number"&gt;${quizInfo[index].answerNum}. &lt;/span&gt;
-        &lt;div class="ask"&gt;${quizInfo[index].answerAsk}&lt;/div&gt;
-    `;
-    const choiceTag = `
-        &lt;label for="select1"&gt;
-            &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;
-            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[0]}&lt;/span&gt;
-        &lt;/label&gt;
-        &lt;label for="select2"&gt;
-            &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;
-            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[1]}&lt;/span&gt;
-        &lt;/label&gt;
-        &lt;label for="select3"&gt;
-            &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;
-            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[2]}&lt;/span&gt;
-        &lt;/label&gt;
-        &lt;label for="select4"&gt;
-            &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;
-            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[3]}&lt;/span&gt;
-        &lt;/label&gt;
-    `;
-    //문제 출력
-    quizType.innerHTML = quizInfo[index].answerType;    //퀴즈 유형
-    quizQuestion.innerHTML = questionTag;   //번호, 질문
-    quizSelects.innerHTML = choiceTag;      //객관식 보기
-    quizResult.innerHTML = quizInfo[index].answerEx;    //해설
+const updateQuiz = () =&gt; {
+    const exam = [];
 
-    const quizChoice = quizSelects.querySelectorAll(".choice");
+    quizInfo.forEach((question, number) =&gt; {
+        exam.push(`
+            &lt;div class="quiz"&gt;
+                &lt;span class="quiz__type"&gt;${question.answerType}&lt;/span&gt;
+                &lt;h2 class="quiz__question"&gt;
+                    &lt;span class="number"&gt;${question.answerNum + ". "}&lt;/span&gt;
+                    &lt;div class="ask"&gt;${question.answerAsk}&lt;/div&gt;
+                &lt;/h2&gt;
+                &lt;div class="quiz__view"&gt;
+                    &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+                    &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
+                    &lt;div class="dog"&gt;
+                        &lt;div class="head"&gt;
+                            &lt;div class="ears"&gt;&lt;/div&gt;
+                            &lt;div class="face"&gt;&lt;/div&gt;
+                            &lt;div class="eyes"&gt;
+                                &lt;div class="teardrop"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="nose"&gt;&lt;/div&gt;
+                            &lt;div class="mouth"&gt;
+                                &lt;div class="tongue"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="chin"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="body"&gt;
+                            &lt;div class="tail"&gt;&lt;/div&gt;
+                            &lt;div class="legs"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="quiz__answer"&gt;
+                    &lt;div class="quiz__selects"&gt;
+                        &lt;label for="select1${number}"&gt;
+                            &lt;input type="radio" id="select1${number}" class="select" name="select${number}" value="1"&gt;
+                            &lt;span class="choice"&gt;${question.answerChoice[1]}&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;label for="select2${number}"&gt;
+                            &lt;input type="radio" id="select2${number}" class="select" name="select${number}" value="2"&gt;
+                            &lt;span class="choice"&gt;${question.answerChoice[2]}&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;label for="select3${number}"&gt;
+                            &lt;input type="radio" id="select3${number}" class="select" name="select${number}" value="3"&gt;
+                            &lt;span class="choice"&gt;${question.answerChoice[3]}&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;label for="select4${number}"&gt;
+                            &lt;input type="radio" id="select4${number}" class="select" name="select${number}" value="4"&gt;
+                            &lt;span class="choice"&gt;${question.answerChoice[4]}&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;`
+        );
 
-    for (let i = 0; i &lt; quizChoice.length; i++) {
-        quizChoice[i].setAttribute("onclick", "choiceSelected(this)");
-    }
+        
 
-    // 문제, 해설 숨기기
-    quizResult.style.display = "none";
-    quizConfirm.style.display = "none";
+    })
+
+    exam.push(`
+            &lt;div class= "quiz__confirm"&gt;
+                &lt;button class="check"&gt;정답 확인하기&lt;/button&gt;
+                &lt;div class="ex"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        `)
+    quiz__wrap.innerHTML = exam.join('');
 }
-updateQuiz(quizCount);
+updateQuiz();
 
-const choiceSelected = (answer) =&gt; {
-    let userAnswer = answer.textContent;    //사용자가 체크한 정답
-    let currentAnswer = quizInfo[quizCount].answerResult;   //문제 정답
-
-    if (userAnswer == currentAnswer) {
-        // console.log("정답");
-        quizView.classList.add("like");
-        quizScore++;
-    } else {
-        // console.log("오답");
-        quizView.classList.add("dislike");
-        quizResult.style.display = "block";
-    }
-    quizConfirm.style.display = "block";
-}
-
-//정답 확인 버튼
-
+//정답 확인
 const answerQuiz = () =&gt; {
-    if (quizInfo.length - 1 == quizCount) {
-        quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞추었습니다.`;
-    }       //마지막 문제 완료 후 정답 갯수 확인
-    quizCount++;
-    updateQuiz(quizCount);
-    quizView.classList.remove("like", "dislike");
+    const quizSelects = document.querySelectorAll(".quiz__selects");      //객관식 보기
+    
+    //사용자가 체크한 보기 == 문제 정답
+    quizInfo.forEach((question, number) =&gt; {
+        const userSelector = `input[name=select${number}]:checked`;      //사용자가 체크한 것
+        const quizSelectsWrap = quizSelects[number];
+        const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;     //정답 체크 안했을때도 있으니 or을 이용해서 빈 공백도 추가한다. 
+        const quizView = document.querySelectorAll(".quiz__view");
+
+        if(userAnswer == question.answerResult){
+            console.log("정답")
+            quizView[number].classList.add("like");
+            quizScore++;
+
+        } else {
+            console.log("오답")
+            quizView[number].classList.add("dislike");
+            const divBox = document.createElement("div");
+            quizSelectsWrap.appendChild(divBox).innerHTML = `&lt;p class="result"&gt;${question.answerEx}&lt;/p&gt;`
+        }
+        
+    });
+    // 전체 문제수
+    console.log(quizInfo.length) 
+    // 내가 맞힌 수
+    console.log(quizScore)
+
+
+    document.querySelector(".quiz__confirm .ex").innerHTML = `${quizScore} / ${quizInfo.length} 맞았습니다 공부좀 하세요..`;
+
 }
-quizConfirm.addEventListener("click", answerQuiz)
+
+//정답 클릭
+document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
 </code></pre>
             </div> 
     </details>               
