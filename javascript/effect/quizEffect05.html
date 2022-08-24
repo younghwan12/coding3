@@ -932,7 +932,7 @@
             console.log(quizScore)
 
 
-            document.querySelector(".quiz__confirm .ex").innerHTML = `${quizScore} / ${quizInfo.length} 맞았습니다 공부좀 하세요..`;
+            document.querySelector(".quiz__confirm .ex").innerHTML = `${quizScore< 40 ? quizInfo.length + "/" + quizScore + "탈락" : quizInfo.length + "/" + quizScore + "합격"}`;
 
         }
 
