@@ -1,5 +1,7 @@
 /* 웹폰트 */
 @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
 
 /* 리셋 */
 /* 여백 초기화 */
@@ -32,6 +34,7 @@ body {
 #header {
     border-bottom: 1px dashed #dcdcdc;
     padding-bottom: 40px;
+    text-align: center;
 }
 #main {
     padding: 40px 0;
@@ -44,28 +47,42 @@ footer {
 #footer a:hover {
     text-decoration: underline;
 }
-
+/* container */
+.container {
+    width: 100%;
+    min-width: 1400px;
+    margin: 0 auto;
+}
 
 /* 헤더 영역 */
 #header h1 a {
     font-size: 60px;
     font-weight: 700;
+    color: blue;
+    border-radius: 15px;
+    padding: 5px 10px;
+    background: linear-gradient(to right top, #861657, #ffa69e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .header_nav ul li {
     display: inline;
 }
 .header_nav ul li.active a {
-    background-color: #000;
     color: #fff;
+    background: linear-gradient(to right top, #861657, #ffa69e);
 }
 .header_nav ul li a {
     border: 1px solid #222;
     padding: 8px 25px;
     display: inline-block;
     margin-bottom: 7px;
+    font-family: "GmarketSans";
+    border-radius: 15px;
+    transition: all 0.3s;
 }
 .header_nav ul li a:hover {
-    background-color: #000;
+    background: linear-gradient(to right top, #861657, #ffa69e);
     color: #fff;
 }
 .header_nav .study {
@@ -101,8 +118,46 @@ footer {
 
 .main_sample .result {
     margin-bottom: 80px;
+    margin-top: 10px;
+    background: linear-gradient(to right top, #861657, #ffa69e);
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+/* intro_menu */
+.intro_menu {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+    padding: 2vw;
+    border-radius: 1vw;
+    font-size: 1vw;
+    text-align: center;
+    color: rgb(38, 0, 255);
 
 }
+.intro_menu ul li a {
+    color: rgb(38, 0, 255);
+    font-size: 1vw;
+}
+@media (max-width: 600px){
+    .intro_menu {
+        width: 90%;
+        padding: 14px;
+    }
+    .intro_menu li {
+        font-size: 16px;
+    }
+    .intro_menu li a {
+        font-size: 16px;
+    }
+}
+
 
 /* sample 2022-08-10 제작*/
 .sample {
