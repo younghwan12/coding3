@@ -106,6 +106,20 @@ a {
     color: #33377d;
 }
 
+
+/* layout */
+#header {
+    z-index: 2000;
+}
+#main {
+    position: relative;
+    z-index: 1000;
+}
+#footer {
+    position: relative;
+    z-index: 3000;
+}
+
 /* footer */
 #footer .source {
     position: absolute;
@@ -269,7 +283,7 @@ a {
     animation: zoomOut 0.5s 1s ease forwards;
 }
 .modal__cont.show .modal__close {   /* 닫기 버튼 */
-    animation: opacityOut 0.5s 1s ease forwards;
+    animation: opacityOut 0.5s 1.5s ease forwards;
 }
 
 .modal__cont.show.hide {    
@@ -279,9 +293,8 @@ a {
     animation: zoomIn 0.5s ease forwards;
 }
 .modal__cont.show.hide .modal__close {
-    animation: opacityIn 0.5s ease forwards;
+    animation: opacityIn 0.8s ease forwards;
 }
-
 
 @keyframes foldOut {
     0%   {transform: scaleX(0) scaleY(0.001);}
@@ -324,7 +337,7 @@ a {
         display: none;
     }
 }
-@media (max-width: 600px){
+@media (max-width: 800px){
     #header {
         width: 100%;
         text-align: center;
