@@ -1,32 +1,58 @@
-const sliderWrap = document.querySelector(".slider__wrap");
-        const sliderImg = document.querySelector(".slider__img");      //보여지는 영역
-        const sliderInner = document.querySelector(".slider__inner");  //움직이는 영역
-        const slider = document.querySelectorAll(".slider");           //이미지
-
-        let currentIndex = 0;                    //현재 이미지
-        let sliderCount = slider.length;         //이미지 갯수
-
-        sliderInner.style.transition = "all 0.6s";
-
-        // sliderInner.style.transform += "translateX(0px)";        800 * 0
-        // sliderInner.style.transform += "translateX(-800px)";     800 * 1
-        // sliderInner.style.transform += "translateX(-1600px)";    800 * 2
-        // sliderInner.style.transform += "translateX(-2400px)";    800 * 3
-        // sliderInner.style.transform += "translateX(-3200px)";    800 * 4
-
-        setInterval(() => {
-
-            currentIndex = (currentIndex + 1) % sliderCount;    //1 2 3 4 0 1 2 3 4 0 1 2 3 4
-
-            // if(currentIndex &lt; 4){
-            //     currentIndex++;
-            // } else {
-            //     currentIndex = 0;
-            // }
-
-            // currentIndex &lt; 4 ? currentIndex++ : currentIndex = 0;
-
-            console.log(currentIndex)
-
-            sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
-        },2000);
+&lt;section id="textType01" class="text__wrap nexon section"&gt;
+    &lt;p class="text__type"&gt;텍스트 유형01&lt;/p&gt;
+    &lt;h2&gt;노래 플레이리스트 모음&lt;/h2&gt;
+    &lt;div class="text__inner container"&gt;
+        &lt;div class="text__top"&gt;
+            &lt;article class="text"&gt;
+                &lt;figure class="icon__box"&gt;
+                    &lt;img src="img/icon01.png" alt="icon"&gt;
+                &lt;/figure&gt;
+                &lt;h3 class="h3"&gt;카페에서 듣기좋은 리스트&lt;/h3&gt;
+                &lt;p class="desc"&gt;카페에서 듣기좋은 플레이 리스트입니다&lt;br&gt;카페에서 듣기좋은 플레이 리스트입니다&lt;br&gt;카페에서 듣기좋은 플레이 리스트입니다&lt;/p&gt;
+                &lt;a class="text__btn" href="/" title="더보기"&gt;더보기&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article class="text"&gt;
+                &lt;figure class="icon__box" style="background-color: #3e2020;"&gt;
+                    &lt;img src="img/icon02.png" alt="icon"&gt;
+                &lt;/figure&gt;
+                &lt;h3 class="h3"&gt;비오는날 듣기좋은 리스트&lt;/h3&gt;
+                &lt;p class="desc"&gt;비오는날 듣기좋은 플레이 리스트입니다&lt;br&gt;비오는날 듣기좋은 플레이 리스트입니다&lt;br&gt;비오는날 듣기좋은 플레이 리스트입니다&lt;/p&gt;
+                &lt;a class="text__btn" href="/" title="더보기"&gt;더보기&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article class="text"&gt;
+                &lt;figure class="icon__box" style="background-color: #fff282;"&gt;
+                    &lt;img src="img/icon03.png" alt="icon"&gt;
+                &lt;/figure&gt;
+                &lt;h3 class="h3"&gt;시간가는줄 모르는 플레이리스트&lt;/h3&gt;
+                &lt;p class="desc"&gt;듣느라 시간가는줄 모르는 플레이리스트요&lt;br&gt;듣느라 시간가는줄 모르는 플레이리스트요&lt;br&gt;듣느라 시간가는줄 모르는 플레이리스트요&lt;/p&gt;
+                &lt;a class="text__btn" href="/" title="더보기"&gt;더보기&lt;/a&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+        &lt;div class="text__bottom"&gt;
+            &lt;article class="text"&gt;
+                &lt;figure class="icon__box" style="background-color: #64a092;"&gt;
+                    &lt;img src="img/icon04.png" alt="icon"&gt;
+                &lt;/figure&gt;
+                &lt;h3 class="h3"&gt;X톡 하면서 듣기좋은 리스트&lt;/h3&gt;
+                &lt;p class="desc"&gt;X톡 하면서 듣기좋은 플레이 리스트입니다&lt;br&gt;X톡 하면서 듣기좋은 플레이 리스트입니다&lt;br&gt;X톡 하면서 듣기좋은 플레이 리스트입니다&lt;/p&gt;
+                &lt;a class="text__btn" href="/" title="더보기"&gt;더보기&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article class="text"&gt;
+                &lt;figure class="icon__box" style="background-color: #ff8282;"&gt;
+                    &lt;img src="img/icon05.png" alt="icon"&gt;
+                &lt;/figure&gt;
+                &lt;h3 class="h3"&gt;게임하면서 듣기좋은 리스트&lt;/h3&gt;
+                &lt;p class="desc"&gt;게임하면서 듣기 좋은 플레이 리스트입니다&lt;br&gt;게임하면서 듣기 좋은 플레이 리스트입니다&lt;br&gt;게임하면서 듣기 좋은 플레이 리스트입니다&lt;/p&gt;
+                &lt;a class="text__btn" href="/" title="더보기"&gt;더보기&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article class="text"&gt;
+                &lt;figure class="icon__box" style="background-color: #9bff82;"&gt;
+                    &lt;img src="img/icon06.png" alt="icon"&gt;
+                &lt;/figure&gt;
+                &lt;h3 class="h3"&gt;이별후 듣는 플레이리스트&lt;/h3&gt;
+                &lt;p class="desc"&gt;들으면 눈물나는 플레이리스트 입니다&lt;br&gt;들으면 눈물나는 플레이리스트 입니다&lt;br&gt;들으면 눈물나는 플레이리스트 입니다&lt;/p&gt;
+                &lt;a class="text__btn" href="/" title="더보기"&gt;더보기&lt;/a&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;            
+    &lt;/div&gt;
+&lt;/section&gt;
