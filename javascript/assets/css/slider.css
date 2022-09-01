@@ -251,6 +251,7 @@ a {
 }
 .modal__box .cont > div {
     display: none;
+    height: 100%;
 }
 .modal__box .cont > div.active {
     display: block;
