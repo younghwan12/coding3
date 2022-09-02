@@ -98,11 +98,11 @@
                         if문을 생략해서 쓸수 있다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const num = 100;
-    
-    if(num) document.write("실행되었습니다(true).");
-    else document.write("실행되었습니다(false).");
-    </code></pre>
+<pre><code class="language-js">const num = 100;
+
+if(num) document.write("실행되었습니다(true).");
+else document.write("실행되었습니다(false).");
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -121,20 +121,20 @@
                         다중 if문은 if else if else if ... else의 구조를 가지고있다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const num = 100;
-    if( num == 90) {
-        document.write("실행되었습니다(num=90)");
-    } else if(num == 100) {
-        document.write("실행되었습니다(num=100)");
-    } else if(num == 110) {
-        document.write("실행되었습니다(num=110)");
-    } else if(num == 120) {
-        document.write("실행되었습니다(num=120)");
-    } else {
-        document.write("실행되었습니다(num=값이없음)");
-    }
-    }
-    </code></pre>
+<pre><code class="language-js">const num = 100;
+if( num == 90) {
+    document.write("실행되었습니다(num=90)");
+} else if(num == 100) {
+    document.write("실행되었습니다(num=100)");
+} else if(num == 110) {
+    document.write("실행되었습니다(num=110)");
+} else if(num == 120) {
+    document.write("실행되었습니다(num=120)");
+} else {
+    document.write("실행되었습니다(num=값이없음)");
+}
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -153,21 +153,21 @@
                         회원가입 및 조건설정할때 주로 사용되며 if문 안에 if문이 있다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const num = 100;
-            
-    if (num == 100) {
-        document.write("실행되었습니다.(1)");
+<pre><code class="language-js">const num = 100;
+        
+if (num == 100) {
+    document.write("실행되었습니다.(1)");
+    if(num == 100){
+        document.write("실행되었습니다.(2)");
         if(num == 100){
-            document.write("실행되었습니다.(2)");
-            if(num == 100){
-                document.write("실행되었습니다.(3)");
-            }
+            document.write("실행되었습니다.(3)");
         }
-    } else {
-        document.write("실행되었습니다.(4)");
     }
-    }
-    </code></pre>
+} else {
+    document.write("실행되었습니다.(4)");
+}
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -188,17 +188,17 @@
                         {}괄호를 쓰지않고 일렬로 나열하여 좀 더 편리하게 출력해낸다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const num = 100;
-    // //num값이 100이면 true출력하고 아니면 false를 출력하세요
-    
-    // if (num == 100) {
-    //     document.write("true");
-    // } else {
-    //     document.write("false");
-    // }
-    // //(삼항연산자 사용)
-    (num == 100) ? document.write("true") : document.write("false");
-    </code></pre>
+<pre><code class="language-js">const num = 100;
+// //num값이 100이면 true출력하고 아니면 false를 출력하세요
+
+// if (num == 100) {
+//     document.write("true");
+// } else {
+//     document.write("false");
+// }
+// //(삼항연산자 사용)
+(num == 100) ? document.write("true") : document.write("false");
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -218,25 +218,25 @@
     witch문은 여러 경우의 값 중 일치하는 데이터를 찾아 그에 해당하는 코드를 실행시킬 때 사용
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const num = 100;
-            
-    switch( num ){
-        case 100 :
-            document.wrtie("실행되었습니다.(num==100)")
-            break;
-        case 110 :
-            document.wrtie("실행되었습니다.(num==110)")
-            break;
-        case 120 :
-            document.wrtie("실행되었습니다.(num==120)")
-            break;
-        case 130 :
-            document.wrtie("실행되었습니다.(num==130)")
-            break;
-        default :
-            document.wrtie("실행되었습니다.(num==값이 없음)");
-        }
-    </code></pre>
+<pre><code class="language-js">const num = 100;
+        
+switch( num ){
+    case 100 :
+        document.wrtie("실행되었습니다.(num==100)")
+        break;
+    case 110 :
+        document.wrtie("실행되었습니다.(num==110)")
+        break;
+    case 120 :
+        document.wrtie("실행되었습니다.(num==120)")
+        break;
+    case 130 :
+        document.wrtie("실행되었습니다.(num==130)")
+        break;
+    default :
+        document.wrtie("실행되었습니다.(num==값이 없음)");
+    }
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -255,12 +255,12 @@
                         while문은 조건식을 만족할 때까지 코드를 여러 회 반복하여 실행할 수 있습니다
                     </p>
                     <div class="script">
-    <pre><code class="language-js">let num = 1;
-    while( num <= 5){
-        document.write("실행되었습니다.");
-        num++;
-    }
-    </code></pre>
+<pre><code class="language-js">let num = 1;
+while( num &lt;= 5){
+    document.write("실행되었습니다.");
+    num++;
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -279,12 +279,12 @@
                         do while문은 조건 여부를 떠나 반드시 한 번은 코드를 실행하고 조건식을 검사
                     </p>
                     <div class="script">
-    <pre><code class="language-js">let num = 1;
-    do {  //바로 실행문을 적는다. (조건이 맞든 안맞든 무조건 한번 실행이 된다.)
-        document.write("실행되었습니다2.");
-        num++;
-    } while (num &lt;= 5);
-    </code></pre>
+<pre><code class="language-js">let num = 1;
+do {  //바로 실행문을 적는다. (조건이 맞든 안맞든 무조건 한번 실행이 된다.)
+    document.write("실행되었습니다2.");
+    num++;
+} while (num &lt;= 5);
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -303,10 +303,10 @@
                         for문은 조건식을 만족할 때까지 특정 코드를 반복하여 실행합니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">for( let i = 1; i &lt;100; i++){
-        document.write(i+". 실행되었습니다.")
-    }
-    </code></pre>
+<pre><code class="language-js">for( let i = 1; i &lt;100; i++){
+    document.write(i+". 실행되었습니다.")
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -325,15 +325,15 @@
                         for문 안에 for문을 중첩하여 사용
                     </p>
                     <div class="script">
-    <pre><code class="language-js">//두번 반복
-        for( let i=1; i&lt;2; i++){
-            document.write(i + "실행");
-            for(let j=1; j&lt;=5; j++){
-                document.write(j + "실행");
-                //i 를 한 번 실행할 때 j를 다섯 번 반복 시켜준다.
-            }
+<pre><code class="language-js">//두번 반복
+    for( let i=1; i&lt;2; i++){
+        document.write(i + "실행");
+        for(let j=1; j&lt;=5; j++){
+            document.write(j + "실행");
+            //i 를 한 번 실행할 때 j를 다섯 번 반복 시켜준다.
         }
-    </code></pre>
+    }
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -352,15 +352,15 @@
                         for문을 이용해서 출력하고 break문을 사용
                     </p>
                     <div class="script">
-    <pre><code class="language-js">// break는 종료의 의미를 가지고있다.
-    //그러므로 10에서 종료
-    for(i = 1; i&lt;=20; i++){
-        document.write(i);
-        if(i == 10){
-            break;
-        }
+<pre><code class="language-js">// break는 종료의 의미를 가지고있다.
+//그러므로 10에서 종료
+for(i = 1; i&lt;=20; i++){
+    document.write(i);
+    if(i == 10){
+        break;
     }
-    </code></pre>
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -379,15 +379,15 @@
                         for문 안에 break문을 중첩하여 사용
                     </p>
                     <div class="script">
-    <pre><code class="language-js">// continue는 그뒤부터 다시 출력한다.
-    //10번은 출력안하고 11번부터 출력한다.
-    for(i = 1; i&lt;=20; i++){
-        if(i == 10){
-            continue;
-        }
-        document.write(i);
+<pre><code class="language-js">// continue는 그뒤부터 다시 출력한다.
+//10번은 출력안하고 11번부터 출력한다.
+for(i = 1; i&lt;=20; i++){
+    if(i == 10){
+        continue;
     }
-    </code></pre>
+    document.write(i);
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
