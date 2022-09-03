@@ -48,47 +48,59 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">jQuery 클래스 관련 메서드</h2>
-            <p class="t_desc">jQuery 클래스 관련 메서드에 대해서 알려드리겠습니다.</p>
+            <h2 class="t_tit">jQuery 스타일 관련 메서드</h2>
+            <p class="t_desc">jQuery 스타일 관련 메서드에 대해서 알려드리겠습니다.</p>
 
             <hr>
-            <h2 class="t_tit2">addClass() 메서드</h2>
-            <p class="t_desc">요소에 class속성을 추가합니다.</p>
+            <h2 class="t_tit2">CSS() 메서드</h2>
             <table class="t_table">
                 <thead>
                     <tr>
-                        <th class="ce">실행 분류</th>
-                        <th>형식</th>
+                        <th class="ce">메서드 종류</th>
+                        <th>설명</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="ce">추가</td>
-                        <td>$("div").addClass("클래스명");</td>
+                        <td class="ce">width()</td>
+                        <td>요소의 가로 길이를 취득, 변경할 수 있습니다.</td>
                     </tr>
                     <tr>
-                        <td class="ce">콜백 함수</td>
-                        <td>$("div").addClass(function(index, className){<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;// index는 각 div 요소의 index 0, 1, 2<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;// className은 각 div의 class속성<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;return class 속성 // 각 div에 속성을 추가합니다.<br>
-                        });<br>
-                        ....<br>
-                        &lt;div&gt;내용1&lt;/div&gt;<br>
-                        &lt;div&gt;내용2&lt;/div&gt;<br>
-                        &lt;div&gt;내용3&lt;/div&gt;
-                    </td>
+                        <td class="ce">innerWidth()</td>
+                        <td>padding이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">outerWidth()</td>
+                        <td>border와 margin이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다.<br>
+                            outerWidth()는 요소의 width 값 + 좌,우 border 값<br>
+                            outerWidth(true)는 요소의 width값 + 좌,우 margin 값
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">height()</td>
+                        <td>요소의 높이를 취득 변경할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">innerHeight()</td>
+                        <td>padding이 적용된 요소의 높이를 취득, 변경할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">outerHeight()</td>
+                        <td>border와 margin이 적용된 요소의 높이를 취득, 변경할 수 있습니다.<br>
+                            outerHeight()는 요소의 height값 + 상,하 border 값<br>
+                            outerHeight(true)는 요소의 height값 + 상, 하 border 값 + 상,하 margin 값
+                        </td>
                     </tr>
                 </tbody>
             </table>
             <h3 class="t_tit2">예시</h3>
-            <p class="t_desc">addClass() 메서드를 이용해 간단한 예시로 보여드리겠습니다.</p>
+            <p class="t_desc">CSS() 메서드를 이용해 간단한 예시로 보여드리겠습니다.</p>
             <div class="t_code">
 <pre><code class="language-html">&lt;script&gt;
-    $(document).ready(function(){
-        $("#m1 > div").addClass("box");
-        $("#m2 > div").addClass(function(index){
-        return "circle" + index;
+    $(document).ready(function() {
+        $("div").eq(0).css({padding: 10, "text-align": "center"});
+        $("div").css("width", function(index) {
+            return index * 100 + 100; // 100, 200, 300
         });
     });
 &lt;/script&gt;
@@ -98,17 +110,16 @@
                 <details>
                     <summary>결과</summary>
                     <div class="t_iframe">
-                        <iframe height="300" style="width: 100%;" scrolling="no" title="jQuery_class" src="https://codepen.io/younghwan12/embed/xxjxRao?result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                            See the Pen <a href="https://codepen.io/younghwan12/pen/xxjxRao">
-                            jQuery_class</a> by younghwan12 (<a href="https://codepen.io/younghwan12">@younghwan12</a>)
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="jQuery_CSS" src="https://codepen.io/younghwan12/embed/oNdNPJP?result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/younghwan12/pen/oNdNPJP">
+                            jQuery_CSS</a> by younghwan12 (<a href="https://codepen.io/younghwan12">@younghwan12</a>)
                             on <a href="https://codepen.io">CodePen</a>.
                           </iframe>
                     </div>
                 </details>               
             </div>
 
-            <h2 class="t_tit2">removeClass() 메서드</h2>
-            <p class="t_desc">요소에 removeClass속성을 추가합니다.</p>
+            <h2 class="t_tit2">width, height 관련 메서드</h2>
             <table class="t_table">
                 <thead>
                     <tr>
@@ -137,14 +148,17 @@
                 </tbody>
             </table>
             <h3 class="t_tit2">예시</h3>
-            <p class="t_desc">addClass() 메서드를 이용해 간단한 예시로 보여드리겠습니다.</p>
+            <p class="t_desc">width, heigh를 이용해 간단한 예시를 보여드리겠습니다.</p>
             <div class="t_code">
 <pre><code class="language-html">&lt;script&gt;
-    $(document).ready(function(){
-        $("#m1 > div").removeClass("con");
-        $("#m2 > div").removeClass(function(){
-          return "bg";
-        });
+    $(document).ready(function() {
+        $("div").width(150).height(150);
+        console.log("width 150" + $("div").width());
+        console.log("height " + $("div").height());
+        console.log("innerWidth " + $("div").innerWidth());
+        console.log("innerHeight " + $("div").innerHeight());
+        console.log("outerWidth " + $("div").outerWidth(true));
+        console.log("outerHeight " + $("div").outerHeight(true));
     });
 &lt;/script&gt;
 </code></pre>
@@ -153,41 +167,43 @@
                 <details>
                     <summary>결과</summary>
                     <div class="t_iframe">
-                        <iframe height="300" style="width: 100%;" scrolling="no" title="jQuery_remove" src="https://codepen.io/younghwan12/embed/wvjvoOr?result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                            See the Pen <a href="https://codepen.io/younghwan12/pen/wvjvoOr">
-                            jQuery_remove</a> by younghwan12 (<a href="https://codepen.io/younghwan12">@younghwan12</a>)
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="jQuery_widhei" src="https://codepen.io/younghwan12/embed/ExLxeMQ?result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/younghwan12/pen/ExLxeMQ">
+                            jQuery_widhei</a> by younghwan12 (<a href="https://codepen.io/younghwan12">@younghwan12</a>)
                             on <a href="https://codepen.io">CodePen</a>.
                           </iframe>
                     </div>
                 </details>               
             </div>
 
-            <h2 class="t_tit2">toggleClass() 메서드</h2>
-            <p class="t_desc">요소에 class 속성이 없으면 addClass()가 적용되고 class 속성이 있으면 removeClass()가 적용됩니다.</p>
+            <h2 class="t_tit2">위치 관련 메서드</h2>
             <table class="t_table">
                 <thead>
                     <tr>
-                        <th class="ce">실행 분류</th>
-                        <th>형식</th>
+                        <th class="ce">메서드 종류</th>
+                        <th>설명</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="ce">추가, 제거</td>
-                        <td>$("div").toggleClass(" 클래스명");</td>
+                        <td class="ce">offset()</td>
+                        <td>$("div").offset().left<br>$("div").offset().top<br>$("div").offset({left:10, top:10})</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">position()</td>
+                        <td>$("div").position().left<br>$("div").position().top<br></td>
                     </tr>
                 </tbody>
             </table>
             <h3 class="t_tit2">예시</h3>
-            <p class="t_desc">toggleClass() 메서드를 이용해 간단한 예시로 보여드리겠습니다.</p>
+            <p class="t_desc">offset(), position() 메서드를 이용해 간단한 예시로 보여드리겠습니다.</p>
             <div class="t_code">
 <pre><code class="language-html">&lt;script&gt;
-    $(document).ready(function(){
-        $("#m_menu a.m").click(function() {}
-            $(this).next().addBack().toggleClass("on").end().find(".m, ul").
-removeClass("on").end().parent().siblings().find(".m, ul").removeClass("on");
-            return flase;
-        });
+    $(document).ready(function () {
+        console.log($("#inner").offset().left);
+        console.log($("#inner").offset().top);
+        console.log($("#inner").position().left);
+        console.log($("#inner").position().top);
     });
 &lt;/script&gt;
 </code></pre>
@@ -196,37 +212,12 @@ removeClass("on").end().parent().siblings().find(".m, ul").removeClass("on");
                 <details>
                     <summary>결과</summary>
                     <div class="t_iframe">
-                        <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/younghwan12/embed/BaxapBm?result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                            See the Pen <a href="https://codepen.io/younghwan12/pen/BaxapBm">
-                            Untitled</a> by younghwan12 (<a href="https://codepen.io/younghwan12">@younghwan12</a>)
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="jQuery_position" src="https://codepen.io/younghwan12/embed/QWrWVPE?result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/younghwan12/pen/QWrWVPE">
+                            jQuery_position</a> by younghwan12 (<a href="https://codepen.io/younghwan12">@younghwan12</a>)
                             on <a href="https://codepen.io">CodePen</a>.
-                          </iframe>
+                        </iframe>
                     </div>
-                </details>               
-            </div>
-
-            <h2 class="t_tit2">hasClass() 메서드</h2>
-            <p class="t_desc">if문의 조건식으로 사용됩니다. 선택한 요소 클래스가 있으면 true, 없으면 false를 반환합니다.</p>
-            <div class="t_code">
-<pre><code class="language-html">&lt;body&gt;
-    &lt;div id="box" class="m"&gt;내용&lt;/div&gt;
-  
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        if($("#box").hasClass("m")){
-            document.write("클래스 있음");
-        } else {
-            document.write("클래스 없음");
-        }
-    &lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-            </div>
-            <div class="t_result">
-                <details>
-                    <summary>결과</summary>
-                    <p>내용<br>클래스 있음</p>
-
                 </details>               
             </div>
     </main>
