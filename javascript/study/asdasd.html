@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            console.log($("input:checkbox").eq(0).attr("checked"));
-            console.log($("input:checkbox").eq(1).prop("checked"));
-            $("input:checkbox").eq(0).attr("checked", "checked");
-            $("input:checkbox").eq(1).prop("checked", true);
-            console.log($("input:checkbox").eq(0).attr("checked"));
-            console.log($("input:checkbox").eq(1).prop("checked"));
+//선택자
+        const searchBox = document.querySelector(".search__box input");   //input 박스
+        const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
+        let count = 0;
+
+        //전체 갯수 구하기
+        searchInfo.textContent = searchList.length;
+
+        //검색 영역
+        searchBox.addEventListener("keyup", () =&gt; {
+            const searchWord = searchBox.value;     //사용자가 입력한 키워드
+
+            searchList.forEach(el =&gt; {
+                const cssName = el.dataset.name;
+
+
+                if (cssName.indexOf(searchWord)) {
+                    el.classList.add("hide");
+                    
+                } else {
+                    el.classList.remove("hide");    //indexOf()값이 0(false)이되는 값만 hide를 지워줍니다.
+                    count++
+                }
+                searchInfo.textContent = count;
+            });
+            count = 0;
         });
-    </script>
-</head>
-<body>
-  <input type="checkbox" id="html"><label for="html">html</label>
-  <input type="checkbox" id="css"><label for="css">css</label> 
-</body>
-</html>
