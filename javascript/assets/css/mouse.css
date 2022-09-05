@@ -8,6 +8,7 @@
 body {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 body.img01 {
     background: #000 url(../img/effect_bg01@2x.jpg) no-repeat center / cover;
@@ -39,6 +40,36 @@ body.img09 {
 body.img10 {
     background: #000 url(../img/effect_bg10@2x.jpg) no-repeat center / cover;
 }
+body.img11 {
+    background: #000 url(../img/effect_bg11@2x.jpg) no-repeat center / cover;
+}
+body.img12 {
+    background: #000 url(../img/effect_bg12@2x.jpg) no-repeat center / cover;
+}
+body.img13 {
+    background: #000 url(../img/effect_bg13@2x.jpg) no-repeat center / cover;
+}
+body.img14 {
+    background: #000 url(../img/effect_bg14@2x.jpg) no-repeat center / cover;
+}
+body.img15 {
+    background: #000 url(../img/effect_bg15@2x.jpg) no-repeat center / cover;
+}
+body.img16 {
+    background: #000 url(../img/effect_bg16@2x.jpg) no-repeat center / cover;
+}
+body.img17 {
+    background: #000 url(../img/effect_bg17@2x.jpg) no-repeat center / cover;
+}
+body.img18 {
+    background: #000 url(../img/effect_bg18@2x.jpg) no-repeat center / cover;
+}
+body.img19 {
+    background: #000 url(../img/effect_bg19@2x.jpg) no-repeat center / cover;
+}
+body.img20 {
+    background: #000 url(../img/effect_bg20@2x.jpg) no-repeat center / cover;
+}
 body::after {
     content: "";
     position: absolute;
@@ -57,7 +88,9 @@ a {
     color: #fff;
     text-decoration: none;
 }
-
+li {
+    list-style: none;
+}
 /* scroll */
 ::-webkit-scrollbar {
     width: 10px;
@@ -382,11 +415,3 @@ a {
         width: 96%;
     }
 }
-
-/* 요소를 안보이게 하는 방법
-    1. display: none;       (애니메이션X, 영역X)
-    2. opacity: 0;          (애니메이션O, 영역O)
-    3. visibility: hidden;  (애니메이션X, 영역X)
-    4. transform: scale(0); (애니메이션O, 영역X)
-    5. width: 0; height: 0; (애니메이션X, 영역X) : blind
-*/
