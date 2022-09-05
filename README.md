@@ -1,7 +1,10 @@
 # coding3
 
-### 메인 페이지
+### 메인 페이지1
 https://younghwan12.github.io/coding3/index.html
+
+### 메인 페이지2
+https://younghwan.netlify.app/
 
 ## 자기소개 페이지
 https://younghwan12.github.io/coding3/class/index.html
