@@ -50,6 +50,9 @@ https://younghwan12.github.io/coding3/site/textType/textType02.html
 https://younghwan12.github.io/coding3/site/textType/textType03.html  
 https://younghwan12.github.io/coding3/site/headerType/headerType01.html  
 https://younghwan12.github.io/coding3/site/imgTextType/imgTextType01.html  
+https://younghwan12.github.io/coding3/site/sliderType/sliderType01.html  
+https://younghwan12.github.io/coding3/site/bannerType/bannerType01.html  
+https://younghwan12.github.io/coding3/site/footerType/footerType01.html  
 
 ### 블로그 예제보기
 https://younghwan12.github.io/coding3/javascript/study/htmltest.html   
