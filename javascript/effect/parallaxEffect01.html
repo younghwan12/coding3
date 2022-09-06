@@ -1048,7 +1048,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
 
                 // forEach문
                 document.querySelectorAll(".content__item").forEach((element, index)=>{
-                    if(scrollTop >= element.offsetTop - 2){
+                    if(scrollTop >= element.offsetTop - 2){         /*여기서 2를 빼주는 이유는 컴퓨터마다 크기가 달라 스크롤이 끝까지 안내려가서 마지막 섹션 offset값까지 도달할수 없을수도 있기에 오류 수정하기 위해서*/
                         document.querySelectorAll("#parallax__nav li").forEach(li => {
                             li.classList.remove("active");
                         });

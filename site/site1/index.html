@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사이트 만들기1</title>
+    
+    <style>
+        
+    </style>
 
     <!-- SEO -->
     <meta name="author" content="왕자님">
@@ -47,11 +51,11 @@
             </div>
             <nav class="header__menu">
                 <ul>
-                    <li><a href="#">헤더 영역</a></li>
-                    <li><a href="#">슬라이드 영역</a></li>
-                    <li><a href="#">배너 영역</a></li>
-                    <li><a href="#">컨텐츠 영역</a></li>
-                    <li><a href="#">푸터 영역</a></li>
+                    <li class="active"><a href="#imageType">이미지 영역</a></li>
+                    <li><a href="#imgTextType">이미지텍스트 영역</a></li>
+                    <li><a href="#cardType">카드 영역</a></li>
+                    <li><a href="#bannerType">배너 영역</a></li>
+                    <li><a href="#textType">텍스트 영역</a></li>
                 </ul>
             </nav>
             <div class="header__member">
@@ -62,7 +66,7 @@
     <!-- //headerType -->
 
     <main id="mainType">
-        <section id="sliderType" class="slider__wrap">
+        <section id="sliderType" class="slider__wrap content__item">
             <h2 class="blind">슬라이드 영역</h2>
             <div class="slider__inner">
                 <div class="slider">
@@ -96,7 +100,7 @@
         </section>
         <!-- //sliderType -->
 
-        <section id="imageType" class="image__wrap nexon section">
+        <section id="imageType" class="type image__wrap nexon section content__item">
             <h2>축구 강의⚽</h2>
             <p>축구에 관한 기초, 드리블, 슈팅 강의 리스트 입니다.</p>
             <div class="image__inner container">
@@ -114,7 +118,7 @@
         </section>
         <!-- //imageType -->
 
-        <section id="imgTextType" class="imgText__wrap nexon section gray">
+        <section id="imgTextType" class="type imgText__wrap nexon section gray content__item">
             <h2 class="blind">유용한 사이트 살펴보기</h2>
             <div class="imgText__inner container">
                 <div class="imgText__txt">
@@ -140,7 +144,7 @@
         </section>
         <!-- //imgTextType -->
 
-        <section id="cardType" class="card__wrap nexon section">
+        <section id="cardType" class="type card__wrap nexon section content__item">
             <h2>축구 강의⚽</h2>
             <p>축구에 관한 기초, 드리블, 슈팅 강의 리스트 입니다.</p>
             <div class="card_inner container">
@@ -199,7 +203,7 @@
         </section>
         <!-- //cardType -->
 
-        <section id="bannerType" class="banner__wrap nexon section">
+        <section id="bannerType" class="type banner__wrap nexon section content__item">
             <h2 class="blind">배너 영역</h2>
             <div class="banner__inner">
                 <h3 class="title">블로거 이영환</h3>
@@ -211,7 +215,7 @@
         </section>
         <!-- //bannerType -->
 
-        <section id="textType" class="text__wrap nexon section">
+        <section id="textType" class="type text__wrap nexon section content__item">
             <span>텍스트 유형01</span>
             <h2 class="mb70">노래 플레이리스트 모음</h2>
             <div class="text__inner container">
@@ -252,7 +256,7 @@
     </main>
     <!-- //mainType -->
 
-    <footer id="footerType" class="footer__wrap nexon section gray">
+    <footer id="footerType" class="type footer__wrap nexon section gray content__item">
         <h2 class="blind">푸터 영역</h2>
         <div class="footer__inner container">
             <div class="footer__menu">
@@ -314,4 +318,49 @@
     </footer>
     <!-- //footerType -->
 </body>
+<script>
+
+        // window.addEventListener("scroll", () => {
+        //     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+        //     // forEach문
+        //     document.querySelectorAll(".content__item").forEach((element, index)=>{
+        //         if(scrollTop >= element.offsetTop - 2){         /*여기서 2를 빼주는 이유는 컴퓨터마다 크기가 달라 스크롤이 끝까지 안내려가서 마지막 섹션 offset값까지 도달할수 없을수도 있기에 오류 수정하기 위해서*/
+        //             document.querySelectorAll(".header__menu li").forEach(li => {
+        //                 li.classList.remove("active");
+        //             });
+        //             document.querySelector(".header__menu li:nth-child(" + (index + 1) + ")").classList.add("active");
+                    
+        //         };
+
+        //     });
+
+        //     // // offsetTop값 for문 이용해서 구하기
+        //     // for(let i = 1; i<= 9; i++ ) {
+        //     //     document.querySelector(".offset" + i ).innerText = document.getElementById("section" + i).offsetTop;
+        //     // };
+        // });
+
+        window.addEventListener("scroll", ()=>{
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+            document.querySelectorAll(".type").forEach((element, index)=>{
+                if(scrollTop >= element.offsetTop - 2){
+                    document.querySelectorAll(".header__menu li").forEach(li => {
+                        li.classList.remove("active");
+                    });
+                    document.querySelector(".header__menu li:nth-child(" + (index + 1) + ")").classList.add("active");
+                };
+            })
+        })
+
+        document.querySelectorAll(".header__menu li a").forEach(li => {
+                li.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector(li.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            });
+
+</script>
 </html>
