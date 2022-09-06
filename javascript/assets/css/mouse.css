@@ -182,6 +182,9 @@ li {
     background-color: #fff;
     color: #3b3d63;
 }
+.modal__btn label:hover {
+    cursor: pointer;
+}
 .modal__cont {
     width: 100%;
     height: 100vh;

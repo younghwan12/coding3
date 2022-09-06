@@ -2,84 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: GowunBatang;
 }
-
 body {
     background-color: #222;
     color: #fff;
-    font-family: "NexonLv1Gothic";
     font-weight: 300;
-}
-
-body.img01 {
-    background: #000 url(../img/effect_bg01@2x.jpg) no-repeat center / cover;
-}
-body.img02 {
-    background: #000 url(../img/effect_bg02@2x.jpg) no-repeat center / cover;
-}
-body.img03 {
-    background: #000 url(../img/effect_bg03@2x.jpg) no-repeat center / cover;
-}
-body.img04 {
-    background: #000 url(../img/effect_bg04@2x.jpg) no-repeat center / cover;
-}
-body.img05 {
-    background: #000 url(../img/effect_bg05@2x.jpg) no-repeat center / cover;
-}
-body.img06 {
-    background: #000 url(../img/effect_bg06@2x.jpg) no-repeat center / cover;
-}
-body.img07 {
-    background: #000 url(../img/effect_bg07@2x.jpg) no-repeat center / cover;
-}
-body.img08 {
-    background: #000 url(../img/effect_bg08@2x.jpg) no-repeat center / cover;
-}
-body.img09 {
-    background: #000 url(../img/effect_bg09@2x.jpg) no-repeat center / cover;
-}
-body.img10 {
-    background: #000 url(../img/effect_bg10@2x.jpg) no-repeat center / cover;
-}
-body.img11 {
-    background: #000 url(../img/effect_bg11@2x.jpg) no-repeat center / cover;
-}
-body.img12 {
-    background: #000 url(../img/effect_bg12@2x.jpg) no-repeat center / cover;
-}
-body.img13 {
-    background: #000 url(../img/effect_bg13@2x.jpg) no-repeat center / cover;
-}
-body.img14 {
-    background: #000 url(../img/effect_bg14@2x.jpg) no-repeat center / cover;
-}
-body.img15 {
-    background: #000 url(../img/effect_bg15@2x.jpg) no-repeat center / cover;
-}
-body.img16 {
-    background: #000 url(../img/effect_bg16@2x.jpg) no-repeat center / cover;
-}
-body.img17 {
-    background: #000 url(../img/effect_bg17@2x.jpg) no-repeat center / cover;
-}
-body.img18 {
-    background: #000 url(../img/effect_bg18@2x.jpg) no-repeat center / cover;
-}
-body.img19 {
-    background: #000 url(../img/effect_bg19@2x.jpg) no-repeat center / cover;
-}
-body.img20 {
-    background: #000 url(../img/effect_bg20@2x.jpg) no-repeat center / cover;
-}
-body::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(23, 20, 88, 0.386);
-    z-index: -1;
+    font-family: “NexonLv1Gothic”;
 }
 img {
     width: 100%;
@@ -103,6 +32,23 @@ li {
 ::-webkit-scrollbar-thumb {
     background: rgba(69, 71, 100, 0.321);
     border-radius: 20px;
+}
+/* ::-webkit-scrollbar-thumb:hover {
+        background: #B0B3E5;
+    } */
+/* layout */
+#header {
+    z-index: 2000;
+}
+#main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1000;
+}
+#footer {
+    position: relative;
+    z-index: 3000;
 }
 
 /* header */
@@ -144,16 +90,6 @@ li {
 #header {
     z-index: 2000;
 }
-#main {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    z-index: 1000;
-}
-#footer {
-    position: relative;
-    z-index: 3000;
-}
 
 /* footer */
 #footer .source {
@@ -165,7 +101,6 @@ li {
     padding: 10px 30px;
     font-size: 14px;
 }
-
 /* modal__wrap */
 .modal__btn {
     color: #fff;
@@ -178,6 +113,9 @@ li {
     bottom: 20px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+}
+.modal__btn label:hover {
+    cursor: pointer;
 }
 .modal__btn:hover {
     background-color: #fff;
@@ -415,34 +353,4 @@ li {
     .modal__box {
         width: 96%;
     }
-}
-
-/* parallax__nav */
-#parallax__nav {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    z-index: 10000;
-    background-color: rgba(0,0,0,0.4);
-    padding: 20px 30px;
-    border-radius: 50px;
-}
-#parallax__nav li {
-    display: inline;
-    margin: 0 5px;
-}
-
-#parallax__nav li a {
-    display: inline-block;
-    height: 30px;
-    padding: 5px 20px;
-    text-align: center;
-    line-height: 30px;
-}
-
-#parallax__nav li.active a {
-    background-color: #fff;
-    color: #000;
-    border-radius: 20px;
-    box-sizing: content-box;
 }
