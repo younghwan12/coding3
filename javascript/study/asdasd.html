@@ -1,60 +1,89 @@
-&lt;footer id="footerType" class="footer__wrap nexon section gray"&gt;
-    &lt;h2 class="blind"&gt;푸터 영역&lt;/h2&gt;
-    &lt;div class="footer__inner container"&gt;
-        &lt;div class="footer__menu"&gt;
-            &lt;div&gt;
-                &lt;h3&gt;사이트&lt;/h3&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;반응형 사이트&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;패럴랙스 사이트&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;포트폴리오 사이트&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-                &lt;h3&gt;헤더 영역&lt;/h3&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;메뉴 유형01&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;메뉴 유형02&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-                &lt;h3&gt;슬라이드 영역&lt;/h3&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;슬라이드 유형01&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;슬라이드 유형02&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-                &lt;h3&gt;이미지 영역&lt;/h3&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;이미지 유형01&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;이미지 유형02&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;이미지/텍스트 유형01&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;이미지/텍스트 유형02&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;텍스트 유형01&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-                &lt;h3&gt;컨텐츠 영역&lt;/h3&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;카드 유형01&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;카드 유형02&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;카드 유형03&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-                &lt;h3&gt;푸터 영역&lt;/h3&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;푸터 메뉴 유형01&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;푸터 컨텍트 유형02&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="#"&gt;푸터 이메일 유형03&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="footer__right"&gt;
-            2022 LeeYounghwan. Portfolio is Power&lt;br&gt;
-            All rights reserved.
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/footer&gt;
+window.addEventListener("mousemove", (event) =&gt; {
+    document.querySelector(".clientX").innerText = event.clientX;
+    document.querySelector(".clientY").innerText = event.clientY;
+    document.querySelector(".offsetX").innerText = event.offsetX;
+    document.querySelector(".offsetY").innerText = event.offsetY;
+    document.querySelector(".pageX").innerText = event.pageX;
+    document.querySelector(".pageY").innerText = event.pageY;
+    document.querySelector(".screenX").innerText = event.screenX;
+    document.querySelector(".screenY").innerText = event.screenY;
+});
+
+const cursor = document.querySelector(".mouse__cursor");
+window.addEventListener("mousemove", (e) =&gt; {
+    
+    
+    cursor.style.left = e.clientX - 25 + "px";          /* 단위를 꼭 적어주어야 한다. */
+    cursor.style.top = e.clientY - 25 + "px";           /* 단위를 꼭 적어주어야 한다. */
+});
+
+// document.querySelector(".style1").addEventListener("mouseover", () =&gt; {
+//     cursor.classList.add("style1");
+// });
+// document.querySelector(".style1").addEventListener("mouseout", () =&gt; {
+//     cursor.classList.remove("style1");
+// });
+// document.querySelector(".style2").addEventListener("mouseover", () =&gt; {
+//     cursor.classList.add("style2");
+// });
+// document.querySelector(".style2").addEventListener("mouseout", () =&gt; {
+//     cursor.classList.remove("style2");
+// });
+// document.querySelector(".style3").addEventListener("mouseover", () =&gt; {
+//     cursor.classList.add("style3");
+// });
+// document.querySelector(".style3").addEventListener("mouseout", () =&gt; {
+//     cursor.classList.remove("style3");
+// });
+// document.querySelector(".style4").addEventListener("mouseover", () =&gt; {
+//     cursor.classList.add("style4");
+// });
+// document.querySelector(".style4").addEventListener("mouseout", () =&gt; {
+//     cursor.classList.remove("style4");
+// });
+// document.querySelector(".style5").addEventListener("mouseover", () =&gt; {
+//     cursor.classList.add("style5");
+// });
+// document.querySelector(".style5").addEventListener("mouseout", () =&gt; {
+//     cursor.classList.remove("style5");
+// });
+// document.querySelector(".style6").addEventListener("mouseover", () =&gt; {
+//     cursor.classList.add("style6");
+// });
+// document.querySelector(".style6").addEventListener("mouseout", () =&gt; {
+//     cursor.classList.remove("style6");
+// });
+
+
+// for 문 이용하기
+// for (let i = 1; i &lt;= 6; i++) {
+    
+//     document.querySelector(".style" + i ).addEventListener("mouseover", () =&gt; {
+//     cursor.classList.add("style" + i );
+//     });
+//     document.querySelector(".style" + i ).addEventListener("mouseout", () =&gt; {
+//     cursor.classList.remove("style" + i );
+//     });
+// }
+
+// forEach 문 이용하기
+// document.querySelectorAll(".mouse__wrap span").forEach((span, num) =&gt; {
+//     span.addEventListener("mouseover", () =&gt; {
+//         cursor.classList.add("style" + (num + 1));
+//     });
+//     span.addEventListener("mouseout", () =&gt; {
+//         cursor.classList.remove("style" + (num + 1));
+//     });
+// });
+
+// getAttribute 속성값 가져와서 작업하기
+document.querySelectorAll(".mouse__wrap span").forEach((span) =&gt; {
+    let attr = span.getAttribute("class");
+
+    span.addEventListener("mouseover", () =&gt; {
+        cursor.classList.add(attr);
+    });
+    span.addEventListener("mouseout", () =&gt; {
+        cursor.classList.remove(attr);
+    });
+});
