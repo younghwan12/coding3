@@ -1,14 +1,13 @@
 /* 웹폰트 */
-@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
-@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
-
+@import url("https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css");
+@import url("https://webfontworld.github.io/gmarket/GmarketSans.css");
 
 /* 리셋 */
 /* 여백 초기화 */
 * {
     margin: 0;
     padding: 0;
-    font-family: 'NexonLv1Gothic';
+    font-family: "NexonLv1Gothic";
     font-size: 16px;
     line-height: 1.6;
 }
@@ -23,7 +22,12 @@ li {
 }
 
 /* 제목 초기화 */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: normal;
 }
 
@@ -109,7 +113,7 @@ footer {
 }
 .main_sample h3 {
     font-size: 18px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
 }
 .main_sample p {
     margin-bottom: 10px;
@@ -125,7 +129,6 @@ footer {
     color: #fff;
 }
 
-
 /* intro_menu */
 .intro_menu {
     position: absolute;
@@ -133,19 +136,18 @@ footer {
     top: 50%;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     padding: 2vw;
     border-radius: 1vw;
     font-size: 1vw;
     text-align: center;
     color: rgb(38, 0, 255);
-
 }
 .intro_menu ul li a {
     color: rgb(38, 0, 255);
     font-size: 1vw;
 }
-@media (max-width: 600px){
+@media (max-width: 600px) {
     .intro_menu {
         width: 90%;
         padding: 14px;
@@ -158,12 +160,11 @@ footer {
     }
 }
 
-
 /* sample 2022-08-10 제작*/
 .sample {
     margin-bottom: 80px;
 }
-.sample .table table{
+.sample .table table {
     width: 100%;
     border: 1px solid #e6e6e6;
     text-align: center;
@@ -224,7 +225,7 @@ footer {
     color: #fff;
 }
 .sample .sbox::after {
-    content: '';
+    content: "";
     width: 480px;
     height: 280px;
     border: 1px dashed #4390e1;
@@ -233,7 +234,7 @@ footer {
     top: -21px;
 }
 .sample .sbox::before {
-    content: '';
+    content: "";
     width: 398px;
     height: 198px;
     border: 1px dashed #4390e1;
@@ -263,7 +264,7 @@ footer {
     color: #fff;
 }
 /* 모바일용 */
-@media (max-width: 800px){
+@media (max-width: 800px) {
     .sample .table {
         overflow-x: scroll;
     }
@@ -303,7 +304,6 @@ footer {
     width: 100%;
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    
 }
 .document i {
     font-style: normal;
@@ -311,7 +311,7 @@ footer {
     position: relative;
 }
 .document i::before {
-    content: '';
+    content: "";
     background-color: #0242f136;
     width: 100%;
     height: 10px;
@@ -368,7 +368,7 @@ footer {
 }
 .document .t_table {
     border: 1px solid #dcdcdc;
-    width : 100%;
+    width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
 }
@@ -388,10 +388,8 @@ footer {
 
 /* 모바일 */
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
     body {
         padding: 20px;
     }
 }
-
- 
