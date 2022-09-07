@@ -60,110 +60,55 @@
                   </iframe>
             </div>
             <h2 class="t_tit2">HTML</h2>
-            <p class="t_desc">HTML에 wrapper라는 태그를 5개 만들고 그안에 div 태그를 만들어줍니다.</p>
+            <p class="t_desc">버튼을 두개 만들어줍니다.</p>
             <div class="t_code">
-<pre><code class="language-html">&lt;div class="wrapper"&gt;
-    &lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="wrapper"&gt;
-    &lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="wrapper"&gt;
-    &lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="wrapper"&gt;
-    &lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="wrapper"&gt;
-    &lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
+<pre><code class="language-html">&&lt;div class="sample"&gt;
+    &lt;div class="timing step"&gt;
+      &lt;div class="stepbox"&gt;&lt;/div&gt;
+      &lt;span class="stepBtn"&gt;
+        &lt;a href="#" class="stepBtnStart"&gt;Start&lt;/a&gt;
+        &lt;a href="#" class="stepBtnStop"&gt;Stop&lt;/a&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 </code></pre>
 </div>
 <h2 class="t_tit2">CSS</h2>
-            <p class="t_desc">배경색을 넣은뒤 5개의 원을 각자 위치를 잡아주고 애니메이션효과를 주면서 공이 점점 작아지며 흐릿해지게 만들어 잔상처럼 보여주게 만들어줍니다.
+            <p class="t_desc">사진을 쭉 가로로 길게 만들어주고 800px씩 우에서 좌로 이동하는거로 만들어줍니다.
             </p>
             <div class="t_code">
-<pre><code class="language-css">* {
-    box-sizing:border-box;
+<pre><code class="language-css">.step {
+    height: 700px;
+    background: #43dcf6;
+    position: relative;
 }
-body {
-    background: linear-gradient(to top, yellowgreen 0%, pink 100%);
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-.wrapper{
+.step .stepbox {
+    width: 800px; height: 600px;
+    background: url(img/ani1.jpg);
+    border-radius: 0;
     position: absolute;
-    animation: x 1s ease-in-out alternate infinite 0s both
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    animation: ani 1s steps(24, start) infinite;
 }
-.wrapper:nth-of-type(2){
-    animation-delay : 0.1s;
+.step .stepbox.start {
+    animation-play-state: running;
 }
-.wrapper:nth-of-type(3){
-    animation-delay : 0.2s;
+.step .stepbox.stop {
+    animation-play-state: paused;
 }
-.wrapper:nth-of-type(4){
-    animation-delay : 0.3s;
+@keyframes ani {
+    0% {background-position: 0 0;}
+    100% {background-position: -19200px 0;}
 }
-.wrapper:nth-of-type(5){
-    animation-delay : 0.4s;
+.stepBtn {
+    position: absolute; left: 15px; top: 20px;
 }
-  
-.wrapper>div{
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 100%;
-    margin: 40px;
-    animation: y 1s linear infinite 0s both;
-}
-  .wrapper:nth-of-type(2)>div{
-    animation-delay : 0.1s;
-    height: 40px;
-    width: 40px;
-    opacity:0.8;
-}
-  .wrapper:nth-of-type(3)>div{
-    animation-delay : 0.2s;
-    height: 30px;
-    width: 30px;
-    opacity:0.6;
-}
-  .wrapper:nth-of-type(4)>div{
-    animation-delay : 0.3s;
-    height: 20px;
-    width: 20px;
-    opacity:0.4;
-}
-  .wrapper:nth-of-type(5)>div{
-    animation-delay : 0.4s;
-    height: 10px;
-    width: 10px;
-    opacity:0.2;
-}
-  
-@keyframes x {
-    0% {
-      transform: translateX(-100px);
-    }
-    100% {
-      transform: translateX(100px);
-    }
-}
-@keyframes y {
-    25% {
-      transform:translatey(-50px);
-    }
-    0%,50%,100% {
-      transform:translatey(0);
-    }
-    75% {
-      transform:translatey(50px);
-    }
+.stepBtn a {
+    background: #e16162; color: #fff;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 3px;
 }
 </code></pre>
                 </div>
