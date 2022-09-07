@@ -59,4 +59,4 @@ https://younghwan12.github.io/coding3/javascript/study/htmltest.html
  
  
 ### 이미지 
-https://younghwan12.github.io/coding3/animation/img/img.html   
+https://younghwan12.github.io/coding3/animation/img.html   
