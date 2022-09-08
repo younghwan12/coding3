@@ -170,7 +170,7 @@
 <p class="t_desc2">사이드 메뉴 디자인을 해봤습니다. active가 있을 때, 없을 때로 디자인했습니다.</p>
 <div class="t_result">
     <details>
-        <summary>결과</summary>
+        <summary>소스보기</summary>
         <div class="t_code">
 <pre><code class="language-css">/* parallax__nav */
 #parallax__nav {
@@ -390,7 +390,8 @@
             스타일 css 선언으로 active가 있을 때 디자인과 배경을 바꿔주면 완성!. 자세한 설명은 주석에 추가하였습니다.
             </p>
             <div class="t_result">
-                <details>
+                <details> 
+                    <summary>소스보기</summary>
                     <div class="t_code">
 <pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach(el =&gt; {
     el.addEventListener("click", e =&gt; {
@@ -432,6 +433,11 @@ window.addEventListener("scroll", ()=&gt; {
                         </div>
                 </details>               
             </div>
+            <br>
+            <h2 class="t_tit2">오늘의 코드</h2>
+            <p class="t_box">
+                Event.preventDefault() : 이벤트를 명시적으로 처리하지 않은 경우, 해당 이벤트에 대한 사용자 에이전트의 기본 동작을 실행하지 않도록 지정합니다.<br>
+            ex) a태그 같이 링크를 걸어두는곳에 addEventListener를 사용해 click 이벤트를 처리해도 preventDefault를 사용하면 아무 동작을 실행하지 않도록 할수 있습니다.</p>
 </div>  
                         
     </main>
