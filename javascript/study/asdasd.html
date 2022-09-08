@@ -1,36 +1,103 @@
-document.querySelectorAll("#parallax__dot a").forEach(el =&gt; {
-  el.addEventListener("click", e =&gt; {
-      e.preventDefault();
-      
-      document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
-  });
-});
+&lt;div id="parallax__top"&gt;
+  Top
+&lt;/div&gt;
+&lt;!-- //parallax__top --&gt;
 
-window.addEventListener("scroll", ()=&gt; {
-  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+&lt;main id="parallax__cont"&gt;
+  &lt;div id="contents"&gt;
+      &lt;section id="section1" class="content__item"&gt;
+          &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+          &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+          &lt;figure class="content__item__imgWrap"&gt;
+              &lt;div class="content__item__img"&gt;&lt;/div&gt;
+          &lt;/figure&gt;
+          &lt;p class="content__item__desc"&gt;산다는것 그것은 치열한 전투이다.&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section1 --&gt;
 
-  document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+      &lt;section id="section2" class="content__item"&gt;
+          &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+          &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+          &lt;figure class="content__item__imgWrap"&gt;
+              &lt;div class="content__item__img"&gt;&lt;/div&gt;
+          &lt;/figure&gt;
+          &lt;p class="content__item__desc"&gt;하루에 3시간을 걸으면 7년 후에 지구를 한바퀴 돌 수 있다.&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section2 --&gt;
 
-  document.querySelectorAll(".content__item").forEach((e, i)=&gt;{
-      if(scrollTop &gt;= e.offsetTop - window.innerHeight/2 ){           /*정확히 안맞을수도 있어서 오차가 있을수 있으므로 10을 빼줍니다.*/
-          document.querySelectorAll("#parallax__dot li").forEach(li =&gt; {
-              li.classList.remove("active");
-          })
-          document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active")
-      };
-  });
-});
+      &lt;section id="section3" class="content__item"&gt;
+          &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+          &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+          &lt;figure class="content__item__imgWrap"&gt;
+              &lt;div class="content__item__img"&gt;&lt;/div&gt;
+          &lt;/figure&gt;
+          &lt;p class="content__item__desc"&gt;내일은 내일의 태양이 뜬다.&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section3 --&gt;
 
+      &lt;section id="section4" class="content__item"&gt;
+          &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+          &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+          &lt;figure class="content__item__imgWrap"&gt;
+              &lt;div class="content__item__img"&gt;&lt;/div&gt;
+          &lt;/figure&gt;
+          &lt;p class="content__item__desc"&gt;배고픈 자 밥솥을 열어라.&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section4 --&gt;
 
+      &lt;section id="section5" class="content__item"&gt;
+          &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+          &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+          &lt;figure class="content__item__imgWrap"&gt;
+              &lt;div class="content__item__img"&gt;&lt;/div&gt;
+          &lt;/figure&gt;
+          &lt;p class="content__item__desc"&gt;그대 자신의 영혼을 탐구하라.&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section5 --&gt;
 
-// window.scroll(0, 1000);                 1000에 간다 (고정)
-// window.scroll({left: 0, top: 2000});    2000에 간다 (고정)
-// window.scroll({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
+      &lt;section id="section6" class="content__item"&gt;
+          &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+          &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+          &lt;figure class="content__item__imgWrap"&gt;
+              &lt;div class="content__item__img"&gt;&lt;/div&gt;
+          &lt;/figure&gt;
+          &lt;p class="content__item__desc"&gt;돈이 없는 것은 죄다.&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section6 --&gt;
 
-// window.scrollTo(0, 1000);                 1000에 간다 (고정)
-// window.scrollTo({left: 0, top: 2000});    2000에 간다 (고정)
-// window.scrollTo({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
+      &lt;section id="section7" class="content__item"&gt;
+          &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+          &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+          &lt;figure class="content__item__imgWrap"&gt;
+              &lt;div class="content__item__img"&gt;&lt;/div&gt;
+          &lt;/figure&gt;
+          &lt;p class="content__item__desc"&gt;무전 유죄, 유전 무죄&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section7 --&gt;
 
-// window.scrollBy(0, 1000);                 1000에 간다 (고정)
-// window.scrollBy({left: 0, top: 2000});    2000에 간다 (고정)
-// window.scrollBy({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
+      &lt;section id="section8" class="content__item"&gt;
+          &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+          &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+          &lt;figure class="content__item__imgWrap"&gt;
+              &lt;div class="content__item__img"&gt;&lt;/div&gt;
+          &lt;/figure&gt;
+          &lt;p class="content__item__desc"&gt;내 주머니의 푼돈이 남 주머니에 있는 거금보다 낫다.&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section8 --&gt;
+
+      &lt;section id="section9" class="content__item"&gt;
+          &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+          &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+          &lt;figure class="content__item__imgWrap"&gt;
+              &lt;div class="content__item__img"&gt;&lt;/div&gt;
+          &lt;/figure&gt;
+          &lt;p class="content__item__desc"&gt;최고에 도달하려면 최저에서 시작하라.&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section9 --&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+
+&lt;aside id="parallax__info"&gt;
+  &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;            
+&lt;/aside&gt;

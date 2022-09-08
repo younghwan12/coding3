@@ -557,23 +557,23 @@
                             <div class="active">
 <pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach(el =&gt; {
     el.addEventListener("click", e =&gt; {
-        e.preventDefault();
+        e.preventDefault();                     /*클릭하면 이동하는것을 중지합니다*/
         
-        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});          /*스무스 하게 이동을 설정합니다*/
     });
 });
   
 window.addEventListener("scroll", ()=&gt; {
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;           /*스크롤 값 선언*/
   
-    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);        /*스크롤값 버림으로 나온 값을 넣어줍니다.*/
   
     document.querySelectorAll(".content__item").forEach((e, i)=&gt;{
-        if(scrollTop &gt;= e.offsetTop - window.innerHeight/2 ){           /*정확히 안맞을수도 있어서 오차가 있을수 있으므로 10을 빼줍니다.*/
+        if(scrollTop &gt;= e.offsetTop - window.innerHeight/2 ){           /*정확히 안맞을수도 있어서 오차가 있을수 있으므로 현재보이는 화면크기값/2를 빼줍니다.*/
             document.querySelectorAll("#parallax__dot li").forEach(li =&gt; {
                 li.classList.remove("active");
             })
-            document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active")
+            document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active")          /*i값은 index값이므로 0부터 시작해서 1을 더해줍니다.*/
         };
     });
 });
@@ -957,7 +957,7 @@ window.addEventListener("scroll", ()=&gt; {
                 document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
 
                 document.querySelectorAll(".content__item").forEach((e, i)=>{
-                    if(scrollTop >= e.offsetTop - window.innerHeight/2 ){           /*정확히 안맞을수도 있어서 오차가 있을수 있으므로 10을 빼줍니다.*/
+                    if(scrollTop >= e.offsetTop - window.innerHeight/2 ){           /*정확히 안맞을수도 있어서 오차가 있을수 있으므로 빼줍니다.*/
                         document.querySelectorAll("#parallax__dot li").forEach(li => {
                             li.classList.remove("active");
                         })

@@ -18,11 +18,15 @@
             #parallax__nav {
                 position: fixed;
                 right: 20px;
-                top: 20px;
+                top: -200px;
                 z-index: 2000;
                 background-color: rgba(0, 0, 0, 0.4);
                 padding: 20px 30px;
                 border-radius: 50px;
+                transition: top 0.4s ease;
+            }
+            #parallax__nav.show {
+                top: 20px;
             }
             #parallax__nav li {
                 display: inline;
@@ -184,6 +188,29 @@
                     bottom: 10px;
                 }
             }
+            #parallax__top {
+                position: fixed;
+                left: 50%;
+                bottom: -120px;
+                z-index: 10000;
+                transform: translateX(-50%);
+                width: 40px;
+                height: 40px;
+                background: rgba(0, 0, 0, 0.4);
+                text-align: center;
+                line-height: 40px;
+                color: #fff;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all .3s;
+            }
+            #parallax__top.show {
+                bottom: 20px;
+            }
+            #parallax__top:hover {
+                background: #fff;
+                color: #000;
+            }
             
         </style>
     </head>
@@ -216,6 +243,12 @@
                 <li><a href="#section9">메뉴9</a></li>
             </ul>
         </nav>
+        <!-- //parallax__nav -->
+
+        <div id="parallax__top">
+            Top
+        </div>
+        <!-- //parallax__top -->
 
         <main id="parallax__cont">
             <div id="contents">
@@ -621,20 +654,11 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
 </code></pre>
                             </div>
                             <div>
-<pre><code class="language-html">&lt;nav id="parallax__nav"&gt;
-    &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
-
+<pre><code class="language-html">&lt;div id="parallax__top"&gt;
+    Top
+  &lt;/div&gt;
+&lt;!-- //parallax__top --&gt;
+  
 &lt;main id="parallax__cont"&gt;
     &lt;div id="contents"&gt;
         &lt;section id="section1" class="content__item"&gt;
@@ -646,7 +670,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
             &lt;p class="content__item__desc"&gt;산다는것 그것은 치열한 전투이다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section1 --&gt;
-
+  
         &lt;section id="section2" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;02&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
@@ -656,7 +680,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
             &lt;p class="content__item__desc"&gt;하루에 3시간을 걸으면 7년 후에 지구를 한바퀴 돌 수 있다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section2 --&gt;
-
+  
         &lt;section id="section3" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;03&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
@@ -666,7 +690,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
             &lt;p class="content__item__desc"&gt;내일은 내일의 태양이 뜬다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section3 --&gt;
-
+  
         &lt;section id="section4" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;04&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
@@ -676,7 +700,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
             &lt;p class="content__item__desc"&gt;배고픈 자 밥솥을 열어라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section4 --&gt;
-
+  
         &lt;section id="section5" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;05&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
@@ -686,7 +710,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
             &lt;p class="content__item__desc"&gt;그대 자신의 영혼을 탐구하라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section5 --&gt;
-
+  
         &lt;section id="section6" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;06&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
@@ -696,7 +720,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
             &lt;p class="content__item__desc"&gt;돈이 없는 것은 죄다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section6 --&gt;
-
+  
         &lt;section id="section7" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;07&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
@@ -706,7 +730,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
             &lt;p class="content__item__desc"&gt;무전 유죄, 유전 무죄&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section7 --&gt;
-
+  
         &lt;section id="section8" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;08&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
@@ -716,7 +740,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
             &lt;p class="content__item__desc"&gt;내 주머니의 푼돈이 남 주머니에 있는 거금보다 낫다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section8 --&gt;
-
+  
         &lt;section id="section9" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;09&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
@@ -729,22 +753,9 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
     &lt;/div&gt;
 &lt;/main&gt;
 &lt;!-- //main --&gt;
-
+  
 &lt;aside id="parallax__info"&gt;
-    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-    &lt;div class="info"&gt;
-        &lt;ul&gt;
-            &lt;li&gt;#section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;            
 &lt;/aside&gt;
 </code></pre>
                             </div>
@@ -753,11 +764,15 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
 #parallax__nav {
     position: fixed;
     right: 20px;
-    top: 20px;
+    top: -200px;
     z-index: 2000;
     background-color: rgba(0, 0, 0, 0.4);
     padding: 20px 30px;
     border-radius: 50px;
+    transition: top 0.4s ease;
+}
+#parallax__nav.show {
+    top: 20px;
 }
 #parallax__nav li {
     display: inline;
@@ -919,6 +934,29 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
         bottom: 10px;
     }
 }
+#parallax__top {
+    position: fixed;
+    left: 50%;
+    bottom: -120px;
+    z-index: 10000;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s;
+}
+#parallax__top.show {
+    bottom: 20px;
+}
+#parallax__top:hover {
+    background: #fff;
+    color: #000;
+}
 </code></pre>
                             </div>
                         </div>
@@ -961,7 +999,64 @@ document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
         </script>
 
         <script>
+            window.addEventListener("scroll", ()=>{
+                let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
+                //01
+                // if(scrollTop > 0){
+                //     document.querySelector("#parallax__nav").classList.add("show");
+                // } else {
+                //     document.querySelector("#parallax__nav").classList.remove("show");
+                // }                                스크롤바 0보다 커지면 메뉴가 나온다.
+
+                
+
+                02
+                if(scrollTop > (document.body.scrollHeight - window.outerHeight) ){
+                    document.querySelector("#parallax__top").classList.add("show");
+                } else {
+                    document.querySelector("#parallax__top").classList.remove("show");
+                }
+                console.log();
+
+                document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+                
+                
+                // document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+            })
+
+            // top 버튼
+            document.querySelector("#parallax__top").addEventListener("click", ()=>{
+                window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+            });
+
+            //03
+            let nowScroll = true;
+            let lastScroll = 0;
+
+            function scrollProgress(){
+                nowScroll = true;
+
+                setInterval(() => {
+                    if(nowScroll){
+                        nowScroll = false;
+                        hasScroll();
+                    }
+                }, 300);
+            }
+
+            function hasScroll(){
+                let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+                if(scrollTop < lastScroll){
+                    document.querySelector("#parallax__nav").classList.add("show");
+                } else {
+                    document.querySelector("#parallax__nav").classList.remove("show");
+                }
+                lastScroll = scrollTop;
+            }
+
+            window.addEventListener("scroll", scrollProgress);
         </script>
 
     </body>

@@ -47,8 +47,8 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">패럴랙스 효과</h2>
-            <p class="t_desc">패럴랙스 이펙트 - 메뉴 이동</p>
-            <p class="t_box">오늘은 메뉴바를 누르면 해당 구역으로 이동하고, offsetTop값을 이용해 해당 영역에 가면 메뉴에 불이 들어오는 효과를 만들어보겠습니다.</p>
+            <p class="t_desc">패럴랙스 이펙트 - 사이드 메뉴</p>
+            <p class="t_box">이번에는 메뉴바를 오른쪽 사이드에 두고 반응형 효과를 주어서 이쁜 사이드 메뉴를 만들어 보겠습니다.</p>
             <hr>
             <h3 class="t_tit2">결과</h3>
             <div class="t_iframe" style="height: 1000px; padding-top: 0;">
@@ -60,26 +60,12 @@
             </div>
             <hr>
             <h3 class="t_tit2">HTML 작성</h3>
-            <p class="t_desc2">HTML 구조는 예제1번을 나타내는 설명 nav와, 사진과 설명이 나오는 parallax__cont, offset메뉴바가 나오는 parallax__info 세개로 구성하였습니다.</p>
+            <p class="t_desc2">HTML 구조는 예제1번과 같고, 상단에 있던 메뉴바를 사이드 메뉴로 만들었습니다.</p>
             <div class="t_result">
                 <details>
                     <summary>소스 보기</summary>
                     <div class="t_code">
-<pre><code class="language-html">&lt;nav id="parallax__nav"&gt;
-    &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
-
-&lt;main id="parallax__cont"&gt;
+<pre><code class="language-html">&lt;main id="parallax__cont"&gt;
     &lt;div id="contents"&gt;
         &lt;section id="section1" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;01&lt;/span&gt;
@@ -90,7 +76,7 @@
             &lt;p class="content__item__desc"&gt;산다는것 그것은 치열한 전투이다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section1 --&gt;
-
+  
         &lt;section id="section2" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;02&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
@@ -100,7 +86,7 @@
             &lt;p class="content__item__desc"&gt;하루에 3시간을 걸으면 7년 후에 지구를 한바퀴 돌 수 있다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section2 --&gt;
-
+  
         &lt;section id="section3" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;03&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
@@ -110,7 +96,7 @@
             &lt;p class="content__item__desc"&gt;내일은 내일의 태양이 뜬다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section3 --&gt;
-
+  
         &lt;section id="section4" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;04&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
@@ -120,7 +106,7 @@
             &lt;p class="content__item__desc"&gt;배고픈 자 밥솥을 열어라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section4 --&gt;
-
+  
         &lt;section id="section5" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;05&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
@@ -130,7 +116,7 @@
             &lt;p class="content__item__desc"&gt;그대 자신의 영혼을 탐구하라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section5 --&gt;
-
+  
         &lt;section id="section6" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;06&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
@@ -140,7 +126,7 @@
             &lt;p class="content__item__desc"&gt;돈이 없는 것은 죄다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section6 --&gt;
-
+  
         &lt;section id="section7" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;07&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
@@ -150,7 +136,7 @@
             &lt;p class="content__item__desc"&gt;무전 유죄, 유전 무죄&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section7 --&gt;
-
+  
         &lt;section id="section8" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;08&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
@@ -160,7 +146,7 @@
             &lt;p class="content__item__desc"&gt;내 주머니의 푼돈이 남 주머니에 있는 거금보다 낫다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section8 --&gt;
-
+  
         &lt;section id="section9" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;09&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
@@ -172,30 +158,16 @@
         &lt;!-- //section9 --&gt;
     &lt;/div&gt;
 &lt;/main&gt;
-&lt;!-- //main --&gt;
 
 &lt;aside id="parallax__info"&gt;
-    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-    &lt;div class="info"&gt;
-        &lt;ul&gt;
-            &lt;li&gt;#section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
+  &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
 &lt;/aside&gt;
 </code></pre>
                         </div>
                 </details>               
             </div>
 <h3 class="t_tit2">CSS 작성</h3>
-<p class="t_desc2">보기좋게 CSS를 넣어줍니다.</p>
+<p class="t_desc2">사이드 메뉴 디자인을 해봤습니다. active가 있을 때, 없을 때로 디자인했습니다.</p>
 <div class="t_result">
     <details>
         <summary>결과</summary>
@@ -370,130 +342,96 @@
         bottom: 10px;
     }
 }
+#parallax__dot {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    background: rgba(0,0,0,0.4);
+    padding: 20px 10px;
+    border-radius: 30px;
+}
+#parallax__dot li {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 12px 8px;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
+    transition: box-shadow 0.2s ease;
+}
+#parallax__dot li a {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+#parallax__dot li span {
+    display: none;
+}
+#parallax__dot li.active {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);                
+}
+#parallax__dot li.active a {
+    transform: scale(0.4);             
+}
 </code></pre>
             </div>
     </details>               
 </div>
             <h3 class="t_tit2">JS 작성</h3>
             <p class="t_desc2">
-                자바스크립트가 매우 중요합니다. 일단 스크롤했을 때 이벤트를 주어서 scrollTop에 scroll값을 넣어줍니다. 그리고 각각의 섹션의 offsetTop값을 for문을 이용해서 구해주고 만들어 놓은 메뉴바에 그 값을 넣어줍니다.
-                현재 스크롤값(scrollTop)값이 각각의 섹션 offset값보다 크거나 같을 때 상단 메뉴바에 active 클래스를 추가해주고, 나머지는 제거해주는 스크립트를 for문과 forEach문을 이용해서 만들어놨으니 주석표시도 잘 확인해 주시기 바랍니다.
+                1번과 큰 구조는 달라진게 없습니다. 내려갈 때 스무스 효과를 주고, 처음 active 값을 모두 제거하고, offsetTop값이 각각 섹션보다 크거나 같을 때 active를 추가해줍니다.
+            스타일 css 선언으로 active가 있을 때 디자인과 배경을 바꿔주면 완성!. 자세한 설명은 주석에 추가하였습니다.
             </p>
             <div class="t_result">
                 <details>
                     <div class="t_code">
-<pre><code class="language-js">window.addEventListener("scroll", () =&gt; {
-    // let scrollTop = window.pageYOffset;
-    // let scrollTop = window.scrollY;
-    // let scrollTop = document.documentElement.scrollTop;
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-    // if(scrollTop &gt;= document.getElementById("section1").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active")
-    // };
-    // if(scrollTop &gt;= document.getElementById("section2").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active")
-    // };
-    // if(scrollTop &gt;= document.getElementById("section3").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(3)").classList.add("active")
-    // };
-    // if(scrollTop &gt;= document.getElementById("section4").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(4)").classList.add("active")
-    // };
-    // if(scrollTop &gt;= document.getElementById("section5").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(5)").classList.add("active")
-    // };
-    // if(scrollTop &gt;= document.getElementById("section6").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(6)").classList.add("active")
-    // };
-    // if(scrollTop &gt;= document.getElementById("section7").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(7)").classList.add("active")
-    // };
-    // if(scrollTop &gt;= document.getElementById("section8").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(8)").classList.add("active")
-    // };
-    // if(scrollTop &gt;= document.getElementById("section9").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(9)").classList.add("active")
-    // };
-    // for문
-    // for (let i = 1; i&lt;= 9; i++){
-    //     if(scrollTop &gt;= document.getElementById("section" + i ).offsetTop) {
-    //         document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
-    //             li.classList.remove("active");
-    //         });
-    //     document.querySelector("#parallax__nav li:nth-child("+ i +")").classList.add("active")
-    //     };
-    // };
-    // forEach문
-    document.querySelectorAll(".content__item").forEach((element, index)=&gt;{
-        if(scrollTop &gt;= element.offsetTop - 2){
-            document.querySelectorAll("#parallax__nav li").forEach(li =&gt; {
+<pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach(el =&gt; {
+    el.addEventListener("click", e =&gt; {
+        e.preventDefault();                     /*클릭하면 이동하는것을 중지합니다*/
+        
+        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});          /*스무스 하게 이동을 설정합니다*/
+    });
+});
+  
+window.addEventListener("scroll", ()=&gt; {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;           /*스크롤 값 선언*/
+  
+    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);        /*스크롤값 버림으로 나온 값을 넣어줍니다.*/
+  
+    document.querySelectorAll(".content__item").forEach((e, i)=&gt;{
+        if(scrollTop &gt;= e.offsetTop - window.innerHeight/2 ){           /*정확히 안맞을수도 있어서 오차가 있을수 있으므로 현재보이는 화면크기값/2를 빼줍니다.*/
+            document.querySelectorAll("#parallax__dot li").forEach(li =&gt; {
                 li.classList.remove("active");
-            });
-            document.querySelector("#parallax__nav li:nth-child(" + (index + 1) + ")").classList.add("active");
+            })
+            document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active")          /*i값은 index값이므로 0부터 시작해서 1을 더해줍니다.*/
         };
     });
-    //info
-    document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+});
+  
+  
+  
+// window.scroll(0, 1000);                 1000에 간다 (고정)
+// window.scroll({left: 0, top: 2000});    2000에 간다 (고정)
+// window.scroll({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
 
-    // offsetTop값 for문 이용해서 구하기
-    for(let i = 1; i&lt;= 9; i++ ) {
-        document.querySelector(".offset" + i ).innerText = document.getElementById("section" + i).offsetTop;
-    };
-});
-// 스크롤 이동 , 클릭하면 스무스하게 부드럽게 움직이게 설정
-document.querySelectorAll("#parallax__nav li a").forEach(li =&gt; {
-    li.addEventListener("click", (e) =&gt; {
-        e.preventDefault();
-        document.querySelector(li.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});
-// document.querySelector(".offset1").innerText = document.getElementById("section1").offsetTop;
-// document.querySelector(".offset2").innerText = document.getElementById("section2").offsetTop;
-// document.querySelector(".offset3").innerText = document.getElementById("section3").offsetTop;
-// document.querySelector(".offset4").innerText = document.getElementById("section4").offsetTop;
-// document.querySelector(".offset5").innerText = document.getElementById("section5").offsetTop;
-// document.querySelector(".offset6").innerText = document.getElementById("section6").offsetTop;
-// document.querySelector(".offset7").innerText = document.getElementById("section7").offsetTop;
-// document.querySelector(".offset8").innerText = document.getElementById("section8").offsetTop;
-// document.querySelector(".offset9").innerText = document.getElementById("section9").offsetTop;
+// window.scrollTo(0, 1000);                 1000에 간다 (고정)
+// window.scrollTo({left: 0, top: 2000});    2000에 간다 (고정)
+// window.scrollTo({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
+
+// window.scrollBy(0, 1000);                 1000에 간다 (고정)
+// window.scrollBy({left: 0, top: 2000});    2000에 간다 (고정)
+// window.scrollBy({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
 </code></pre>
                         </div>
                 </details>               
-            </div>  
-            <h3 class="t_tit2">보기쉬운 그림 설명</h3>  
-            <div class="iframe">
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FDNvQLuiYf3yVX1KIgUDAQF%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0~%3Fnode-id%3D409%253A10382" allowfullscreen></iframe>
-            </div>       
+            </div>
 </div>  
                         
     </main>
