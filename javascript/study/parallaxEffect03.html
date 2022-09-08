@@ -386,42 +386,64 @@
             <div class="t_result">
                 <details>
                     <div class="t_code">
-<pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach(el =&gt; {
-    el.addEventListener("click", e =&gt; {
-        e.preventDefault();
-        
-        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
-    });
-});
-  
-window.addEventListener("scroll", ()=&gt; {
+<pre><code class="language-js">window.addEventListener("scroll", ()=&gt;{
     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
   
-    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+    //01
+    // if(scrollTop &gt; 0){
+    //     document.querySelector("#parallax__nav").classList.add("show");
+    // } else {
+    //     document.querySelector("#parallax__nav").classList.remove("show");
+    // }                                스크롤바 0보다 커지면 메뉴가 나온다.
   
-    document.querySelectorAll(".content__item").forEach((e, i)=&gt;{
-        if(scrollTop &gt;= e.offsetTop - window.innerHeight/2 ){           /*정확히 안맞을수도 있어서 오차가 있을수 있으므로 빼줍니다.*/
-            document.querySelectorAll("#parallax__dot li").forEach(li =&gt; {
-                li.classList.remove("active");
-            })
-            document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active")
-        };
-    });
+    
+  
+    02
+    if(scrollTop &gt; (document.body.scrollHeight - window.outerHeight) ){
+        document.querySelector("#parallax__top").classList.add("show");
+    } else {
+        document.querySelector("#parallax__top").classList.remove("show");
+    }
+    console.log();
+  
+    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+    
+    
+    // document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+})
+  
+  // top 버튼
+document.querySelector("#parallax__top").addEventListener("click", ()=&gt;{
+    window.scrollTo({left: 0, top: 0, behavior: "smooth"});
 });
   
+  //03
+let nowScroll = true;
+let lastScroll = 0;
   
+function scrollProgress(){
+    nowScroll = true;
   
-// window.scroll(0, 1000);                 1000에 간다 (고정)
-// window.scroll({left: 0, top: 2000});    2000에 간다 (고정)
-// window.scroll({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
-
-// window.scrollTo(0, 1000);                 1000에 간다 (고정)
-// window.scrollTo({left: 0, top: 2000});    2000에 간다 (고정)
-// window.scrollTo({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
-
-// window.scrollBy(0, 1000);                 1000에 간다 (고정)
-// window.scrollBy({left: 0, top: 2000});    2000에 간다 (고정)
-// window.scrollBy({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
+    setInterval(() =&gt; {
+        if(nowScroll){
+            nowScroll = false;
+            hasScroll();
+        }
+    }, 300);
+  }
+  
+function hasScroll(){
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+  
+    if(scrollTop &lt; lastScroll){
+        document.querySelector("#parallax__nav").classList.add("show");
+    } else {
+        document.querySelector("#parallax__nav").classList.remove("show");
+    }
+    lastScroll = scrollTop;
+  }
+  
+window.addEventListener("scroll", scrollProgress);
 </code></pre>
                         </div>
                 </details>               
