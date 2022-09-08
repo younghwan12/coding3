@@ -27,10 +27,10 @@ li {
     height: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #1f224a26;
+    background: #a7a8c126;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(69, 71, 100, 0.321);
+    background: rgba(192, 193, 201, 0.321);
     border-radius: 20px;
 }
 /* ::-webkit-scrollbar-thumb:hover {
@@ -271,6 +271,18 @@ li {
 }
 .modal__cont.show.hide .modal__close {
     animation: opacityIn 0.8s ease forwards;
+}
+
+.modal__box ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.modal__box ::-webkit-scrollbar-track {
+    background: #1f224a26;
+}
+.modal__box ::-webkit-scrollbar-thumb {
+    background: rgba(69, 71, 100, 0.321);
+    border-radius: 20px;
 }
 
 @keyframes foldOut {

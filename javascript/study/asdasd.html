@@ -1,9 +1,36 @@
-&lt;div class="sample"&gt;
-    &lt;div class="timing step"&gt;
-      &lt;div class="stepbox"&gt;&lt;/div&gt;
-      &lt;span class="stepBtn"&gt;
-        &lt;a href="#" class="stepBtnStart"&gt;Start&lt;/a&gt;
-        &lt;a href="#" class="stepBtnStop"&gt;Stop&lt;/a&gt;
-      &lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+document.querySelectorAll("#parallax__dot a").forEach(el =&gt; {
+  el.addEventListener("click", e =&gt; {
+      e.preventDefault();
+      
+      document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+  });
+});
+
+window.addEventListener("scroll", ()=&gt; {
+  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+  document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+
+  document.querySelectorAll(".content__item").forEach((e, i)=&gt;{
+      if(scrollTop &gt;= e.offsetTop - window.innerHeight/2 ){           /*정확히 안맞을수도 있어서 오차가 있을수 있으므로 10을 빼줍니다.*/
+          document.querySelectorAll("#parallax__dot li").forEach(li =&gt; {
+              li.classList.remove("active");
+          })
+          document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active")
+      };
+  });
+});
+
+
+
+// window.scroll(0, 1000);                 1000에 간다 (고정)
+// window.scroll({left: 0, top: 2000});    2000에 간다 (고정)
+// window.scroll({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
+
+// window.scrollTo(0, 1000);                 1000에 간다 (고정)
+// window.scrollTo({left: 0, top: 2000});    2000에 간다 (고정)
+// window.scrollTo({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
+
+// window.scrollBy(0, 1000);                 1000에 간다 (고정)
+// window.scrollBy({left: 0, top: 2000});    2000에 간다 (고정)
+// window.scrollBy({left: 0, top: 2000, behavior: "smooth"});  2000에 간다(스무스하게) 고정
