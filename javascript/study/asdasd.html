@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 window.addEventListener("scroll", ()=&gt;{
   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
@@ -56,3 +57,65 @@ function hasScroll(){
 }
 
 window.addEventListener("scroll", scrollProgress);
+=======
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  
+  nav .link_item {
+    text-decoration: none;
+    font-size: 25px;
+    color: #ddd;
+    position: relative;
+    margin-bottom: 50px;
+    transition: all 0.2s;
+    overflow: hidden;
+  }
+  
+  nav .link_item:hover {
+    color: #fff;
+  }
+  
+  nav .link_item:last-child {
+    margin-bottom: 0px;
+  }
+  
+  nav .link_item::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #eb2141;
+    z-index: 99;
+    transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  
+  nav .link_item:hover::before {
+    left: 100%;
+  }
+  
+  nav .link_item::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    left: 100%;
+    width: 100%;
+    height: 4px;
+    background: #eb2141;
+    transition: all 0.3s;
+    transition-delay: 0.4s;
+  }
+  
+  nav .link_item:hover::after {
+    left: 0%;
+  }
+>>>>>>> Stashed changes
