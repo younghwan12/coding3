@@ -60,7 +60,7 @@
     position: absolute;
     left: 30px;
     bottom: 30px;
-    background-color: #7c2b39;
+    background-color: rgba(66, 14, 14, 0.849);
     color: #fff;
     font-size: 18px;
     padding: 10px 30px;
@@ -68,7 +68,7 @@
     display: inline-block;
 }
 .imgText__img a.blue {
-    background-color: #2b387C;
+    background-color: rgba(87, 43, 18, 0.815);
 }
 .imgText__img.img1 {
     background: url(../img/imgText_bg01.jpg) no-repeat center / cover;

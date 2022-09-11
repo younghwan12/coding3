@@ -60,7 +60,7 @@
             </div>
             <hr>
             <h3 class="t_tit2">HTML 작성</h3>
-            <p class="t_desc2">HTML 구조는 예제1번과 같고, 상단에 있던 메뉴바를 사이드 메뉴로 만들었습니다.</p>
+            <p class="t_desc2">상단의 메뉴바와, 맨 밑 가운데 top버튼(누르면 맨 위 상단으로 올라가는 버튼) 섹션으로 구조를 만들었습니다.</p>
             <div class="t_result">
                 <details>
                     <summary>소스 보기</summary>
@@ -173,7 +173,7 @@
                 </details>               
             </div>
 <h3 class="t_tit2">CSS 작성</h3>
-<p class="t_desc2">사이드 메뉴 디자인을 해봤습니다. active가 있을 때, 없을 때로 디자인했습니다.</p>
+<p class="t_desc2">메뉴바와 TOP버튼을 평소에는 화면에 보이지 않도록 위치 설정하고, show라는 class가 추가될 때 보이는 위치에 되도록 설정하였습니다.</p>
 <div class="t_result">
     <details>
         <summary>결과</summary>
@@ -381,11 +381,10 @@
 </div>
             <h3 class="t_tit2">JS 작성</h3>
             <p class="t_desc2">
-                123123
+                현재의 스크롤 값 &gt; 이전의 스크롤 값 ⇒ 스크롤을 내리고 있는 상태<br>
+                현재의 스크롤 값 &lt; 이전의 스크롤 값 ⇒ 스크롤을 올리는 있는 상태
             </p>
-            <div class="t_result">
-                <details>
-                    <div class="t_code">
+            <div class="t_code">
 <pre><code class="language-js">window.addEventListener("scroll", ()=&gt;{
     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
   
@@ -398,35 +397,35 @@
   
     
   
-    02
-    if(scrollTop &gt; (document.body.scrollHeight - window.outerHeight) ){
+    //02
+    if(scrollTop &gt; (document.body.scrollHeight - window.outerHeight) ){    /* 스크롤 탑 값이 (문서 전체의 높이 - 윈도우 안쪽 보여지는 높이) 가 된다면 문서의 끝에 다다른것.*/
         document.querySelector("#parallax__top").classList.add("show");
     } else {
         document.querySelector("#parallax__top").classList.remove("show");
     }
     console.log();
   
-    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);          /* floor은 버림 */
     
     
-    // document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+    // document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);        /*celi은 올림 */
 })
   
   // top 버튼
-document.querySelector("#parallax__top").addEventListener("click", ()=&gt;{
+document.querySelector("#parallax__top").addEventListener("click", ()=&gt;{                   /* top 버튼을 눌렀을 때 시작점으로 스무스하게 움직이도록 하는 스크립트 */
     window.scrollTo({left: 0, top: 0, behavior: "smooth"});
 });
   
-  //03
+    //03
 let nowScroll = true;
 let lastScroll = 0;
   
-function scrollProgress(){
+function scrollProgress(){                     /* nowScroll은 스크롤이 움직일 때(= scrollProgress 함수가 실행 될 떄) true가 된다. */
     nowScroll = true;
   
     setInterval(() =&gt; {
         if(nowScroll){
-            nowScroll = false;
+            nowScroll = false;                 /*nowScroll 을 false로 하는 이유는 스크롤이 움직였을 때만 함수를 실행시키기 위함 */
             hasScroll();
         }
     }, 300);
@@ -435,7 +434,7 @@ function scrollProgress(){
 function hasScroll(){
     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
   
-    if(scrollTop &lt; lastScroll){
+    if(scrollTop &lt; lastScroll){            /* 스크롤 탑 값이 lastScroll값보다 작을 때 즉 스크롤을 위로 올라갈 때 실행 */
         document.querySelector("#parallax__nav").classList.add("show");
     } else {
         document.querySelector("#parallax__nav").classList.remove("show");
@@ -445,9 +444,6 @@ function hasScroll(){
   
 window.addEventListener("scroll", scrollProgress);
 </code></pre>
-                        </div>
-                </details>               
-            </div>
 </div>  
                         
     </main>
