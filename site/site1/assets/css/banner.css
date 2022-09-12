@@ -30,3 +30,12 @@
     font-size: 16px;
     text-decoration: underline;
 }
+
+@media(max-width : 768px) {
+    .banner__inner .title {
+        font-size: 20px;
+    }
+    .banner__inner .desc {
+        font-size: 16px;
+    }
+}

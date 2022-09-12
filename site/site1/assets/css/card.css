@@ -34,6 +34,13 @@
 }
 
 @media(max-width : 768px) {
+    .card_inner {
+        display: block;
+    }
+    .card {
+        width: 98%;
+        margin-bottom: 15px;
+    }
     .card__body .tit {
         font-size: 20px;
     }
