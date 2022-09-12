@@ -367,10 +367,10 @@
 
         const menuBtn = document.querySelector(".header__icon");
         const menu = document.querySelector(".header__menu");
-        menuBtn.addEventListener("click", () => {
+        menuBtn.addEventListener("mouseover", () => {
             menu.classList.add("on");
         });
-        menu.addEventListener("click", () => {
+        menu.addEventListener("mouseleave", () => {
             menu.classList.remove("on");
         });
 </script>
