@@ -15,10 +15,7 @@
 #skip a:focus {
     left: 5px;
 }
-
 /* 컨테이너 */
-body {
-}
 .container {
     width: 1160px;
 

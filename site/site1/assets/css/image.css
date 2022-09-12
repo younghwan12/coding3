@@ -40,3 +40,22 @@
 .image__btn.yellow {
     background-color: #82c26a;
 }
+@media(max-width : 768px) {
+    .image__inner {
+        display: block;
+    }
+    .image {
+        width: 96%;
+        height: 370px;
+        color: #fff;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    .image__title {
+        font-size: 20px;
+    }
+    .image__desc {
+        font-size: 16px; 
+    }
+}
