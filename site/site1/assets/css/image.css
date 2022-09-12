@@ -40,3 +40,9 @@
 .image__btn.yellow {
     background-color: #82c26a;
 }
+
+@media(max-width : 1226px) {
+    .container {
+        width: 96%;
+    }
+}
