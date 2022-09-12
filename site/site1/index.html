@@ -60,6 +60,9 @@
             <div class="header__member">
                 <a href="#">Log in</a>
             </div>
+            <a href="#" class="header__icon">
+                <img src="assets/img/Burger.png" alt="">
+            </a>
         </div>
     </header>
     <!-- //headerType -->
@@ -361,5 +364,14 @@
                 });
             });
 
+
+        const menuBtn = document.querySelector(".header__icon");
+        const menu = document.querySelector(".header__menu");
+        menuBtn.addEventListener("click", () => {
+            menu.classList.add("on");
+        });
+        menu.addEventListener("click", () => {
+            menu.classList.remove("on");
+        });
 </script>
 </html>

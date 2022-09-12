@@ -20,30 +20,37 @@
     font-weight: 700;
     text-transform: uppercase;
 }
+
 .header__logo em {
     font-size: 18px;
     font-weight: 400;
 }
+
 .header__menu {
     width: 60%;
     text-align: center;
 }
+
 .header__menu li {
     display: inline;
 }
+
 .header__menu li a {
     padding: 13px 30px;
     margin: 0 5px;
 }
+
 .header__menu li a:hover {
     background-color: #f1f1f1;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
 .header__member {
     width: 20%;
     text-align: right;
 }
+
 .header__member a {
     font-size: 16px;
     border: 1px solid #000;
@@ -51,11 +58,33 @@
     border-radius: 50px;
     transition: all 0.3s;
 }
+
 .header__member a:hover {
     background-color: #000;
     color: #fff;
 }
+
 .header__menu li.active a {
     background-color: #f1f1f1;
     border-radius: 5px;
+}
+.header__icon {
+    display: none;
+}
+@media(max-width : 1226px) {
+    .header__icon {
+        display: block;
+    }
+    .header__menu {
+        display: none;
+    }
+    .header__menu .on {
+        display: block;
+    }
+    .header__logo {
+        position: relative;
+    }
+}
+
+@media(max-width : 460px) {
 }
