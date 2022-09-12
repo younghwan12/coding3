@@ -1,121 +1,22 @@
-<<<<<<< Updated upstream
-window.addEventListener("scroll", ()=&gt;{
-  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+&lt;main id="main"&gt;
+  &lt;section id="mouseType"&gt;
+      &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+      &lt;div class="mouse__wrap"&gt;
+          &lt;p&gt;I haven't &lt;span class="style1"&gt;failed&lt;/span&gt;. I've &lt;span class="style2"&gt;discovered&lt;/span&gt; 10,000 &lt;span class="style3"&gt;ways&lt;/span&gt; that don't work.&lt;/p&gt;
+          &lt;p&gt;나는 &lt;span class="style4"&gt;실패&lt;/span&gt;한 게 아니다. 나는 잘 되지 않는 &lt;span class="style5"&gt;방법&lt;/span&gt; 1만 가지를 &lt;span class="style6"&gt;발견&lt;/span&gt;한 것이다.&lt;/p&gt;
+      &lt;/div&gt;
 
-  //01
-  // if(scrollTop &gt; 0){
-  //     document.querySelector("#parallax__nav").classList.add("show");
-  // } else {
-  //     document.querySelector("#parallax__nav").classList.remove("show");
-  // }                                스크롤바 0보다 커지면 메뉴가 나온다.
-
-  
-
-  02
-  if(scrollTop &gt; (document.body.scrollHeight - window.outerHeight) ){
-      document.querySelector("#parallax__top").classList.add("show");
-  } else {
-      document.querySelector("#parallax__top").classList.remove("show");
-  }
-  console.log();
-
-  document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
-  
-  
-  // document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
-})
-
-// top 버튼
-document.querySelector("#parallax__top").addEventListener("click", ()=&gt;{
-  window.scrollTo({left: 0, top: 0, behavior: "smooth"});
-});
-
-//03
-let nowScroll = true;
-let lastScroll = 0;
-
-function scrollProgress(){
-  nowScroll = true;
-
-  setInterval(() =&gt; {
-      if(nowScroll){
-          nowScroll = false;
-          hasScroll();
-      }
-  }, 300);
-}
-
-function hasScroll(){
-  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-  if(scrollTop &lt; lastScroll){
-      document.querySelector("#parallax__nav").classList.add("show");
-  } else {
-      document.querySelector("#parallax__nav").classList.remove("show");
-  }
-  lastScroll = scrollTop;
-}
-
-window.addEventListener("scroll", scrollProgress);
-=======
-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 600px;
-    height: 100%;
-    margin: 0 auto;
-  }
-  
-  nav .link_item {
-    text-decoration: none;
-    font-size: 25px;
-    color: #ddd;
-    position: relative;
-    margin-bottom: 50px;
-    transition: all 0.2s;
-    overflow: hidden;
-  }
-  
-  nav .link_item:hover {
-    color: #fff;
-  }
-  
-  nav .link_item:last-child {
-    margin-bottom: 0px;
-  }
-  
-  nav .link_item::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: #eb2141;
-    z-index: 99;
-    transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
-  }
-  
-  nav .link_item:hover::before {
-    left: 100%;
-  }
-  
-  nav .link_item::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    margin-top: -2px;
-    left: 100%;
-    width: 100%;
-    height: 4px;
-    background: #eb2141;
-    transition: all 0.3s;
-    transition-delay: 0.4s;
-  }
-  
-  nav .link_item:hover::after {
-    left: 0%;
-  }
->>>>>>> Stashed changes
+      &lt;div class="mouse__info"&gt;
+          &lt;ul&gt;
+              &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+              &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+              &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+              &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+              &lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+              &lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+              &lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+              &lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+          &lt;/ul&gt;
+      &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
