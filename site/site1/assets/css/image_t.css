@@ -36,27 +36,29 @@
 .image__btn {
     font-size: 16px;
     color: #fff;
-    background-color: #82c26b;
+    background-color: #404e3b;
     padding: 10px 20px;
     display: inline-block;
 }
 .image__btn.yellow {
-    background-color: #82c26a;
+    background-color: #3b434e;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 960px) {
+}
+@media (max-width: 600px) {
     .image__inner {
-        display: block;
+        flex-direction: column;
     }
     .image {
-        width: 96%;
-        height: 370px;
-        color: #fff;
-        margin: 0 auto;
-        margin-bottom: 10px;
-        box-sizing: border-box;
+        width: 100%;
+        padding: 200px 20px 20px 20px;
+    }
+    .image:first-child {
+        margin-bottom: 20px;
     }
     .image__title {
-        font-size: 20px;
+        font-size: 24px;
     }
     .image__desc {
         font-size: 16px;

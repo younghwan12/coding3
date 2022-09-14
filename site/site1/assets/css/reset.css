@@ -53,13 +53,14 @@ select,
 table,
 textarea {
     color: #000;
-    font-family: 'NexonLv1Gothic', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', dotum, 돋움;
+    font-family: "NexonLv1Gothic", "AppleSDGothicNeo-Regular", "Malgun Gothic",
+        "맑은 고딕", dotum, 돋움;
 }
 
 /* 링크 초기화 */
 a {
     text-decoration: none;
-    color: #000;   
+    color: #000;
 }
 
 /* 목록 초기화 */
@@ -79,7 +80,8 @@ h6 {
     font-weight: normal;
 }
 /* 폰트 스타일 초기화 */
-em, address {
+em,
+address {
     font-style: normal;
 }
 
@@ -90,7 +92,9 @@ img {
 }
 
 /* 보더 초기화 */
-img, fieldset, button {
+img,
+fieldset,
+button {
     border: 0;
 }
 
@@ -100,7 +104,7 @@ img, fieldset, button {
 }
 .clearfix::before,
 .clearfix::after {
-    content: '';
+    content: "";
     display: block;
     line-height: 0;
 }
@@ -109,13 +113,13 @@ img, fieldset, button {
 }
 
 /* 블라인드 효과 */
-.blind{
-    position:absolute;
+.blind {
+    position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;
     height: 1px;
     margin: -1px;
-    overflow: hidden
+    overflow: hidden;
 }
 
 /* 이미지 대체(ir) */
