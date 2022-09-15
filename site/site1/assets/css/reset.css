@@ -62,7 +62,11 @@ a {
     text-decoration: none;
     color: #000;
 }
-
+/* 가로모드 초기화 */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
 /* 목록 초기화 */
 li,
 ol,
@@ -84,7 +88,6 @@ em,
 address {
     font-style: normal;
 }
-
 /* 이미지 초기화 */
 img {
     width: 100%;
@@ -129,4 +132,7 @@ button {
     font-size: 0;
     line-height: 0;
     text-indent: -9999px;
+}
+body {
+    overflow: overlay;
 }

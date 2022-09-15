@@ -57,7 +57,7 @@
                 <ul>
                     <li class="active"><a href="#imageType">WHISKEY</a></li>
                     <li><a href="#imgTextType">SITE</a></li>
-                    <li><a href="#cardType">WORLD BEER</a></li>
+                    <li><a href="#cardType">BEER</a></li>
                     <li><a href="#bannerType">BANNER</a></li>
                     <li><a href="#textType">FOOD</a></li>
                 </ul>
@@ -65,9 +65,11 @@
             <div class="header__member">
                 <a href="#">Log in</a>
             </div>
-            <a href="#" class="header__icon">
-                <img src="assets/img/Burger.png" alt="">
-            </a>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
     <!-- //headerType -->
@@ -150,8 +152,12 @@
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
                     <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-prev"></div>   
                 </div>            
             </div>
         </section>
@@ -382,17 +388,62 @@
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        // autoplay: {
-        // delay: 2000,
-        // },
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
+            clickable: true,
         },
     });
+
+    const btnStop = document.querySelector(".swiper-button-stop");
+    const btnStart = document.querySelector(".swiper-button-play");
+    const btnHam = document.querySelector(".header__ham");
+    const btnMenu = document.querySelector(".header__menu");
+    const btnMenuList = btnMenu.querySelectorAll("ul li a")
+
+    btnStart.style.display ="none";
+
+    btnStop.addEventListener("click", ()=>{
+        swiper.autoplay.stop();
+        btnStart.style.display ="block";
+        btnStop.style.display ="none";
+    });
+    btnStart.addEventListener("click", ()=>{
+        swiper.autoplay.start();
+        btnStart.style.display ="none";
+        btnStop.style.display ="block";
+    });
+
+    btnHam.addEventListener("click", () => {
+        btnHam.classList.toggle("active");
+        btnMenu.classList.toggle("active")
+        document.body.classList.toggle("fixed");
+    });
+
+    btnMenuList.forEach((list) => {
+        list.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active")
+            document.body.classList.toggle("fixed");
+        });
+    })
+
+    window.addEventListener("resize", ()=> {
+        let width = window.innerWidth;
+        if(width > 1300){
+            document.body.classList.remove("fixed");
+            btnMenu.classList.remove("active");
+            btnHam.classList.remove("active");
+        }
+    });
 </script>
+
 <script>
-        window.addEventListener("scroll", ()=>{
+    window.addEventListener("scroll", ()=>{
             let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
             document.querySelectorAll(".type").forEach((element, index)=>{
@@ -414,6 +465,7 @@
                 });
             });
 
+
         const menuBtn = document.querySelector(".header__icon");
         const menu = document.querySelector(".header__menu");
         menuBtn.addEventListener("mouseover", () => {
@@ -423,4 +475,5 @@
             menu.classList.remove("on");
         });
 </script>
+
 </html>
