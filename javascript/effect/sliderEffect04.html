@@ -189,63 +189,63 @@
                         </div>
                         <div class="cont">
                             <div class="active">
-<pre><code class="language-js">//JAVASCRIPT
-const sliderWrap = document.querySelector(".slider__wrap"); 
+<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap"); 
 const sliderImg = document.querySelector(".slider__img");       //보여지는 영역
 const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역 
 const slider = document.querySelectorAll(".slider");            //각각 이미지
+const sliderBtn = document.querySelector(".slider__btn");    //버튼
+const sliderBtnPrev = sliderBtn.querySelector(".prev");      //왼쪽버튼
+const sliderBtnNext = sliderBtn.querySelector(".next");      //오른쪽버튼
 
-let currentIndex = 0;                                                   //현재 보이는 이미지
-let sliderCount = slider.length;                                        //이미지 갯수
-let sliderWidth = sliderImg.offsetWidth;                                //이미지 가로값
-let sliderClone = sliderInner.firstElementChild.cloneNode(true);      //첫번째 이미지 복사
-sliderInner.appendChild(sliderClone);                                   //첫번째 이미지를 마지막에 넣어줌
-
-function sliderEffect(){
-    currentIndex++;
-    sliderInner.style.transition = "all 0.6s";
-
-    sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)";
+let currentIndex = 0;                       //현재 이미지
+let sliderCount = slider.length;            //이미지 갯수
+let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값
 
 
-    // sliderInner.style.transform = "translateX(-800px)"   800 * 1
-    // sliderInner.style.transform = "translateX(-1600px)"  800 * 2
-    // sliderInner.style.transform = "translateX(-2400px)"  800 * 3
-    // sliderInner.style.transform = "translateX(-3200px)"  800 * 4
-    // sliderInner.style.transform = "translateX(-4000px)"  800 * 5
-    // sliderInner.style.transform = "translateX(-4800px)"  800 * 6
-
-    // 마지막 사진에 위치 했을 때
-    if(currentIndex == sliderCount){
-        // 0.7s 뒤에 실행한다는 setTimeout을 줘서 5번에서 6번 넘어갈때 부드럽게 넘어가도록 설정합니다.
-        setTimeout(() => {
-            sliderInner.style.transition = "0s";
-            sliderInner.style.transform = "translateX(0px)"
-        }, 700);
-        
-        currentIndex = 0;
-    }
-
-    
+//이미지 움직이는 영역
+function gotoSlider(num){
+    sliderInner.style.transition = "all 400ms"
+    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+    currentIndex = num;
 }
-setInterval(sliderEffect, 2000);
+
+//왼쪽 버튼 클릭
+sliderBtnPrev.addEventListener("click", ()=>{
+    let prevIndex = (currentIndex + 4) %  sliderCount
+    gotoSlider(prevIndex);
+    console.log(prevIndex);
+});
+
+//오른쪽 버튼 클릭
+sliderBtnNext.addEventListener("click", ()=>{
+    let nextIndex = (currentIndex + 1) % sliderCount;
+    gotoSlider(nextIndex);
+    // 0,1,2,3,4
+    console.log(nextIndex);
+});
 </code></pre>
                             </div>
                             <div>
 <pre><code class="language-html">//HTML
-&lt;section id="sliderType01"&gt;
-    &lt;div class="slider__wrap"&gt;
-        &lt;div class="slider__img"&gt;
-            &lt;div class="slider__inner"&gt;
-                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg03.jpg" alt="이미지1"&gt;&lt;/div&gt;
-                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg04.jpg" alt="이미지2"&gt;&lt;/div&gt;
-                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg05.jpg" alt="이미지3"&gt;&lt;/div&gt;
-                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg06.jpg" alt="이미지4"&gt;&lt;/div&gt;
-                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg07.jpg" alt="이미지5"&gt;&lt;/div&gt;
+&lt;main id="main"&gt;
+    &lt;section id="sliderType01"&gt;
+        &lt;div class="slider__wrap"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="slider__inner"&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg03.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg04.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg05.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg06.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg07.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__btn"&gt;
+                &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;   
+                &lt;a href="#" class="next"&gt;next&lt;/a&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/section&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
 </code></pre>
                             </div>
                             <div>
@@ -291,13 +291,37 @@ setInterval(sliderEffect, 2000);
 .slider:nth-child(5)::before {content: '이미지5'}
 .slider:nth-child(6)::before {content: '이미지1'}
 
-//부드럽게 넘어가기 위해서 6번에 다시 이미지1을 넣습니다.
-
 @media (max-width: 800px){
     .slider__img {
         width: 400px;
         height: 225px;
     }
+}
+.slider__btn a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.2s;
+    display: block;
+    color: #fff;
+}
+.slider__btn a:hover {
+    background: rgb(225, 255, 0);
+    color: #000;
+    font-weight: 800;
+}
+.slider__btn a.prev {
+    left: 0;
+    border-radius: 50%;
+}
+.slider__btn a.next {
+    right: 0;
+    border-radius: 50%;
 }
 </code></pre>
                             </div>
