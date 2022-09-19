@@ -100,3 +100,29 @@
     width: 16px;
     height: 16px;
 }
+
+/* media */
+@media (max-width: 960px) {
+    .swiper-slide .desc {
+        width: 100%;
+        text-align: center;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 70px;
+    }
+}
+@media (max-width: 600px) {
+    .swiper-slide .desc {
+        padding: 80px 0;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 30px;
+    }
+    .swiper-slide .desc p {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    .swiper-slide .desc .btn a {
+        padding: 10px 25px;
+    }
+}
