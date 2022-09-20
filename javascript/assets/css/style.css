@@ -77,13 +77,14 @@ footer {
     background: linear-gradient(to right top, #861657, #ffa69e);
 }
 .header_nav ul li a {
-    border: 1px solid #222;
+    border: 1px solid #861657;
     padding: 8px 25px;
     display: inline-block;
     margin-bottom: 7px;
     font-family: "GmarketSans";
     border-radius: 15px;
     transition: all 0.3s;
+    color: #861657;
 }
 .header_nav ul li a:hover {
     background: linear-gradient(to right top, #861657, #ffa69e);
