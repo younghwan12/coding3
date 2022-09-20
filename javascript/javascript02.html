@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dracula.css">
     <style>
-        body {
-            padding-bottom: 600px;
-        }
     </style>
 </head>
 <body>
@@ -45,6 +42,12 @@
         </nav>
     </header>
     <!-- //header -->
+
+    <div id="parallax__top">
+        Top
+    </div>
+    <!-- //parallax__top -->
+
     <main id="main">
         <div class="container">
             <div class="main_menu">
@@ -1091,6 +1094,27 @@ document.write(name3);
         // }
     
 
+    </script>
+
+    <script>
+        window.addEventListener("scroll", ()=>{
+                let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+                if(scrollTop > (document.body.scrollHeight - window.outerHeight) ){
+                    document.querySelector("#parallax__top").classList.add("show");
+                } else {
+                    document.querySelector("#parallax__top").classList.remove("show");
+                }
+                console.log();
+
+                document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+                
+            })
+
+            // top 버튼
+            document.querySelector("#parallax__top").addEventListener("click", ()=>{
+                window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+            });
     </script>
 </body>
 </html>

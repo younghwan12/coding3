@@ -43,6 +43,10 @@
     </header>
     <!-- //header  -->
 
+    <div id="parallax__top">
+        Top
+    </div>
+
     <main id="main">
         <div class="container">
             <div class="main_menu">
@@ -897,6 +901,27 @@ obj.g();
             //document.querySelector(".sample17_result").innerHTML = obj.a + "<br>" + obj.b[0] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>" + obj.c + "<br>" + obj.d + "<br>"
         }
 
+    </script>
+
+    <script>
+        window.addEventListener("scroll", ()=>{
+                let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+                if(scrollTop > (document.body.scrollHeight - window.outerHeight) ){
+                    document.querySelector("#parallax__top").classList.add("show");
+                } else {
+                    document.querySelector("#parallax__top").classList.remove("show");
+                }
+                console.log();
+
+                document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+                
+            })
+
+            // top 버튼
+            document.querySelector("#parallax__top").addEventListener("click", ()=>{
+                window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+            });
     </script>
 
     
