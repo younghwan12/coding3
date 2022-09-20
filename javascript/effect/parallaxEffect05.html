@@ -99,7 +99,7 @@
                 left: -5%;
                 top: -5%;
                 filter: saturate(0%);
-                transition: all 1s;
+                /* transition: all 1s; */
             }
             .content__item:nth-child(1) .content__item__img {
                 background-image: url(../assets/img/effect_bg18@2x.jpg);
@@ -138,6 +138,20 @@
             .content__item:nth-child(even) .content__item__desc {
                 margin-left: auto;
                 margin-right: -4vw;
+            }
+            #parallax__info {
+                position: fixed;
+                left: 20px;
+                bottom: 20px;
+                z-index: 2000;
+                background-color: rgba(0,0,0,0.4);
+                color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            #parallax__info li,
+            .scroll {
+                line-height: 1.4;
             }
             @media (max-width: 800px) {
                 #parallax__cont {
@@ -279,6 +293,10 @@
             </div>
         </main>
         <!-- //main -->
+
+        <aside id="parallax__info">
+            <div class="scroll">scrollTop : <span>0</span>px</div>            
+        </aside>
 
 
         <footer id="footer">
@@ -480,14 +498,29 @@
                         <div class="cont">
                             <div class="active">
 <pre><code class="language-js">function scroll(){
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.screenTop;
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    document.querySelectorAll(".content__item").forEach(item =&gt; {
-        if(scrollTop &gt; item.offsetTop - window.innerHeight / 2 ){
-            item.classList.add("show");
-        }
-    })
-    requestAnimationFrame(scroll);  /*1분에 60번 실행하는 무한 함수(재귀함수)지만 메모리 적게 차지한다. */
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+    
+    document.querySelectorAll(".content__item").forEach(item => {
+        const target1 = item.querySelector(".content__item__img");
+        const target2 = item.querySelector(".content__item__desc");
+        const target3 = item.querySelector(".content__item__num");
+
+        let offset1 = (scrollTop - item.offsetTop) * 0.1 ;    //오차가 있을수 있으므로 0.1 곱하였음
+        let offset2 = (scrollTop - item.offsetTop) * 0.15 ;   //뒤에 숫자가 클수록 값이 커지므로 이동하는게 더 크게 보인다.
+        let offset3 = (scrollTop - item.offsetTop) * 0.2 ;
+
+        // target1.style.transform = `translateY(${offset1}px)`;
+        // target2.style.transform = `translateX(${offset2}px)`;
+
+        gsap.to(target1, {duration: .3, y: offset1, ease: "power4.out"});
+        gsap.to(target2, {duration: .3, y: offset2});
+        gsap.to(target3, {duration: .3, y: offset3, ease: "expo out"});
+
+    });
+
+    requestAnimationFrame(scroll);
 }
 scroll();
 </code></pre>
@@ -674,7 +707,7 @@ scroll();
     left: -5%;
     top: -5%;
     filter: saturate(0%);
-    transition: all 1s;
+    /* transition: all 1s; */
 }
 .content__item:nth-child(1) .content__item__img {
     background-image: url(../assets/img/effect_bg18@2x.jpg);
@@ -714,6 +747,20 @@ scroll();
     margin-left: auto;
     margin-right: -4vw;
 }
+#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+#parallax__info li,
+.scroll {
+    line-height: 1.4;
+}
 @media (max-width: 800px) {
     #parallax__cont {
         margin-top: 70vw;
@@ -741,73 +788,6 @@ scroll();
     #parallax__nav li.active a {
         border-radius: 5px;
     }
-}
-
-/* 한번에 나타나기 */
-/* #contents > section {
-    opacity: 0;
-    transition: all 1s;
-}
-#contents > section.show {
-    opacity: 1;
-} */
-
-/* 개별적으로 나타나기 */
-#contents > section .content__item__num {
-    opacity: 0;
-    transform: translateY(200px);
-    transition: all 1s 0.05s cubic-bezier(0.73,-0.03, 0.29, 1.05);
-}
-#contents > section .content__item__title {
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: all 1s 0.15s cubic-bezier(0.73,-0.03, 0.29, 1.05);
-}
-#contents > section .content__item__imgWrap {
-    opacity: 0;
-    transform: translateY(200px) rotate(30deg) skew(20deg);
-    transition: all 1s 0.3s cubic-bezier(0.73,-0.03, 0.29, 1.05);
-}
-#contents > section .content__item__desc {
-    opacity: 0;
-    transform: translateX(-200px);
-    transition: all 1s 0.6s cubic-bezier(0.73,-0.03, 0.29, 1.05);
-}
-
-#contents > section.show .content__item__num {
-    opacity: 0.07;
-    transform: translateY(0);
-}
-#contents > section.show .content__item__title {
-    opacity: 1;
-    transform: translateX(0);
-}
-#contents > section.show .content__item__imgWrap {
-    opacity: 1;
-    transform: translateY(0) rotate(0) skew(0);
-}
-#contents > section.show .content__item__desc {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-#contents > section:nth-child(even) .content__item__title {
-    transform: translateX(100px);
-}
-#contents > section:nth-child(even).show .content__item__title {
-    transform: translateX(0);
-}
-#contents > section:nth-child(even) .content__item__desc {
-    transform: translateX(200px);
-}
-#contents > section:nth-child(even).show .content__item__desc {
-    transform: translateX(0);
-}
-#contents > section:nth-child(even) .content__item__imgWrap {
-    transform: translateX(200px) rotate(30deg) skew(20deg);;
-}
-#contents > section:nth-child(even).show .content__item__imgWrap {
-    transform: translateX(0) rotate(0) skew(0);
 }
 </code></pre>
                             </div>
@@ -845,12 +825,38 @@ scroll();
         </footer>
         <!-- //footer -->
         <script src="../assets/js/highlight.min.js"></script>
+        <script src="../assets/js/gsap.min.js"></script>
         <script src="../assets/js/common.js"></script>
         <script>
             hljs.highlightAll();
         </script>
         <script>
+            function scroll(){
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+                document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+                
+                document.querySelectorAll(".content__item").forEach(item => {
+                    const target1 = item.querySelector(".content__item__img");
+                    const target2 = item.querySelector(".content__item__desc");
+                    const target3 = item.querySelector(".content__item__num");
+
+                    let offset1 = (scrollTop - item.offsetTop) * 0.1 ;    //오차가 있을수 있으므로 0.1 곱하였음
+                    let offset2 = (scrollTop - item.offsetTop) * 0.15 ;   //뒤에 숫자가 클수록 값이 커지므로 이동하는게 더 크게 보인다.
+                    let offset3 = (scrollTop - item.offsetTop) * 0.2 ;
+
+                    // target1.style.transform = `translateY(${offset1}px)`;
+                    // target2.style.transform = `translateX(${offset2}px)`;
+
+                    gsap.to(target1, {duration: .3, y: offset1, ease: "power4.out"});
+                    gsap.to(target2, {duration: .3, y: offset2});
+                    gsap.to(target3, {duration: .3, y: offset3, ease: "expo out"});
+
+                });
+
+                requestAnimationFrame(scroll);
+            }
+            scroll();
         </script>
         
 
