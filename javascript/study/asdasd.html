@@ -1,8 +1,75 @@
-&lt;div class="cube"&gt;
-    &lt;div&gt;북극꼼&lt;/div&gt;
-    &lt;div&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;/div&gt;
-  &lt;/div&gt;
+<script>
+  //1번
+
+// const sliderWrap = document.querySelector(".slider__wrap");
+// const sliderImg = sliderWrap.querySelector(".slider__img");
+// const slider = document.querySelectorAll(".slider");
+
+// let currentIndex = 0;                 //현재 보이는 이미지
+// let sliderCount = slider.length       //이미지 갯수
+
+// setInterval(()=> {
+
+//     let nextIndex = (currentIndex + 1) % sliderCount; //다음 이미지
+//     // 1 % 5 = 1, 2, 3, 4, 0, 1, 2, 3, 4, 0 ...
+    
+//     //첫번째 이미지를 안보이게
+//     //두번째 이미지를 보이게
+
+//     slider[currentIndex].style.opacity = "0";    //첫번째 이미지를 안보이게
+//     slider[nextIndex].style.opacity = "1";    //두번째 이미지를 보이게
+
+//     currentIndex = nextIndex;
+// },2000);
+
+
+//2번
+
+// const sliderWrap = document.querySelector(".slider__wrap");
+// const sliderImg = document.querySelector(".slider__img");      //보여지는 영역
+// const sliderInner = document.querySelector(".slider__inner");  //움직이는 영역
+// const slider = document.querySelectorAll(".slider");           //이미지
+
+// let currentIndex = 0;                    //현재 이미지
+// let sliderCount = slider.length;         //이미지 갯수
+
+// sliderInner.style.transition = "all 0.6s";
+
+
+// setInterval(() => {
+
+//     currentIndex = (currentIndex + 1) % sliderCount;    //1 2 3 4 0 1 2 3 4 0 1 2 3 4
+
+//     sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
+// },2000);
+
+// //3번
+
+// const sliderWrap = document.querySelector(".slider__wrap"); 
+// const sliderImg = document.querySelector(".slider__img");       //보여지는 영역
+// const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역 
+// const slider = document.querySelectorAll(".slider");            //각각 이미지
+
+// let currentIndex = 0;                                                   //현재 보이는 이미지
+// let sliderCount = slider.length;                                        //이미지 갯수
+// let sliderWidth = sliderImg.offsetWidth;                                //이미지 가로값
+// let sliderClone = sliderInner.firstElementChild.cloneNode(true);      //첫번째 이미지 복사
+// sliderInner.appendChild(sliderClone);                                   //첫번째 이미지를 마지막에 넣어줌
+
+// function sliderEffect(){
+//     currentIndex++;
+//     sliderInner.style.transition = "all 0.6s";
+
+//     sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)";
+
+//     if(currentIndex == sliderCount){
+//         setTimeout(() => {
+//             sliderInner.style.transition = "0s";
+//             sliderInner.style.transform = "translateX(0px)"
+//         }, 700);
+//         currentIndex = 0;
+//     }
+// }
+// setInterval(sliderEffect, 2000);
+
+</script>
