@@ -74,3 +74,27 @@
     font-size: 14px;
     font-weight: 300;
 }
+
+@media (max-width: 960px) {
+    #footer .footer_inner {
+        display: block;
+    }
+    .footer_info {
+        width: 100%;
+        text-align: center;
+    }
+    .footer_list {
+        width: 100%;
+        text-align: center;
+
+    }
+    .footer_info .footer_sns {
+        justify-content: center;
+        margin: 50px 0;
+    }
+}
+@media (max-width: 480px) {
+    .footer_list {
+        display: none;
+    }
+}

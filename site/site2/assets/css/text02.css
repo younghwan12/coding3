@@ -58,11 +58,3 @@
     width: 30px;
     height: 30px;
 }  
-
-/* media */
-
-@media (max-width: 600px) {
-    .text__inner {
-        display: block;
-    }
-}
