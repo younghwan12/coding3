@@ -36,6 +36,11 @@
     font-weight: 300;
     line-height: 1.4;
     margin-bottom: 97px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
 }
 
 .text .icon__box {
@@ -53,3 +58,11 @@
     width: 30px;
     height: 30px;
 }  
+
+/* media */
+
+@media (max-width: 600px) {
+    .text__inner {
+        display: block;
+    }
+}
