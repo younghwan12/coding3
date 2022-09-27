@@ -11,7 +11,7 @@
     top: 50%;
     width: 23px;
     height: 23px;
-    background-color: #4857EC;
+    background-color: #4857ec;
     border-radius: 50%;
 }
 .swiper-slide .ball2 {
@@ -20,7 +20,7 @@
     top: 5%;
     width: 18px;
     height: 18px;
-    background-color: #F7E36D;
+    background-color: #f7e36d;
     border-radius: 50%;
 }
 .swiper-slide .ball3 {
@@ -29,7 +29,7 @@
     top: 80px;
     width: 46px;
     height: 46px;
-    background-color: #2FEFB1;
+    background-color: #2fefb1;
     border-radius: 50%;
 }
 .swiper-slide .ball4 {
@@ -38,7 +38,7 @@
     top: 60%;
     width: 35px;
     height: 35px;
-    background-color: #4857EC;
+    background-color: #4857ec;
     border-radius: 50%;
 }
 .swiper-slide .ball5 {
@@ -47,7 +47,7 @@
     top: 80%;
     width: 30px;
     height: 30px;
-    background-color: #FF3344;
+    background-color: #ff3344;
     border-radius: 50%;
 }
 .swiper-slide .ball6 {
@@ -56,7 +56,7 @@
     top: 75%;
     width: 30px;
     height: 30px;
-    background-color: #2FEFB1;
+    background-color: #2fefb1;
     border-radius: 50%;
 }
 .swiper-slide .desc {
@@ -124,16 +124,16 @@
     opacity: 1;
     width: 16px;
     height: 16px;
-    background-color: #FF3344;
+    background-color: #ff3344;
 }
 .swiper-pagination-bullet-active {
     width: 20px;
     height: 20px;
-    background-color: #FF3344;
+    background-color: #ff3344;
     position: relative !important;
 }
 .swiper-pagination-bullet-active::before {
-    content: '';
+    content: "";
     border-radius: 50%;
     position: absolute !important;
     left: 4px !important;
@@ -151,10 +151,10 @@
     background-image: url(../img/slider_icon03.svg);
     background-repeat: no-repeat;
 }
-.swiper-button-next::after, .swiper-button-prev:after {
+.swiper-button-next::after,
+.swiper-button-prev:after {
     display: none;
 }
-
 
 /* media */
 @media (max-width: 1300px) {
@@ -187,7 +187,6 @@
         right: 14%;
         top: 40%;
     }
-
 }
 @media (max-width: 600px) {
     .swiper-slide .desc .slider_img01 {
@@ -204,7 +203,6 @@
         left: 55%;
         width: 5rem;
         height: 5rem;
-
     }
     .swiper-slide .desc .slider_img03 {
         /* display: none; */
@@ -213,7 +211,6 @@
         height: 5rem;
         left: 75%;
         top: 20%;
-
     }
     .swiper-slide .desc .slider_img04 {
         /* display: none; */
