@@ -1775,7 +1775,7 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             document.querySelector(".sample14_Q1").innerHTML = "javascript";
             document.querySelector(".sample14_M1").innerHTML = "Array.from(text)";
             document.querySelector(".sample14_P1").innerHTML = result;
-            console.log(result);
+            // console.log(result);
 
             const text2 = "javascript";
             const result2 = Array.from(text2, el => el + "10");
@@ -1784,7 +1784,7 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             document.querySelector(".sample14_Q2").innerHTML = "javascript";
             document.querySelector(".sample14_M2").innerHTML = "Array.from(text2, el => el + '10')";
             document.querySelector(".sample14_P2").innerHTML = result2;
-            console.log(result2);
+            // console.log(result2);
 
             const text3 = "javascript";
             const result3 = [...text3].map(el => el);
@@ -1795,6 +1795,66 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             document.querySelector(".sample14_P3").innerHTML = result3;
         }
     
+
+        {
+            
+
+
+            // //결과값이 400이 나올수 있도록
+
+            //1 splice
+            // num1 = number.splice(3, 1);
+            // console.log(num1);
+
+            // //2 filter
+            // num2 = number.filter(e => e === 400);
+            // console.log(num2);
+
+            // //3 for문
+            // for(i = 0; i<number.length; i++){
+            //     if(number[i] == 400){
+            //         console.log(number[i]);
+            //     }
+            // }
+
+            // //4 find
+            // num4 = number.find(e => e === 400);
+            // console.log(num4);
+
+            // //5 slice
+            // num5 = number.slice(3, 4);
+            // console.log(num5);
+
+            // 400과 500이 나올수 있도록
+            // splice
+            const number1 = [100,200,300,400,500,600,700,800,900];
+            num1 = number1.splice(3,2);
+            console.log(num1);
+
+            // slice
+            const number2 = [100,200,300,400,500,600,700,800,900];
+            num2 = number2.slice(3, 5);
+            console.log(num2);
+
+            // filter
+            const number3 = [100,200,300,400,500,600,700,800,900];
+            num3 = number3.filter(el => el >=400 && el<=500);
+            console.log(num3);
+
+
+            const number4 = [100,200,300,400,500,600,700,800,900];
+            for(j = 0; j<number4.length; j++){
+                if(number4[j]>300 && number4[j]<600){
+                    console.log(number4[j]);
+                }
+            } 
+
+            
+            const number5 = [100,200,300,400,500,600,700,800,900];
+            num5 = number5.find(e => e >= 400 );
+            console.log(num5)
+            
+        }
     </script>
     
 </body>
