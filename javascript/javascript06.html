@@ -1827,32 +1827,62 @@ document.querySelector(".sample14_P3").innerHTML = result3;
 
             // 400과 500이 나올수 있도록
             // splice
-            const number1 = [100,200,300,400,500,600,700,800,900];
-            num1 = number1.splice(3,2);
-            console.log(num1);
+            // const number1 = [100,200,300,400,500,600,700,800,900];
+            // num1 = number1.splice(3,2);
+            // console.log(num1);
 
-            // slice
-            const number2 = [100,200,300,400,500,600,700,800,900];
-            num2 = number2.slice(3, 5);
-            console.log(num2);
+            // // slice
+            // const number2 = [100,200,300,400,500,600,700,800,900];
+            // num2 = number2.slice(3, 5);
+            // console.log(num2);
 
-            // filter
-            const number3 = [100,200,300,400,500,600,700,800,900];
-            num3 = number3.filter(el => el >=400 && el<=500);
-            console.log(num3);
+            // // filter
+            // const number3 = [100,200,300,400,500,600,700,800,900];
+            // num3 = number3.filter(el => el >=400 && el<=500);
+            // console.log(num3);
 
 
-            const number4 = [100,200,300,400,500,600,700,800,900];
-            for(j = 0; j<number4.length; j++){
-                if(number4[j]>300 && number4[j]<600){
-                    console.log(number4[j]);
-                }
-            } 
+            // const number4 = [100,200,300,400,500,600,700,800,900];
+            // for(j = 0; j<number4.length; j++){
+            //     if(number4[j]>300 && number4[j]<600){
+            //         console.log(number4[j]);
+            //     }
+            // } 
 
             
-            const number5 = [100,200,300,400,500,600,700,800,900];
-            num5 = number5.find(e => e >= 400 );
-            console.log(num5)
+            // const number5 = [100,200,300,400,500,600,700,800,900];
+            // num5 = number5.find(e => e >= 400 );
+            // console.log(num5)
+
+            
+
+            //b d f h k (짝수 출력)
+            // const num = ["a","b","c","d","e","f","g","h","i","k"];
+            // 01. for문
+            // for(i=1; i<num.length; i+=2){
+            //     console.log(num[i]);
+            // };
+
+            // 02. filter
+            // const num2 = ["a","b","c","d","e","f","g","h","i","k"];
+            // const result2 = num2.filter(e => e == "b" | e == "d" | e == "f" | e == "h" | e == "k");
+            // console.log(result2)
+
+            // 03. slice
+            // const num3 = ["a","b","c","d","e","f","g","h","i","k"];
+            // for(i=1; i<num3.length; i+=2){
+            //     const result3 = num3.slice(i,i+1);
+            //     console.log(result3)
+            // }
+
+            // 04. splice
+            // const num4 = ["a","b","c","d","e","f","g","h","i","k"];
+            // const result4 = num4.splice(0,num4.length);
+            // num4.push("b","d","f","h","k")
+            // console.log(num4)
+            
+ 
+            
             
         }
     </script>
