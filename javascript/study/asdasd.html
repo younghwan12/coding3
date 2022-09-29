@@ -1,51 +1,64 @@
-//글씨 하나씩 쪼개기
-            let text = document.querySelectorAll(".content__item__desc");
-            // let splitText = text.innerText;
-            // let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span&gt;')
-            // text.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;"
+&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;div class="mouse__img"&gt;
+                &lt;figure&gt;
+                    &lt;img src="../assets/img/effect_bg17.jpg" alt="이미지"&gt;
+                &lt;/figure&gt;
+            &lt;/div&gt;  
+            &lt;div class="mouse__text"&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanSlow"&gt;I'm still hungry&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanSlow"&gt;I'm still hungry&lt;/span&gt;
+                        &lt;/div&gt;                        
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanFast"&gt;bab jo jae bal&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanFast"&gt;bab jo jae bal&lt;/span&gt;
+                        &lt;/div&gt;                                
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanSlow"&gt;난 아직 배가고프다.&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanSlow"&gt;난 아직 배가고프다.&lt;/span&gt;
+                        &lt;/div&gt;                               
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanFast"&gt;밥좀 주세요.&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanFast"&gt;밥좀 주세요.&lt;/span&gt;
+                        &lt;/div&gt;                               
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;                  
+        &lt;/div&gt;
+    &lt;/section&gt;
 
-            // 글씨 쪼개기(다중이) 
 
-            document.querySelectorAll(".split").forEach(text =&gt; {
-                let splitText = text.innerText;
-                let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span aria-hidden = "true"&gt;');    //접근성 때문에 aria-hidden을 준다
-                splitWrap = "&lt;span aria-hidden = 'true'&gt;" + splitWrap + "&lt;/span&gt;";
-                text.innerHTML = splitWrap;
-                text.setAttribute("aria-label", splitText);           // splitText에 aria-label로 값을 넣는다.
-            });
-
-            function scroll(){
-                let ScrollTop = window.scrollY;
-                document.querySelector("#parallax__info .scroll").innerText = Math.round(ScrollTop);
-
-                // CSS에 클래스 추가(노가다)
-                // document.querySelectorAll(".content__item").forEach(item =&gt; {
-                //     if(ScrollTop &gt;= item.offsetTop) {
-                //         item.querySelector(".split").classList.add("show");
-                //     }
-                // })
-
-                document.querySelectorAll(".content__item").forEach(item =&gt; {
-                    if(ScrollTop &gt;= item.offsetTop){
-                        item.querySelectorAll(".split span").forEach((span, index) =&gt; {
-                            span.classList.add("show");
-
-                            span.style.transitionDelay = index + "00ms";
-                        });
-                    }
-                })
-
-                requestAnimationFrame(scroll);
-
-                // 첫 번째 span --&gt; 0.01s
-                // 두 번째 span --&gt; 0.02s
-                // 세 번째 span --&gt; 0.03s
-            }
-            scroll();
-
-
-            // text.forEach((el) =&gt; {
-            //     let splitText = el.innerText;
-            //     let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span&gt;');
-            //     el.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
-            // });
+&lt;/main&gt;
