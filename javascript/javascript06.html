@@ -1857,25 +1857,26 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             
 
             //b d f h k (짝수 출력)
-            // const num = ["a","b","c","d","e","f","g","h","i","k"];
+            
             // 01. for문
+            // const num = ["a","b","c","d","e","f","g","h","i","k"];
             // for(i=1; i<num.length; i+=2){
             //     console.log(num[i]);
             // };
 
-            // 02. filter
+            // // 02. filter
             // const num2 = ["a","b","c","d","e","f","g","h","i","k"];
             // const result2 = num2.filter(e => e == "b" | e == "d" | e == "f" | e == "h" | e == "k");
             // console.log(result2)
 
-            // 03. slice
+            // // 03. slice
             // const num3 = ["a","b","c","d","e","f","g","h","i","k"];
             // for(i=1; i<num3.length; i+=2){
             //     const result3 = num3.slice(i,i+1);
             //     console.log(result3)
             // }
 
-            // 04. splice
+            // // 04. splice
             // const num4 = ["a","b","c","d","e","f","g","h","i","k"];
             // const result4 = num4.splice(0,num4.length);
             // num4.push("b","d","f","h","k")
@@ -1883,7 +1884,14 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             
  
             
+            //  e f 만 출력(2가지)
             
+            const num = ["a","b","c","d","e","f","g","h","i","k"];
+            const result = num.filter(e => e == "e" | e == "f" );
+            console.log(result.split);
+            
+            
+
         }
     </script>
     
