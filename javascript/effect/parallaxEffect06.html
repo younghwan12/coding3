@@ -555,32 +555,57 @@
                         </div>
                         <div class="cont">
                             <div class="active">
-<pre><code class="language-js">function scroll(){
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+<pre><code class="language-js">//글씨 하나씩 쪼개기
+let text = document.querySelectorAll(".content__item__desc");
+// let splitText = text.innerText;
+// let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span&gt;')
+// text.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;"
 
-    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
-    
-    document.querySelectorAll(".content__item").forEach(item => {
-        const target1 = item.querySelector(".content__item__img");
-        const target2 = item.querySelector(".content__item__desc");
-        const target3 = item.querySelector(".content__item__num");
+// 글씨 쪼개기(다중이) 
 
-        let offset1 = (scrollTop - item.offsetTop) * 0.1 ;    //오차가 있을수 있으므로 0.1 곱하였음
-        let offset2 = (scrollTop - item.offsetTop) * 0.15 ;   //뒤에 숫자가 클수록 값이 커지므로 이동하는게 더 크게 보인다.
-        let offset3 = (scrollTop - item.offsetTop) * 0.2 ;
+document.querySelectorAll(".split").forEach(text =&gt; {
+    let splitText = text.innerText;
+    let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span aria-hidden = "true"&gt;');    //접근성 때문에 aria-hidden을 준다
+    splitWrap = "&lt;span aria-hidden = 'true'&gt;" + splitWrap + "&lt;/span&gt;";
+    text.innerHTML = splitWrap;
+    text.setAttribute("aria-label", splitText);           // splitText에 aria-label로 값을 넣는다.
+});
 
-        // target1.style.transform = `translateY(${offset1}px)`;
-        // target2.style.transform = `translateX(${offset2}px)`;
+function scroll(){
+    let ScrollTop = window.scrollY;
+    document.querySelector("#parallax__info .scroll").innerText = Math.round(ScrollTop);
 
-        gsap.to(target1, {duration: .3, y: offset1, ease: "power4.out"});
-        gsap.to(target2, {duration: .3, y: offset2});
-        gsap.to(target3, {duration: .3, y: offset3, ease: "expo out"});
+    // CSS에 클래스 추가(노가다)
+    // document.querySelectorAll(".content__item").forEach(item =&gt; {
+    //     if(ScrollTop &gt;= item.offsetTop) {
+    //         item.querySelector(".split").classList.add("show");
+    //     }
+    // })
 
-    });
+    document.querySelectorAll(".content__item").forEach(item =&gt; {
+        if(ScrollTop &gt;= item.offsetTop){
+            item.querySelectorAll(".split span").forEach((span, index) =&gt; {
+                span.classList.add("show");
+
+                span.style.transitionDelay = index + "00ms";
+            });
+        }
+    })
 
     requestAnimationFrame(scroll);
+
+    // 첫 번째 span --&gt; 0.01s
+    // 두 번째 span --&gt; 0.02s
+    // 세 번째 span --&gt; 0.03s
 }
 scroll();
+
+
+// text.forEach((el) =&gt; {
+//     let splitText = el.innerText;
+//     let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span&gt;');
+//     el.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
+// });
 </code></pre>
                             </div>
                             <div>
@@ -592,87 +617,87 @@ scroll();
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;산다는것 그것은 치열한 전투이다.&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;산다는것 그것은 치열한 전투이다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section1 --&gt;
-  
+
         &lt;section id="section2" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;02&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;하루에 3시간을 걸으면 7년 후에 지구를 한바퀴 돌 수 있다.&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;하루에 3시간을 걸으면 7년 후에 지구를 한바퀴 돌 수 있다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section2 --&gt;
-  
+
         &lt;section id="section3" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;03&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;내일은 내일의 태양이 뜬다.&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;내일은 내일의 태양이 뜬다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section3 --&gt;
-  
+
         &lt;section id="section4" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;04&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;배고픈 자 밥솥을 열어라.&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;배고픈 자 밥솥을 열어라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section4 --&gt;
-  
+
         &lt;section id="section5" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;05&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;그대 자신의 영혼을 탐구하라.&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;그대 자신의 영혼을 탐구하라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section5 --&gt;
-  
+
         &lt;section id="section6" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;06&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;돈이 없는 것은 죄다.&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;돈이 없는 것은 죄다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section6 --&gt;
-  
+
         &lt;section id="section7" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;07&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;무전 유죄, 유전 무죄&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;무전 유죄, 유전 무죄&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section7 --&gt;
-  
+
         &lt;section id="section8" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;08&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;내 주머니의 푼돈이 남 주머니에 있는 거금보다 낫다.&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;내 주머니의 푼돈이 남 주머니에 있는 거금보다 낫다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section8 --&gt;
-  
+
         &lt;section id="section9" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;09&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;최고에 도달하려면 최저에서 시작하라.&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;최고에 도달하려면 최저에서 시작하라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section9 --&gt;
     &lt;/div&gt;
