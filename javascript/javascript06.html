@@ -1885,10 +1885,25 @@ document.querySelector(".sample14_P3").innerHTML = result3;
  
             
             //  e f 만 출력(2가지)
-            
+
+            // 1 filter
             const num = ["a","b","c","d","e","f","g","h","i","k"];
             const result = num.filter(e => e == "e" | e == "f" );
-            console.log(result.split);
+            console.log(result);
+            // 2 for
+            const num2 = ["a","b","c","d","e","f","g","h","i","k"];
+            for(i= 4; i<=5; i++){
+                console.log(num2[i])
+            };
+            // 3 join,match
+            const num4 = ["a","b","c","d","e","f","g","h","i","k"];
+            const result4 = num4.join("").match(/[e && f]/g);
+            console.log(result4)
+            // 5 
+            // const num5 = ["a","b","c","d","e","f","g","h","i","k"];
+            // const result5 = 
+
+            
             
             
 

@@ -1694,6 +1694,8 @@ input[type="checkbox"] {
 
         // 출력하기
         function updatelist(list){
+
+            
             listCSS = "";
 
             for (const data of list){
@@ -1711,14 +1713,21 @@ input[type="checkbox"] {
         updatelist(cssProperty);
 
         // 클릭하기
-        searchClick.forEach(star => {
+        searchClick.forEach((star, index) => {
             star.addEventListener("click", ()=> {
-                const target = star.dataset.star;
-                const target2 = star.dataset.number;
                 
-                const filterList = cssProperty.filter(data => data.star == target || data.star >= target2);
+                // const target = star.dataset.star;
+                // const target2 = star.dataset.number;
+
+                const target2 = star.innerText.slice(0, 1);
+                const filterList = cssProperty.filter(data => data.star == index || data.star >= target2);
+                
+                // const filterList = cssProperty.filter(data => data.star == target || data.star >= target2);
 
                 updatelist(filterList);
+
+
+                
             });
         });
         
