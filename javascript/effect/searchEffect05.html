@@ -1715,11 +1715,12 @@ input[type="checkbox"] {
         // 클릭하기
         searchClick.forEach((star, index) => {
             star.addEventListener("click", ()=> {
-                
+                // console.log(index)
+
                 // const target = star.dataset.star;
                 // const target2 = star.dataset.number;
-
                 const target2 = star.innerText.slice(0, 1);
+
                 const filterList = cssProperty.filter(data => data.star == index || data.star >= target2);
                 
                 // const filterList = cssProperty.filter(data => data.star == target || data.star >= target2);
