@@ -251,21 +251,20 @@
     let sliderWidth = 2000;
 
 
+    
+    sliderBtnPrev.addEventListener("click", ()=>{
+        let prevIndex = (currentIndex + (sliderCount - 1)) %  sliderCount
+        gotoSlider(prevIndex);
+    });
+    
+    sliderBtnNext.addEventListener("click", ()=>{
+        let nextIndex = (currentIndex + 1) % sliderCount;
+        gotoSlider(nextIndex);
+    });
     function gotoSlider(num){
         sliderInner.style.transition = "all 400ms"
         sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
         currentIndex = num;
     }
-
-    sliderBtnPrev.addEventListener("click", ()=>{
-        let prevIndex = (currentIndex + (sliderCount - 1)) %  sliderCount
-        gotoSlider(prevIndex);
-        console.log(prevIndex);
-    });
-
-    sliderBtnNext.addEventListener("click", ()=>{
-        let nextIndex = (currentIndex + 1) % sliderCount;
-        gotoSlider(nextIndex);
-    });
 </script>
 </html>
