@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 팝업</title>
+
+    <link rel="stylesheet" href="../asset/css/common.css">
+    <link rel="stylesheet" href="../asset/css/reset.css">
+
+
+    <link rel="stylesheet" href="../asset/css/login.css">
+</head>
+<body>
+    <div class="login__popup">
+        <div class="login__inner">
+            <div class="login__header">
+                <h3>winimal Login</h3>
+            </div>
+            <div class="login__contents">
+                <form name="login" action="loginSave.php" method="POST">
+                    <fieldset>
+                        <legend class="blind">로그인 입력폼</legend>
+                        <div>
+                            <div>
+                                <label class="blind" for="youEmail">이메일</label>
+                                <input type="email" name="youEmail" id="youEmail" placeholder="아이디를 입력해주세요." class="input__style" required>
+                            </div>
+                            <div>
+                                <label class="blind" for="youPass">비밀번호</label>
+                                <input type="password" name="youPass" id="youPass" placeholder="비밀번호를 입력해주세요." class="input__style" required>
+                            </div>
+                        </div>
+                        <label><input type="checkbox" name="" class="login__box"> 로그인 상태 유지</label>
+                    </fieldset>
+                </form>
+                <div class="btn">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">KaKao Login</a></li>                
+                </div>
+            </div>
+            <div class="login__footer">
+                <div class="btn">
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">ID / PW 찾기</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

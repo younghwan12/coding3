@@ -1,0 +1,59 @@
+.join__popup {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.join__inner {
+    width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #505050;
+}
+.join__inner > h2 {
+    font-size: 24px;
+    text-align: center;
+    padding: 30px 0;
+}
+.join__box > h3 {
+    border-left: 1px solid #6cc4b3;
+    margin: 15px 0;
+    padding-left: 10px;
+    color: #6cc4b3;
+}
+.join__box .join__title {
+}
+.join__box > div {
+    margin-bottom: 10px;
+}
+.join__box > div > label {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.join__box > div > input {
+    border: 0;
+    background-color: #f5f5f5;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px 30px;
+    font-size: 20px;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+.join__btn {
+    display: block;
+    text-align: center;
+    background-color: #fff;
+    padding: 1rem;
+    font-size: 1.3rem;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
