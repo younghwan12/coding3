@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 팝업</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+        .score {
+            font-family: 'SCoreDream';
+            font-weight: 400;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        em {
+            font-style: normal;
+        }
+        li {
+            list-style: none;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 400;
+        }
+        img {
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            height: 150px;
+            background-color: #d5d5d5;
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #header li {
+            display: inline-block;
+        }
+        .login_btn {
+            margin-right: 40px;
+        }
+
+        /* 공통 */
+        .login__popup {
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border-radius: 10px;
+            border: 1px solid #6CC4B3;
+            color: #505050;
+        }
+        .login__inner {
+            padding: 40px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .login__header h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab_menu {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+        .tab_menu em {
+            color: #6CC4B3;
+        }
+        .tab_menu span {
+            color: #757575;
+            cursor: pointer;
+        }
+        .tab_menu span.id {
+            margin-right: 5px;
+        }
+        .tab_menu span.pass {
+            margin-left: 5px;
+        }
+        .tab_menu span.active {
+            color: #6CC4B3;
+        }
+        .search_contents {
+            padding-top: 1.2rem;
+        }
+        .id_search {
+            font-size: 1.3em;
+            border-bottom: 1px dashed #6CC4B3;
+            border-style: dashed 20px;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: #757575;
+        }
+        
+        .certify_method  p {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .method_choice {
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .certify_method {
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #757575;
+        }
+        .method {
+            width: 100px;
+            height: 100px;
+            padding: 35px 35px 35px 35px;
+            border: 1px solid #6CC4B3;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 25px;
+            cursor: pointer;
+        }
+        .method:hover {
+            background-color: rgba(108, 196, 179, 0.1);
+        }
+        .method img {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+        }
+        .method figcaption {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 90px;
+            color: #757575;
+
+        }
+        .certify_method span {
+            color: #505050;
+        }
+
+        .certify_confirm {
+            font-size: 25px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            color: #757575;
+            background-color: #f5f5f5;
+        }
+
+        .close_btn {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            cursor: pointer;
+        }
+        
+        .close {
+            display: none;
+        }
+
+
+        .blind{
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login__popup score">
+        <div class="login__inner">
+            <div class="login__header">
+                <h3>I.D/P.W 찾기</h3>
+            </div>
+            <div class="tab_menu">
+                <span class="id">ID</span> <em>|</em> <span class="pass">Password</span>
+                <div class="search_contents">
+                    <h4 class="id_search">아이디 찾기</h4>
+                    <div class="certify_method">
+                        <p>원하시는 인증 방법을 선택해주세요.</p>
+                        <div class="method_choice">
+                            <figure class="method">
+                                <img src="../asset/img/email_logo.png" alt="이메일 로고">
+                               <figcaption>이메일 인증</figcaption> 
+                            </figure>
+                            <figure class="method">
+                                <img src="../asset/img/phone_logo.png" alt="핸드폰 로고">
+                               <figcaption>휴대번호 인증</figcaption> 
+                            </figure>
+                        </div>
+                        <span>선택 완료</span>
+                    </div>
+                    <div class="certify_confirm"><a href="#">인증하기</a></div>
+                </div>
+            </div>
+            <div class="close_btn">
+                <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#D5D5D5"/>
+                    <path d="M5.33334 4.66675L14.6667 15.3334" stroke="white" stroke-linecap="round"/>
+                    <path d="M14.6667 4.66675L5.33333 15.3334" stroke="white" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginPopup = document.querySelector(".login__popup");
+        const tabMenuId = document.querySelector(".id");
+        const tabMenuPass = document.querySelector(".pass");
+        const loginBtn = document.querySelector("login_btn");
+        const close_btn = document.querySelector("close_btn");
+
+
+
+        // loginPopup.addEventListener("click", () => {
+        //     preventdefault();
+        //     loginPopup.classList.remove("close");
+        // });
+        // close_btn.addEventListener("click", () => {
+        //     loginPopup.classList.add("close");
+        // });
+
+        tabMenuId.addEventListener("click", () => {
+            tabMenuId.classList.add("active");
+            tabMenuPass.classList.remove("active");
+        });
+        tabMenuPass.addEventListener("click", () => {
+            tabMenuPass.classList.add("active");
+            tabMenuId.classList.remove("active");
+        });
+
+
+    </script>
+</body>
+</html>
