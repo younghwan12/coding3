@@ -318,7 +318,7 @@
                     <figure class="content__item__imgWrap reveal reveal-TTB">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc">내일은 내일의 태양이 뜬다.</p>
+                    <p class="content__item__desc reveal">내일은 내일의 태양이 뜬다.</p>
                 </section>
                 <!-- //section3 -->
 
@@ -328,7 +328,7 @@
                     <figure class="content__item__imgWrap reveal reveal-BTT" data-delay="500">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc">배고픈 자 밥솥을 열어라.</p>
+                    <p class="content__item__desc reveal">배고픈 자 밥솥을 열어라.</p>
                 </section>
                 <!-- //section4 -->
 
@@ -338,7 +338,7 @@
                     <figure class="content__item__imgWrap reveal reveal-TWO">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc">그대 자신의 영혼을 탐구하라.</p>
+                    <p class="content__item__desc reveal">그대 자신의 영혼을 탐구하라.</p>
                 </section>
                 <!-- //section5 -->
 
@@ -348,7 +348,7 @@
                     <figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc">돈이 없는 것은 죄다.</p>
+                    <p class="content__item__desc reveal">돈이 없는 것은 죄다.</p>
                 </section>
                 <!-- //section6 -->
 
@@ -358,7 +358,7 @@
                     <figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc">무전 유죄, 유전 무죄</p>
+                    <p class="content__item__desc reveal">무전 유죄, 유전 무죄</p>
                 </section>
                 <!-- //section7 -->
 
@@ -368,7 +368,7 @@
                     <figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc">내 주머니의 푼돈이 남 주머니에 있는 거금보다 낫다.</p>
+                    <p class="content__item__desc reveal">내 주머니의 푼돈이 남 주머니에 있는 거금보다 낫다.</p>
                 </section>
                 <!-- //section8 -->
 
@@ -378,7 +378,7 @@
                     <figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc">최고에 도달하려면 최저에서 시작하라.</p>
+                    <p class="content__item__desc reveal">최고에 도달하려면 최저에서 시작하라.</p>
                 </section>
                 <!-- //section9 -->
             </div>
@@ -949,40 +949,19 @@ scroll();
         <script>
 
             const revealText = document.querySelectorAll(".reveal");
-
-            
+           
         
-
+            // 2022-10-06
             revealText.forEach((el)=>{
                 let splitText = el.innerText;
-                let splitWrap = splitText.split('').join('<span><span>');
 
-                console.log(splitWrap);
-                // if(el.innerHTML == undefined){
-                // }  
+                if(splitText){
+                    splitText.innerHTML = '<span>' + splitText + '</span>';
+                }
             })
-            // console.log(revealText.innerHTML)
 
             
-            // reveal 클래스 자식에 글씨만 있다면, 가상으로 span태그 만들어서 추가!
-            // document.querySelectorAll(".reveal").forEach((el) => {
-            //     // console.log(el.innerHTML);
 
-            //     let revealText = el.innerHTML;
-            //     let revealWrap = revealText.split('').join('<span></span>');
-            //     if(revealText == ''){
-            //         revealText.innerHTML
-            //     }
-            //     console.log(revealWrap)
-            // });
-
-            document.querySelectorAll(".split").forEach(text => {
-                let splitText = text.innerText;
-                let splitWrap = splitText.split('').join('</span><span aria-hidden = "true">');    //접근성 때문에 aria-hidden을 준다
-                splitWrap = "<span aria-hidden = 'true'>" + splitWrap + "</span>";
-                text.innerHTML = splitWrap;
-                text.setAttribute("aria-label", splitText);           // splitText에 aria-label로 값을 넣는다.
-            });
 
 
             function scroll(){
