@@ -14,76 +14,52 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
 
         <style>
-            /* parallax__nav */
-            #parallax__nav {
-                position: fixed;
-                right: 20px;
-                top: 20px;
-                z-index: 2000;
-                background-color: rgba(0, 0, 0, 0.4);
-                padding: 20px 30px;
-                border-radius: 50px;
-                transition: top 0.4s ease;
+            body {
+                overflow-x: hidden;
             }
-            #parallax__nav li {
-                display: inline;
-                margin: 0 5px;
-            }
-            #parallax__nav li a {
-                display: inline-block;
-                height: 30px;
-                padding: 5px 20px;
-                text-align: center;
-                line-height: 30px;
-            }
-            #parallax__nav li.active a {
-                background: #fff;
-                color: #000;
-                border-radius: 20px;
-                box-sizing: content-box;
-            }
+            /* parallax__cont */
             #parallax__cont {
                 max-width: 1600px;
                 width: 98%;
                 margin: 0 auto;
-                /* background-color: rgba(255, 255, 255, 0.1); */
+                /* background-color: rgba(255,255,255,0.1); */
             }
             .content__item {
                 width: 1000px;
                 max-width: 70vw;
                 margin: 30vw auto;
-                /* background-color: rgba(255, 255, 255, 0.3); */
+                /* background-color: rgba(255,255,255,0.3); */
                 text-align: left;
                 margin-right: 0;
                 position: relative;
-                padding-top: 8vw;
+                padding-top: 9vw;
             }
-            .content__item:nth-child(even) {
+            .content__item:nth-child(even) {      /* 2n: n은 변수, even: 짝수만 선택 */
                 margin-left: 0;
                 text-align: right;
             }
+            .content__item:nth-child(even) .content__item__num {
+                left: auto;  /*left 값 초기화 */
+                right: -5vw;
+            }
             .content__item__num {
                 font-size: 35vw;
-                font-weight: 100;
                 font-family: 'Lato';
+                font-weight: 100;
                 position: absolute;
                 left: -5vw;
                 top: -13vw;
                 opacity: 0.07;
                 z-index: -2;
             }
-            .content__item:nth-child(even) .content__item__num {
-                left: auto;
-                right: -5vw;
-            }
             .content__item__title {
                 font-weight: 400;
-                text-transform: capitalize;
+                text-transform: capitalize;     /* 첫글자만 대문자 */
             }
             .content__item__imgWrap {
                 width: 100%;
                 padding-bottom: 56.25%;
-                background: #000;
+                background-color: #000;
                 position: relative;
                 overflow: hidden;
                 z-index: -1;
@@ -93,8 +69,8 @@
                 background: url(../assets/img/effect_bg19@2x.jpg);
                 background-repeat: no-repeat;
                 background-position: center center;
-                background-size: cover;
                 width: 110%;
+                background-size: cover;
                 height: 110%;
                 left: -5%;
                 top: -5%;
@@ -131,7 +107,7 @@
             .content__item__desc {
                 font-size: 4vw;
                 line-height: 1.4;
-                margin-top: -4vw;
+                margin-top: -5vw;
                 margin-left: -4vw;
                 word-break: keep-all;
             }
@@ -139,108 +115,35 @@
                 margin-left: auto;
                 margin-right: -4vw;
             }
+            @media(max-width: 800px) {
+                #parallax__cont {
+                    margin-top: 70vw;
+                }
+            }
+
             #parallax__info {
                 position: fixed;
                 left: 20px;
                 bottom: 20px;
                 z-index: 2000;
-                background-color: rgba(0,0,0,0.4);
+                background-color: rgba(0,0,0,0.6);
                 color: #fff;
-                padding: 20px;
+                padding: 15px 20px;
                 border-radius: 10px;
             }
-            #parallax__info li,
-            .scroll {
-                line-height: 1.4;
-            }
-            @media (max-width: 800px) {
-                #parallax__cont {
-                    margin-top: 70vw;
-                }
-                #parallax__nav {
-                    padding: 10px;
-                    right: auto;
-                    left: 10px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    border-radius: 5px;
-                    background-color: rgba(0,0,0,0.8);
-                }
-                #parallax__nav li {
-                    display: block;
-                    margin: 5px;
-                }
-                #parallax__nav li a {
-                    font-size: 14px;
-                    padding: 5px;
-                    border-radius: 5px;
-                    height: auto;
-                    line-height: 1;
-                }
-                #parallax__nav li.active a {
-                    border-radius: 5px;
-                }
-            }
-
+            /* option */
             /* .split span {
+                display: inline-block;
                 opacity: 0;
                 transform: translateY(50px);
-                transition: all 0.6s cubic-bezier(0.75,-0.32, 0.07, 1.29);
-                display: inline-block;
+                transition: all 0.3s cubic-bezier(0, 0.76, 0.45, 1.42);
                 min-width: 1vw;
             }
             .split span.show {
                 opacity: 1;
                 transform: translateY(0);
             } */
-
-            /* option */
-            /* .split span {
-                opacity: 0;
-                transform: translateY(50px);
-                transition: all 0.6s cubic-bezier(0.75,-0.32, 0.07, 1.29);
-                display: inline-block;
-                min-width: 1vw;
-            }
-            .split.show span {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            .split span:nth-child(1)  {transition-delay: 100ms;}
-            .split span:nth-child(2)  {transition-delay: 150ms;}
-            .split span:nth-child(3)  {transition-delay: 200ms;}
-            .split span:nth-child(4)  {transition-delay: 150ms;}
-            .split span:nth-child(5)  {transition-delay: 200ms;}
-            .split span:nth-child(6)  {transition-delay: 250ms;}
-            .split span:nth-child(7)  {transition-delay: 300ms;}
-            .split span:nth-child(8)  {transition-delay: 350ms;}
-            .split span:nth-child(9)  {transition-delay: 400ms;}
-            .split span:nth-child(10) {transition-delay: 450ms;}
-            .split span:nth-child(11) {transition-delay: 500ms;}
-            .split span:nth-child(12) {transition-delay: 550ms;}
-            .split span:nth-child(13) {transition-delay: 600ms;}
-            .split span:nth-child(14) {transition-delay: 650ms;}
-            .split span:nth-child(15) {transition-delay: 700ms;}
-            .split span:nth-child(16) {transition-delay: 750ms;}
-            .split span:nth-child(17) {transition-delay: 800ms;}
-            .split span:nth-child(18) {transition-delay: 850ms;}
-            .split span:nth-child(19) {transition-delay: 900ms;}
-            .split span:nth-child(20) {transition-delay: 950ms;}
-            .split span:nth-child(21) {transition-delay: 100ms;}
-            .split span:nth-child(22) {transition-delay: 1050ms;}
-            .split span:nth-child(23) {transition-delay: 1100ms;}
-            .split span:nth-child(24) {transition-delay: 1150ms;}
-            .split span:nth-child(25) {transition-delay: 1200ms;}
-            .split span:nth-child(26) {transition-delay: 1250ms;}
-            .split span:nth-child(27) {transition-delay: 1300ms;}
-            .split span:nth-child(28) {transition-delay: 1350ms;}
-            .split span:nth-child(29) {transition-delay: 1400ms;}
-            .split span:nth-child(30) {transition-delay: 1450ms;}
-            .split span:nth-child(31) {transition-delay: 1500ms;}
-            .split span:nth-child(32) {transition-delay: 1550ms;}
-            .split span:nth-child(33) {transition-delay: 1600ms;} */
-
-            /* setTimeout사용 순차적으로 나타나게 */
+            /* 순차적으로 나타나기 */
             .style1.split span {
                 opacity: 0;
                 min-width: 1vw;
@@ -249,70 +152,175 @@
             .style1.split span.show {
                 opacity: 1;
             }
-            
             .style2.split span {
                 opacity: 0;
                 min-width: 1vw;
-                transform: translateY(50px);
+                transform: translateY(70px);
                 display: inline-block;
-                transition: all 0.3s ease-in-out;
+                transition: all 0.3s cubic-bezier(0, 0.28, 0, 1.2);
             }
             .style2.split span.show {
                 opacity: 1;
                 transform: translateY(0);
             }
-
             .style3.split span {
                 opacity: 0;
                 min-width: 1vw;
-                transform: translateY(50px) translateX(30px) rotate(360deg);
+                transform: translateY(70px) translateX(100px) rotate(360deg);
                 display: inline-block;
-                transition: all 0.3s ease-in-out;
+                transition: all 0.3s cubic-bezier(0, 0.28, 0, 1.2);
             }
             .style3.split span.show {
                 opacity: 1;
                 transform: translateY(0) translateX(0) rotate(0);
             }
-
             .style4.split span {
                 opacity: 0;
                 min-width: 1vw;
+                display: inline-block;
             }
             .style4.split span.show {
-                animation: wobble 0.5s 1s ease-in forwards;
+                animation: wobble 0.5s 1 ease-in forwards;
             }
-            @keyframes wobble {
-            from {transform: translate3d(0, 0, 0); opacity: 0;}
-            15% {transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);}
-            30% {transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);}
-            45% {transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);}
-            60% {transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);}
-            75% {transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);}
-            100% {transform: translate3d(0, 0, 0); opacity: 1;}
-            }
-
-            @keyframes bounceInLeft {
-            0% {
+            .style5.split span {
                 opacity: 0;
-                transform: translate3d(-3000px, 0, 0) scaleX(3);
+                min-width: 1vw;
+                display: inline-block;
+            }
+            .style5.split span.show {
+                animation: bounceInLeft 0.5s 1 ease-in forwards;
+            }
+            .style6.split span {
+                opacity: 0;
+                min-width: 1vw;
+                display: inline-block;
+            }
+            .style6.split span.show {
+                animation: lightSpeedInLeft 0.5s 1 ease-in forwards;
+            }
+            .style6.split span {
+                opacity: 0;
+                min-width: 1vw;
+                display: inline-block;
+            }
+            .style6.split span.show {
+                animation: flipp 0.5s 1 ease-in forwards;
+            }
+            .style7.split span {
+                opacity: 0;
+                min-width: 1vw;
+                display: inline-block;
+            }
+            .style7.split span.show {
+                animation: rotateInUpRight 0.5s 1 ease-in forwards;
+            }
+            .style8.split span {
+                opacity: 0;
+                min-width: 1vw;
+                display: inline-block;
+            }
+            .style8.split span.show {
+                animation: rollIn 0.5s 1 ease-in forwards;
+            }
+            .style9.split span {
+                opacity: 0;
+                min-width: 1vw;
+                display: inline-block;
+            }
+            .style9.split span.show {
+                animation: rubberBand 0.5s 1 ease-in forwards;
             }
 
-            60% {
-                opacity: 1;
-                transform: translate3d(25px, 0, 0) scaleX(1);
+            @keyframes wobble {
+                0% {transform: translate3d(0, 0, 0); opacity: 0}
+                15% {transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);}
+                30% {transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);}
+                45% {transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);}
+                60% {transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);}
+                75% {transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);}
+                100% { transform: translate3d(0, 0, 0); opacity: 1}
             }
-
-            75% {
-                transform: translate3d(-10px, 0, 0) scaleX(0.98);
+            @keyframes bounceInLeft {
+                0%,
+                60%,
+                75%,
+                90%,
+                100% {animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);}
+                0% {opacity: 0;transform: translate3d(-3000px, 0, 0) scaleX(3);}
+                60% {opacity: 1;transform: translate3d(25px, 0, 0) scaleX(1);}
+                75% {transform: translate3d(-10px, 0, 0) scaleX(0.98);}
+                90% {transform: translate3d(5px, 0, 0) scaleX(0.995);}
+                100% {transform: translate3d(0, 0, 0); opacity: 1}
             }
-
-            90% {
-                transform: translate3d(5px, 0, 0) scaleX(0.995);
+            @keyframes lightSpeedInLeft {
+                0% {transform: translate3d(-100%, 0, 0) skewX(30deg);opacity: 0;}
+                60% {transform: skewX(-20deg);opacity: 1;}
+                80% {transform: skewX(5deg); opacity: 1}
+                100% {transform: translate3d(0, 0, 0); opacity: 1}
             }
-            100% {
-                transform: translate3d(0, 0, 0) scaleX(1); opacity: 1;
+            @keyframes flipp {
+                0% {transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);animation-timing-function: ease-out;}
+                40% {transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);animation-timing-function: ease-out;}
+                50% {transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);animation-timing-function: ease-in;}
+                80% {transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);animation-timing-function: ease-in;}
+                100% {transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);animation-timing-function: ease-in;opacity: 1;}
             }
+            @keyframes rotateInUpRight {
+                0% {transform: rotate3d(0, 0, 1, -90deg);opacity: 0;}
+                100% {transform: translate3d(0, 0, 0);opacity: 1;}
             }
+            @keyframes rollIn {
+                0% {opacity: 0;transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);}
+                100% {opacity: 1;transform: translate3d(0, 0, 0);opacity: 1;}
+            }
+            @keyframes rubberBand {
+                0% {transform: scale3d(1, 1, 1);}
+                30% {transform: scale3d(1.25, 0.75, 1);}
+                40% {transform: scale3d(0.75, 1.25, 1);}
+                50% {transform: scale3d(1.15, 0.85, 1);}
+                65% {transform: scale3d(0.95, 1.05, 1);}
+                75% {transform: scale3d(1.05, 0.95, 1);}
+                100% {transform: scale3d(1, 1, 1);opacity: 1;}
+            }
+            /* .split span:nth-child(1) {transition-delay: 0.1s;}
+            .split span:nth-child(2) {transition-delay: 0.15s;}
+            .split span:nth-child(3) {transition-delay: 0.2s;}
+            .split span:nth-child(4) {transition-delay: 0.25s;}
+            .split span:nth-child(5) {transition-delay: 0.3s;}
+            .split span:nth-child(6) {transition-delay: 0.35s;}
+            .split span:nth-child(7) {transition-delay: 0.4s;}
+            .split span:nth-child(8) {transition-delay: 0.45s;}
+            .split span:nth-child(9) {transition-delay: 0.5s;}
+            .split span:nth-child(10) {transition-delay: 0.55s;}
+            .split span:nth-child(11) {transition-delay: 0.6s;}
+            .split span:nth-child(12) {transition-delay: 0.65s;}
+            .split span:nth-child(13) {transition-delay: 0.7s;}
+            .split span:nth-child(14) {transition-delay: 0.75s;}
+            .split span:nth-child(15) {transition-delay: 0.8s;}
+            .split span:nth-child(16) {transition-delay: 0.85s;}
+            .split span:nth-child(17) {transition-delay: 0.9s;}
+            .split span:nth-child(18) {transition-delay: 0.95s;}
+            .split span:nth-child(19) {transition-delay: 1.0s;}
+            .split span:nth-child(20) {transition-delay: 1.05s;}
+            .split span:nth-child(21) {transition-delay: 1.1s;}
+            .split span:nth-child(22) {transition-delay: 1.15s;}
+            .split span:nth-child(23) {transition-delay: 1.2s;}
+            .split span:nth-child(24) {transition-delay: 1.25s;}
+            .split span:nth-child(25) {transition-delay: 1.3s;}
+            .split span:nth-child(26) {transition-delay: 1.35s;}
+            .split span:nth-child(27) {transition-delay: 1.4s;}
+            .split span:nth-child(28) {transition-delay: 1.45s;}
+            .split span:nth-child(29) {transition-delay: 1.5s;}
+            .split span:nth-child(30) {transition-delay: 1.55s;}
+            .split span:nth-child(31) {transition-delay: 1.6s;}
+            .split span:nth-child(32) {transition-delay: 1.65s;}
+            .split span:nth-child(33) {transition-delay: 1.7s;}
+            .split span:nth-child(34) {transition-delay: 1.75s;}
+            .split span:nth-child(35) {transition-delay: 1.8s;}
+            .split span:nth-child(36) {transition-delay: 1.85s;}
+            .split span:nth-child(37) {transition-delay: 1.9s;}
+            .split span:nth-child(38) {transition-delay: 1.95s;}
+            .split span:nth-child(39) {transition-delay: 2.0s;} */
         </style>
     </head>
     <body>
@@ -379,7 +387,7 @@
                     <figure class="content__item__imgWrap">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc split">그대 자신의 영혼을 탐구하라.</p>
+                    <p class="content__item__desc split style5">그대 자신의 영혼을 탐구하라.</p>
                 </section>
                 <!-- //section5 -->
 
@@ -389,7 +397,7 @@
                     <figure class="content__item__imgWrap">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc split">돈이 없는 것은 죄다.</p>
+                    <p class="content__item__desc split style6">돈이 없는 것은 죄다.</p>
                 </section>
                 <!-- //section6 -->
 
@@ -399,7 +407,7 @@
                     <figure class="content__item__imgWrap">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc split">무전 유죄, 유전 무죄</p>
+                    <p class="content__item__desc split style7">무전 유죄, 유전 무죄</p>
                 </section>
                 <!-- //section7 -->
 
@@ -409,7 +417,7 @@
                     <figure class="content__item__imgWrap">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc split">내 주머니의 푼돈이 남 주머니에 있는 거금보다 낫다.</p>
+                    <p class="content__item__desc split style8">내 주머니의 푼돈이 남 주머니에 있는 거금보다 낫다.</p>
                 </section>
                 <!-- //section8 -->
 
@@ -419,7 +427,7 @@
                     <figure class="content__item__imgWrap">
                         <div class="content__item__img"></div>
                     </figure>
-                    <p class="content__item__desc split">최고에 도달하려면 최저에서 시작하라.</p>
+                    <p class="content__item__desc split style9">최고에 도달하려면 최저에서 시작하라.</p>
                 </section>
                 <!-- //section9 -->
             </div>
