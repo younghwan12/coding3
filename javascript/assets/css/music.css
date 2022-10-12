@@ -60,6 +60,10 @@
     padding: 20px;
     padding-top: 0;
 }
+.music__control .control i:hover {
+    background-color: #fff;
+    padding: 10px;
+}
 .music__control .progress {
     width: 100%;
     height: 6px;
@@ -67,7 +71,7 @@
     border-radius: 5px;
 }
 .music__control .progress .bar {
-    width: 30%;
+    width: 0;
     height: inherit;
     background: #7fff58;
     border-radius: 5px;
@@ -91,22 +95,20 @@
     background-position: -288px 0;
     transform: scale(0.8);
 }
-/* .control > div {
-    display: flex;
-} */
-
-/* .music__control .control .repeat_one {
+.music__control .control .repeat-one {
     width: 48px;
     height: 48px;
     background: url(../img/music_icon.svg);
-    background-position: -300px 0;
+    background-position: -336px 0;
+    transform: scale(0.8);
 }
 .music__control .control .shuffle {
     width: 48px;
     height: 48px;
     background: url(../img/music_icon.svg);
     background-position: -240px 0;
-} */
+    transform: scale(0.8);
+}
 .music__control .control .prev {
     width: 48px;
     height: 48px;
@@ -121,12 +123,13 @@
     background-position: 0 0;
     transform: scale(0.8);
 }
-/* .music__control .control .stop {
+.music__control .control .stop {
     width: 48px;
     height: 48px;
     background: url(../img/music_icon.svg);
     background-position: -48px 0;
-} */
+    transform: scale(0.8);
+}
 .music__control .control .next {
     width: 48px;
     height: 48px;
@@ -140,4 +143,49 @@
     background: url(../img/music_icon.svg);
     background-position: -192px 0;
     transform: scale(0.8);
+}
+.music__footer {
+    background: #c4c4c4;
+}
+.music__list {
+    padding: 20px;
+}
+.music__list ul {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.music__list h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #000;
+}
+.music__list h3 .list {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: url(../img/music_icon.svg);
+    background-position: -192px 0;
+    transform: scale(0.8);
+    margin-right: 5px;
+    vertical-align: -14px;
+}
+.music__list li {
+    border-bottom: 1px solid #000;
+    list-style: none;
+    position: relative;
+    padding: 7px 0 5px;
+}
+.music__list li strong {
+    display: block;
+    font-size: 16px;
+}
+.music__list li em {
+    font-style: normal;
+}
+
+.music__list li span {
+    position: absolute;
+    right: 0;
+    top: 25px;
 }

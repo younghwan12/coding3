@@ -87,18 +87,29 @@
                         </div>
                     </div>
                     <div class="control">
-                        <i title="전체 반복" class="repeat"></i>
+                        <i title="전체 반복" class="repeat" id="control-repeat"></i>
                         <!-- <i title="한곡 반복" class="repeat_one"></i> -->
                         <!-- <i title="랜덤 반복" class="shuffle"></i> -->
                         <i title="이전곡 재생" class="prev" id="control-prev"></i>
                         <i title="재생" class="play" id="control-play"></i>
                         <!-- <i title="정지" class="stop"></i> -->
                         <i title="다음곡 재생" class="next" id="control-next"></i>
-                        <i title="재생 목록" class="list"></i>
+                        <i title="재생 목록" class="list" id="control-list"></i>
                     </div>
                 </div>
             </div>
-            <div class="music__footer"></div>
+            <div class="music__footer">
+                <div class="music__list">
+                    <h3><span class="list"></span>뮤직 리스트</h3>
+                    <ul>
+                        <!-- <li>
+                            <strong>제목</strong>
+                            <em>아티스트</em>
+                            <span>재생시간</span>
+                        </li>                         -->
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <!-- //뮤직 플레이어 -->
@@ -149,18 +160,26 @@
                     $(".cursor img").attr("src", "../assets/img/cursor6.png")
                 },
             });
+            $(".music__wrap").draggable({
+            });
         } );
 
-
         function printTime(){
-
             const clock = document.querySelector(".time");
             const now = new Date();
-            const nowTime = "오늘은 " + now.getFullYear() + "년 " + (now.getMonth() + 1 ) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초 입니다."  ;
-            
-            
+
+            let nowHours = now.getHours();
+            let nowMinutes = now.getMinutes();
+            let nowSeconds = now.getSeconds();
+            if(nowHours > 12) nowHours = `0${nowHours - 12}`;
+            if(nowMinutes < 10) nowMinutes = `0${nowMinutes}`;
+            if(nowSeconds < 10) nowSeconds = `0${nowSeconds}`;                
+                
+            const nowTime = `오늘은 ${now.getFullYear()} 년 ${now.getMonth() + 1} 월 ${now.getDate()}일 ${nowHours} 시 ${nowMinutes}분 ${nowSeconds}초 입니다.`;
+
             clock.innerText = nowTime;
-            setTimeout("printTime()", 1000);               
+            setTimeout("printTime()", 1000);
+                   
         }
         
         function printAgent(){
