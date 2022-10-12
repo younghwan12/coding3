@@ -54,7 +54,8 @@
     height: 4px;
     border-radius: 2px;
     background: #000;
-    transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6), width 0.2s ease 0.2s;
+    transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6),
+        width 0.2s ease 0.2s;
 }
 .ham_menu input {
     display: none;
@@ -86,12 +87,14 @@
 .ham_menu.active input + div + div {
     width: 19px;
     transform: translate(6px, 0) rotate(45deg);
-    transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s, width 0.2s ease;
+    transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s,
+        width 0.2s ease;
 }
 .ham_menu.active input + div + div + div {
     width: 19px;
     transform: translate(-6px, 0) rotate(45deg);
-    transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s, width 0.2s ease;
+    transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s,
+        width 0.2s ease;
 }
 
 /* media */
