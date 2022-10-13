@@ -64,6 +64,7 @@
     background-color: #fff;
     border-radius: 5px;
     padding: 10px;
+    transition: all 0.6s;
 }
 .music__control .progress {
     width: 100%;
@@ -189,6 +190,7 @@
     background-color: #fff;
     padding: 10px;
     border-radius: 5px;
+    transition: all 0.6s;
 }
 .music__list li {
     border-bottom: 1px solid #000;
