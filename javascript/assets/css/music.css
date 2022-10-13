@@ -37,6 +37,13 @@
 .music__view .img img {
     width: 100%;
 }
+.music__view .volume {
+    margin-top: 5px;
+    width: 80%;
+    height: 6px;
+    background: #000;
+    border-radius: 5px;
+}
 .music__view .title {
     width: 69%;
     text-align: center;
