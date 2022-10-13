@@ -299,3 +299,21 @@ window.addEventListener("load", ()=> {
     loadMusic(musicIndex);  // 음악 재생
     playListMusic();        // 리스트 초기화
 })
+
+
+// 볼륨 조절
+const audio = document.getElementById("main-audio");
+const audioVolume = document.getElementById("volume-control");
+const volumeIcon = document.querySelector(".volume_icon");
+const volumeOffIcon = document.querySelector(".volumeOff_icon");
+
+audioVolume.addEventListener("change", function (e) {
+    audio.volume = this.value / 10;
+    if (this.value == 0) {
+        volumeIcon.classList.add("hide");
+        volumeOffIcon.classList.add("show");
+    } else {
+        volumeIcon.classList.remove("hide");
+        volumeOffIcon.classList.remove("show");
+    }
+});
