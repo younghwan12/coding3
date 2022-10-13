@@ -159,6 +159,7 @@
 .music__list ul {
     max-height: 200px;
     overflow-y: scroll;
+    padding-right: 10px;
 }
 .music__list h3 {
     font-size: 24px;
