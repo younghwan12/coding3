@@ -13,6 +13,18 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+/* scroll */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgb(9, 77, 159, 0.4);
+}
+::-webkit-scrollbar-thumb {
+    background: #094d9f;
+    border-radius: 20px;
+}
 
 #header {
     position: fixed;
@@ -109,6 +121,8 @@ body {
     width: 50px;
     height: 50px;
     z-index: 1;
+    pointer-events: none;
+    user-select: none;
 }
 .cursor img {
     width: 15px;

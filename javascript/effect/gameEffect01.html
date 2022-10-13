@@ -100,7 +100,7 @@
             </div>
             <div class="music__footer">
                 <div class="music__list">
-                    <h3><span class="list"></span>뮤직 리스트</h3>
+                    <h3><span class="list"></span>뮤직 리스트<span class="close_btn"></span></h3>
                     <ul>
                         <!-- <li>
                             <strong>제목</strong>
@@ -121,10 +121,13 @@
     <script src="../asset/js/music.js"></script>
     <script>
 
+        
+
+
         const cursor = document.querySelector(".cursor");
 
         window.addEventListener("mousemove" , e => {
-            gsap.to(cursor, {duration: 0, left: e.pageX +5, top: e.pageY +5})
+            gsap.to(cursor, {duration: 0, left: e.pageX -1, top: e.pageY -3})
         })
 
 
