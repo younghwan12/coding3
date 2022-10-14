@@ -1685,8 +1685,6 @@ input[type="checkbox"] {
             const cssList = document.querySelector(".search__list .line");
             
             let cssProp = [];
-
-
             
 
             // 데이터 출력하기
@@ -1729,8 +1727,11 @@ input[type="checkbox"] {
             document.querySelector(".btn1").addEventListener("click", (e)=>{
                 e.preventDefault();
                 cssList.innerHTML = "";
-                shuffle(cssProp);                
+                shuffle(cssProp);  
+                // console.log(cssProp)              
             })
+
+            console.log(cssProp)
 
     </script>
 </body>
