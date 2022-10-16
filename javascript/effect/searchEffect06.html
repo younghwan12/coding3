@@ -33,7 +33,7 @@
 
     <main id="main">
         <div class="search__wrap">
-            <span>sort(), reverse()를 이용하여 정렬하기</span>
+            <span>sort(), reverse(), random()를 이용하여 정렬하기</span>
             <h1>CSS 속성 정렬하기</h1>
 
             <div class="search__click">
@@ -576,12 +576,8 @@
     { num: 381 , name: "z-index", desc: " 엘리먼트의 겹쳐지는 순서를 지정한다." }];
 
 
-const cssList = document.querySelector(".search__list .line");
+    const cssList = document.querySelector(".search__list .line");
 
-const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
-
-
-searchInfo.textContent = cssList.length;
 
 //전체 갯수 구하기
 // searchInfo.textContent = cssList.length;
@@ -589,17 +585,16 @@ searchInfo.textContent = cssList.length;
 // console.log(cssProperty[0].num)
 
 // 데이터 출력하기
+const listCssProp = [];
+
 const updateList = () =&gt; {
-    let listCSS = "";
-
-    cssProperty.forEach((data, index)=&gt; {
-
-        listCSS += `&lt;li&gt;${data.num + 1}. ${data.name} : ${data.desc}&lt;/li&gt;`;
+    let listCss = "";
+    cssProperty.forEach((data, index) =&gt; {
+        listCss += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc}&lt;/li&gt;`;
+        listCssProp.push(`&lt;li&gt;${data.num}. ${data.name} : ${data.desc}&lt;/li&gt;`);
     });
-
-    cssList.innerHTML = listCSS;
+    cssList.innerHTML = listCss;
 }
-
 updateList();
 
 // 반대로 정렬
@@ -648,7 +643,7 @@ function sortAlphabetZ() {
 
 // 반대로 정렬 클릭
 document.querySelector(".btn1").addEventListener("click", ()=&gt;{
-    sortReverse();
+    // sortReverse();
 }); 
 
 // 내림차순 정렬 클릭
@@ -669,6 +664,23 @@ document.querySelector(".btn4").addEventListener("click", ()=&gt;{
 // 알파벳 정렬(z~a) 클릭
 document.querySelector(".btn5").addEventListener("click", ()=&gt;{
     sortAlphabetZ();
+});
+
+
+// 피셔 에이츠 (랜덤 정렬)
+function shuffle(data) {
+    for(let i = data.length -1; i &gt;= 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        [data[i], data[randomIndex]] = [data[randomIndex], data[i]];
+        cssList.innerHTML += data[i];
+    }
+}
+
+const randomBtn = document.querySelector('.btn6');
+randomBtn.addEventListener('click', (e) =&gt; {
+    e.preventDefault();
+    cssList.innerHTML = '';
+    shuffle(listCssProp);
 });
 </code></pre>
                     </div>
@@ -1734,12 +1746,6 @@ input[type="checkbox"] {
 
             const cssList = document.querySelector(".search__list .line");
 
-            let cssProp = [];
-
-            const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
-
-            searchInfo.textContent = cssList.length;
-
 
             //전체 갯수 구하기
             // searchInfo.textContent = cssList.length;
@@ -1747,14 +1753,15 @@ input[type="checkbox"] {
             // console.log(cssProperty[0].num)
 
             // 데이터 출력하기
-            const updateList = (list) => {
+            const listCssProp = [];
 
-                // map
-                cssProperty.map((data, index) => {
-                    cssProp.push(`<li>${data.num + 1}. ${data.name} : ${data.desc}</li>`);                  
-                    cssList.innerHTML += cssProp[index];
-                });  
-                
+            const updateList = () => {
+                let listCss = "";
+                cssProperty.forEach((data, index) => {
+                    listCss += `<li>${data.num}. ${data.name} : ${data.desc}</li>`;
+                    listCssProp.push(`<li>${data.num}. ${data.name} : ${data.desc}</li>`);
+                });
+                cssList.innerHTML = listCss;
             }
             updateList();
 
@@ -1828,24 +1835,21 @@ input[type="checkbox"] {
             });
 
 
-            // 피셔 에이츠 알고리즘
-            function shuffle(data){
-                for (let i = data.length-1; i>=0; i--){
+            // 피셔 에이츠 (랜덤 정렬)
+            function shuffle(data) {
+                for(let i = data.length -1; i >= 0; i--) {
                     const randomIndex = Math.floor(Math.random() * (i + 1));
-                    // console.log(randomIndex)
                     [data[i], data[randomIndex]] = [data[randomIndex], data[i]];
                     cssList.innerHTML += data[i];
-
-                    // console.log(cssList)
                 }
             }
-            
-            document.querySelector(".btn6").addEventListener("click", (e)=>{
+
+            const randomBtn = document.querySelector('.btn6');
+            randomBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                cssList.innerHTML = "";
-                shuffle(cssProp);  
-                // console.log(cssProp)              
-            })
+                cssList.innerHTML = '';
+                shuffle(listCssProp);
+            });
             
 
     </script>
