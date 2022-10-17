@@ -1,4 +1,5 @@
-const cssProperty = [ //all, animation, background, flex, grid, string, table
+const cssProperty = [ 
+    //all, animation, background, flex, grid, string, table
     { num: 1 , category: "flex", name: "accent-color", desc: " 요소의 강조 색상을 지정합니다. " },
     { num: 2 , category: "flex", name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다." },
     { num: 3 , category: "flex", name: "align-items", desc: " 교차축에서 아이템 정렬 하는 속성입니다. 주로 flex에서 item들을 정렬할 때 사용됩니다." },
@@ -400,7 +401,7 @@ const searchResult = document.querySelector(".search__result .result");
 const searchResultWrap = document.querySelector(".search__result");
 const searchRestart = document.querySelector(".search__result .restart");
 
-let timeReamining = 5,    //남은시간
+let timeReamining = 120,    //남은시간
     timeInterval = "",    //시간 간격
     Score = 0,            //점수
     answers = {};         //새로운 정답

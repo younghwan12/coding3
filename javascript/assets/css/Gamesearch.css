@@ -32,7 +32,7 @@ li {
 .search__wrap.show {
     display: block;
     max-width: 50%;
-    margin: 0 auto;
+    margin: auto auto;
     border: 3px solid var(--htmlColor);
     border-radius: 20px;
     background-color: #f1f3f6;
