@@ -1,5 +1,5 @@
 :root {
-    --htmlColor: #223547;
+    --htmlColor: #094d9f;
     --cssColor: #472222;
     --javascriptColor: #224736;
 }
@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "NexonLv1Gothic";
+    /* font-family: "NexonLv1Gothic"; */
     color: var(--htmlColor);
     position: relative;
 }
@@ -25,16 +25,16 @@ li {
 }
 
 .search__wrap {
+    font-family: "DungGeunMo";
     display: none;
 }
 
-
 .search__wrap.show {
     display: block;
-    max-width: 50%;
+    max-width: 40%;
     margin: auto auto;
     border: 3px solid var(--htmlColor);
-    border-radius: 20px;
+    /* border-radius: 20px; */
     background-color: #f1f3f6;
     padding: 30px;
     text-align: center;
@@ -96,7 +96,7 @@ li {
     transform: translateX(-50%);
     background: #223547;
     width: 30%;
-    border-radius: 50px;
+    /* border-radius: 50px; */
     font-size: 20px;
     border: 2px solid var(--htmlColor);
     padding: 15px 40px;
@@ -345,7 +345,7 @@ li {
 .modal__btn:hover {
     background-color: var(--htmlColor);
 }
-.modal__btn:hover .btn__txt {
+.modal__btn:hover label {
     color: #fff;
 }
 .modal__cont {
