@@ -27,13 +27,31 @@ li {
 .search__wrap {
     font-family: "DungGeunMo";
     display: none;
+    position: relative;
+}
+.search__header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    background-color: var(--htmlColor);
+    padding: 10px 0;
+}
+.search__header > div,
+h2 {
+    color: #fff;
 }
 
 .search__wrap.show {
     display: block;
     max-width: 40%;
     margin: auto auto;
-    border: 3px solid var(--htmlColor);
+    border: 10px solid var(--htmlColor);
     /* border-radius: 20px; */
     background-color: #f1f3f6;
     padding: 30px;
@@ -259,6 +277,7 @@ li {
     margin: 3px;
 }
 .search__audio {
+    margin-top: 10px;
     margin-bottom: 10px;
     cursor: pointer;
 }
