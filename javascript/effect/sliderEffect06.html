@@ -524,6 +524,16 @@ document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=&gt;{
                 }
             });
 
+            document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=>{
+                dot.addEventListener("click", ()=>{
+                    let dotActive = document.querySelectorAll(".slider__dot .dot");
+                    dotActive.forEach(el => el.classList.remove("active"));
+                    dotActive[index].classList.add("active");
+                })
+            })
+
+            
+
             
             sliderInner.addEventListener("transitionend", checkIndex);
 
